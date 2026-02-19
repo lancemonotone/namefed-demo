@@ -11,33 +11,11 @@
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
-
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo">
-        <img src="https://placehold.co/140x48/2c2416/c9a227?text=NAMEFED" alt="Placeholder for NAMEFED credit union logo. Replace with official logo from placehold.co">
-        <span class="logo-text">NAMEFED</span>
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="membership.html">Membership</a></li>
-          <li><a href="rates.html">Rates</a></li>
-          <li><a href="hours-locations.html" aria-current="page">Hours &amp; Locations</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div id="header-placeholder"></div>
+  <script src="js/header.js"></script>
 
   <main id="main">
-    <section class="page-header">
+    <section class="section--title">
       <h1>Hours &amp; Locations</h1>
     </section>
 
@@ -48,24 +26,26 @@
         <p><strong>Summer Hours:</strong> Monday – Thursday 9am–4pm, Friday 9am–1pm</p>
         <p>Saturday – Sunday: Closed</p>
         <p>We are closed on federal holidays.</p>
-        <div class="alert-bar" style="margin-top: 1.5rem;">
-          <div class="alert-inner">
+        <div class="strip" style="margin-top: 1.5rem;">
+          <div class="strip-inner">
             <p><strong>Friendly Reminder:</strong> Due to our day closing procedures, all transactions must be in by 3:30 PM for same-day processing. Requests after 3:30 PM will be processed the next business day.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--alt">
-      <div class="container">
-        <h2>Our Location</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Norad_Mill_60_Roberts_Drive_North_Adams_from_west.jpg" class="intro-image" alt="Norad Mill, 60 Roberts Drive, North Adams" style="max-width: 100%; margin-bottom: 1.5rem;">
-        <div class="location-card">
-          <p><strong>North Adams M.E. Federal Credit Union</strong></p>
-          <p>Norad Mill<br>60 Roberts Drive, Suite 112<br>North Adams, MA 01247</p>
-          <p>Phone: (413) 662-2657<br>Fax: (413) 662-2173</p>
-          <p><a href="contact.html">Contact us</a></p>
+    <section class="section section--split section--alt">
+      <div class="container section-split">
+        <div>
+          <h2>Our Location</h2>
+          <div class="location-card">
+            <p><strong>North Adams M.E. Federal Credit Union</strong></p>
+            <p>Norad Mill<br>60 Roberts Drive, Suite 112<br>North Adams, MA 01247</p>
+            <p>Phone: (413) 662-2657<br>Fax: (413) 662-2173</p>
+            <p><a href="contact.html">Contact us</a></p>
+          </div>
         </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Norad_Mill_60_Roberts_Drive_North_Adams_from_west.jpg" alt="Norad Mill, 60 Roberts Drive, North Adams">
       </div>
     </section>
   </main>

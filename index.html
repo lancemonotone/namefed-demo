@@ -11,101 +11,80 @@
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
-
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo">
-        <img src="https://placehold.co/140x48/2c2416/c9a227?text=NAMEFED" alt="Placeholder for NAMEFED credit union logo – stylized tree with roots in gold on dark background. Replace with official logo from placehold.co">
-        <span class="logo-text">NAMEFED</span>
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="membership.html">Membership</a></li>
-          <li><a href="rates.html">Rates</a></li>
-          <li><a href="hours-locations.html">Hours &amp; Locations</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div id="header-placeholder"></div>
+  <script src="js/header.js"></script>
 
   <main id="main">
-    <section class="hero">
-      <div class="hero-bg" role="img" aria-label="Main Street, North Adams, Massachusetts" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/Main_Street_North_Adams.jpg');"></div>
-      <div class="hero-inner">
+    <section class="section--banner">
+      <div class="banner-bg" role="img" aria-label="Main Street, North Adams, Massachusetts" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7b/Main_Street_North_Adams.jpg');"></div>
+      <div class="banner-inner">
         <h1>Have You Joined Your Credit Union Yet?</h1>
-        <p class="hero-tagline">North Adams Municipal Employees Federal Credit Union—serving those who serve our community since 1959.</p>
-        <div class="hero-ctas">
+        <p class="banner-tagline">North Adams Municipal Employees Federal Credit Union—serving those who serve our community since 1959.</p>
+        <div class="banner-ctas">
           <a href="membership.html" class="btn btn-primary">Apply for Membership</a>
           <a href="contact.html" class="btn btn-secondary">Contact Us</a>
         </div>
       </div>
     </section>
 
-    <section class="alert-bar" aria-live="polite">
-      <div class="alert-inner">
+    <section class="section--strip" aria-live="polite">
+      <div class="strip-inner">
         <p><strong>Branch hours:</strong> Mon–Fri 9am–4pm. Transactions must be in by 3:30pm for same-day processing. Closed on federal holidays.</p>
       </div>
     </section>
 
-    <section class="intro section">
-      <div class="container">
-        <div class="intro-with-image">
-          <div>
-            <h2>Welcome to NAMEFED</h2>
-            <p class="lead">Chartered January 1, 1959, we've been serving North Adams municipal employees and their families for over 60 years. We're member-owned, not-for-profit, and focused on helping you save, borrow, and plan for the future.</p>
-            <p><strong>Once a Member – Always a Member!</strong> Even if you leave your employment or move out of the area, we just require annual activity in your account.</p>
-            <div class="quick-links">
-              <a href="rates.html">View Rates</a>
-              <a href="hours-locations.html">Find Us</a>
-              <a href="membership.html">Join NAMEFED</a>
-            </div>
+    <section class="section section--split">
+      <div class="container section-split">
+        <div>
+          <h2>Welcome to NAMEFED</h2>
+          <p class="lead">Chartered January 1, 1959, we've been serving North Adams municipal employees and their families for over 60 years. We're member-owned, not-for-profit, and focused on helping you save, borrow, and plan for the future.</p>
+          <p><strong>Once a Member – Always a Member!</strong> Even if you leave your employment or move out of the area, we just require annual activity in your account.</p>
+          <div class="quick-links">
+            <a href="rates.html" class="btn btn-primary">View Rates</a>
+            <a href="hours-locations.html" class="btn btn-primary">Find Us</a>
+            <a href="membership.html" class="btn btn-primary">Join NAMEFED</a>
           </div>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/North_Adams_Massachusetts_downtown.jpg" class="intro-image" alt="Downtown North Adams, Massachusetts">
         </div>
+        <img src="https://media.cnn.com/api/v1/images/stellar/prod/190524170003-01-north-adams-photos.jpg?q=w_1110,c_fill" alt="Downtown North Adams, Massachusetts">
       </div>
     </section>
 
-    <section class="features section section--alt">
-      <div class="container">
-        <h2>Who We Serve</h2>
-        <p class="lead">NAMEFED membership is open to employees and retirees of:</p>
-        <ul class="serve-list">
-          <li>City of North Adams</li>
-          <li>North Adams City Yard</li>
-          <li>North Adams Public Schools</li>
-          <li>North Adams Fire Department</li>
-          <li>North Adams Police Department</li>
-          <li>Northern Berkshire EMS</li>
-          <li>North Adams Housing Authority</li>
-        </ul>
-        <p><strong>Immediate family members can join!</strong></p>
+    <section class="section section--split section--alt">
+      <div class="container section-split">
+        <div>
+          <h2>Who We Serve</h2>
+          <p class="lead">NAMEFED membership is open to employees and retirees of:</p>
+          <ul class="serve-list">
+            <li>City of North Adams</li>
+            <li>North Adams City Yard</li>
+            <li>North Adams Public Schools</li>
+            <li>North Adams Fire Department</li>
+            <li>North Adams Police Department</li>
+            <li>Northern Berkshire EMS</li>
+            <li>North Adams Housing Authority</li>
+          </ul>
+          <p><strong>Immediate family members can join!</strong></p>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Seal_of_North_Adams%2C_Massachusetts.png" alt="Seal of the City of North Adams, Massachusetts">
       </div>
     </section>
 
-    <section class="features section">
+    <section class="section section--grid">
       <div class="container">
         <h2>What We Offer</h2>
         <div class="feature-grid">
           <article class="feature-card">
-            <img src="https://images.pexels.com/photos/1450339/pexels-photo-1450339.jpeg?auto=compress&cs=tinysrgb&w=800" class="feature-card-img" alt="Piggy bank and coins representing savings">
+            <img src="https://images.pexels.com/photos/1450339/pexels-photo-1450339.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Piggy bank and coins representing savings">
             <h3>Savings &amp; Christmas Clubs</h3>
             <p>Share Savings at a competitive rate. Just $5 to open. Christmas Clubs with checks printed October 1st. Lil Buck Savers for ages 0–17.</p>
           </article>
           <article class="feature-card">
-            <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=800" class="feature-card-img" alt="Car keys representing auto loans">
+            <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Car keys representing auto loans">
             <h3>Loans</h3>
             <p>Auto, personal, motorcycle, utility trailers, snowmobiles, boats, campers, ATVs—plus seasonal loan specials throughout the year.</p>
           </article>
           <article class="feature-card">
-            <img src="https://images.pexels.com/photos/3944406/pexels-photo-3944406.jpeg?auto=compress&cs=tinysrgb&w=800" class="feature-card-img" alt="Mobile banking and direct deposit">
+            <img src="https://images.pexels.com/photos/3944406/pexels-photo-3944406.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mobile banking and direct deposit">
             <h3>Payroll Deduction</h3>
             <p>Simplify the process and ensure payments are on time. Direct deposit available—choose any amount.</p>
           </article>
@@ -113,7 +92,7 @@
       </div>
     </section>
 
-    <section class="newsletter-section">
+    <section class="section section--dark">
       <div class="container">
         <h2>Stay in the Loop</h2>
         <p>Our one-click newsletter brings you rates, specials, and credit union news—ready to email or print. Stay connected with your community.</p>
@@ -121,7 +100,7 @@
       </div>
     </section>
 
-    <section class="cta section">
+    <section class="section section--center">
       <div class="container">
         <h2>Ready to Join?</h2>
         <p>Eligibility is easy—if you're a municipal employee, retiree, or family member, you likely qualify.</p>
