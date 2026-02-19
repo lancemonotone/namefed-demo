@@ -389,7 +389,7 @@ a:hover {
 }
 
 .feature-card-img {
-  width: 100%;
+  width: calc(100% + 2 * var(--space-xl));
   height: 160px;
   object-fit: cover;
   margin: calc(-1 * var(--space-xl)) calc(-1 * var(--space-xl)) var(--space-lg);
