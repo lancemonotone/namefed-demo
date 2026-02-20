@@ -2,21 +2,35 @@
  * NAMEFED Mock-up – Mobile navigation toggle & form handling
  */
 (function () {
+  function closeNav() {
+    const nav = document.querySelector('#main-nav');
+    const toggle = document.querySelector('.nav-toggle');
+    const closeBtn = document.querySelector('.nav-close');
+    if (nav) nav.classList.remove('is-open');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    if (closeBtn) closeBtn.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
   function initNav() {
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('#main-nav');
+    const closeBtn = document.querySelector('.nav-close');
 
     if (toggle && nav) {
       toggle.addEventListener('click', function () {
         const isOpen = nav.classList.toggle('is-open');
         toggle.setAttribute('aria-expanded', isOpen);
+        if (closeBtn) closeBtn.setAttribute('aria-hidden', !isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
       });
 
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeNav);
+      }
+
       nav.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-          nav.classList.remove('is-open');
-          toggle.setAttribute('aria-expanded', 'false');
-        });
+        link.addEventListener('click', closeNav);
       });
     }
   }
