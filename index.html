@@ -95,8 +95,15 @@
     <section class="section section--dark">
       <div class="container">
         <h2>Stay in the Loop</h2>
-        <p>Our one-click newsletter brings you rates, specials, and credit union news—ready to email or print. Stay connected with your community.</p>
-        <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+        <p>Subscribe to our newsletter for rates, specials, and credit union news delivered to your inbox.</p>
+        <form class="newsletter-form" action="#" method="post">
+          <div class="form-row">
+            <label for="newsletter-email" class="visually-hidden">Email address</label>
+            <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required>
+          </div>
+          <button type="submit" class="btn btn-secondary">Subscribe to Newsletter</button>
+        </form>
+        <p class="form-note form-note--light">* Required. This is a mock-up form—submissions are not processed.</p>
       </div>
     </section>
 
@@ -122,6 +129,7 @@
             <li><a href="membership.html">Join</a></li>
             <li><a href="rates.html">Rates</a></li>
             <li><a href="hours-locations.html">Locations</a></li>
+            <li><a href="faq.html">FAQ</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>

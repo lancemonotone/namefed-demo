@@ -329,6 +329,45 @@ button.btn-primary:hover {
   border-color: var(--color-white);
 }
 
+/* Alert bar (demo – as on fully functional site) */
+.alert-bar {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-sm) var(--space-lg);
+  text-align: center;
+  font-size: 0.9375rem;
+}
+
+.alert-bar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.alert-bar a {
+  color: var(--color-white);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.alert-bar a:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Newsletter form in dark section */
+.newsletter-form {
+  max-width: 400px;
+  margin: 0 auto var(--space-lg);
+}
+
+.newsletter-form .form-row input {
+  max-width: 100%;
+}
+
+.form-note--light {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.875rem;
+}
+
 /* Strip (thin band) */
 .section--strip,
 .strip {
@@ -674,6 +713,138 @@ fieldset legend {
   color: var(--color-primary);
 }
 
+.section--alt fieldset legend {
+  color: var(--color-white);
+}
+
+.form-row select {
+  width: 100%;
+  max-width: 400px;
+  padding: var(--space-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-white);
+}
+
+.form-row--inline {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.form-row--inline > div {
+  flex: 1;
+  min-width: 100px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto;
+  max-width: none;
+  margin-top: 0.25em;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Eligibility checker */
+.eligibility-checker {
+  max-width: 480px;
+  padding: var(--space-xl);
+  background: var(--color-bg-warm);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.eligibility-checker .form-row {
+  margin-bottom: var(--space-lg);
+}
+
+.eligibility-result {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+}
+
+.eligibility-result--success {
+  background: rgba(76, 175, 80, 0.15);
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  color: #2e7d32;
+}
+
+.eligibility-result--warning {
+  background: rgba(255, 152, 0, 0.15);
+  border: 1px solid rgba(255, 152, 0, 0.4);
+  color: #e65100;
+}
+
+.eligibility-result--info {
+  background: rgba(33, 150, 243, 0.15);
+  border: 1px solid rgba(33, 150, 243, 0.4);
+  color: #1565c0;
+}
+
+.eligibility-result a {
+  font-weight: 600;
+}
+
+/* Step wizard */
+.wizard-progress {
+  margin-bottom: var(--space-2xl);
+}
+
+.wizard-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.wizard-step {
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.wizard-step.active {
+  background: var(--color-white);
+  color: var(--color-primary-dark);
+}
+
+.wizard-step.complete {
+  background: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.wizard-panel[hidden] {
+  display: none !important;
+}
+
+.wizard-nav {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.wizard-nav button[hidden] {
+  display: none !important;
+}
+
 /* Rates table */
 .rates-table-wrapper {
   overflow-x: auto;
@@ -703,6 +874,35 @@ fieldset legend {
   font-weight: 700;
   color: var(--color-primary);
   background: var(--color-bg-alt);
+}
+
+/* FAQ */
+.faq-list {
+  margin-top: var(--space-xl);
+}
+
+.faq-item {
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.faq-question {
+  font-size: 1.25rem;
+  margin: 0 0 var(--space-md);
+  color: var(--color-primary);
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.7;
 }
 
 .visually-hidden {
@@ -748,6 +948,27 @@ fieldset legend {
 
 .location-card:hover {
   box-shadow: var(--shadow-hover);
+}
+
+/* Holiday schedule */
+.holiday-schedule {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.holiday-schedule h3 {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.holiday-schedule h3:first-child {
+  margin-top: 0;
+}
+
+.holiday-schedule ul {
+  margin: 0 0 var(--space-lg);
+  padding-left: 1.5em;
 }
 
 .location-card p {

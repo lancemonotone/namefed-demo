@@ -4,14 +4,15 @@ A front-end demo of what the NAMEFED (North Adams Municipal Employees Federal Cr
 
 ## What’s included
 
-- **Home** – Hero, quick links, feature overview
+- **Home** – Hero, quick links, feature overview, newsletter signup, alert bar (demo)
 - **About** – Who we are, mission, why credit union
-- **Membership** – Eligibility info, application form (mock-up)
+- **Membership** – Eligibility checker, multi-step application form (mock-up)
 - **Rates** – Sample rates table
-- **Hours & Locations** – Branch hours and address
+- **Hours & Locations** – Branch hours, Massachusetts bank holiday schedule, address
+- **FAQ** – Frequently asked questions (routing number, hours, membership, etc.)
 - **Contact** – Contact form (mock-up)
 
-Forms are visual only; submissions are not processed.
+Forms are visual only; submissions are not processed. Logo is included in `img/logo.png`.
 
 ## Tech stack
 
@@ -62,6 +63,5 @@ In **Settings** → **Pages** → **Custom domain**, add your domain and follow 
 ## Customization
 
 - Replace placeholder content (hours, rates, address, phone) with real data.
-- Add a logo file and update the `.logo` in the header.
 - Swap fonts or colors in `css/style.css` if needed.
 - Forms can be wired to Formspree, Netlify Forms, or another service once you deploy.
