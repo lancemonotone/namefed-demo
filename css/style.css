@@ -14,7 +14,7 @@
   --color-bg-warm: #faf6ee;
   --color-white: #fff;
   --color-border: rgba(201, 162, 39, 0.25);
-  --font-heading: "Lora", Georgia, serif;
+  --font-heading: "Inter", system-ui, sans-serif;
   --font-body: "Nunito", system-ui, sans-serif;
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
@@ -49,6 +49,7 @@ body {
   line-height: 1.65;
   color: var(--color-text);
   background: var(--color-bg);
+  text-wrap: balance;
 }
 
 .skip-link {
@@ -135,8 +136,9 @@ a:hover {
 
 .site-name a {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: clamp(1rem, 1.5rem + 1vw, 2.2rem);
+  font-weight: 600;
+  text-transform: uppercase;
   line-height: 1.2;
   color: var(--color-primary);
   text-decoration: none;
@@ -255,7 +257,8 @@ a:hover {
 .section--banner h1 {
   font-family: var(--font-heading);
   font-size: clamp(1.875rem, 4.5vw, 2.75rem);
-  font-weight: 400;
+  font-weight: 600;
+  text-transform: uppercase;
   margin: 0 0 var(--space-md);
   line-height: 1.25;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -281,7 +284,7 @@ a:hover {
 button.btn {
   display: inline-block;
   padding: var(--space-sm) var(--space-lg);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.2;
@@ -415,10 +418,11 @@ button.btn-primary:hover {
 .section h2 {
   font-family: var(--font-heading);
   font-size: 1.875rem;
-  font-weight: 400;
+  font-weight: 600;
+  text-transform: uppercase;
   margin: 0 0 var(--space-lg);
   color: var(--color-primary-dark);
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
 }
 
 .section--alt h2 {
@@ -679,7 +683,7 @@ button.btn-primary:hover {
   width: 100%;
   max-width: 400px;
   padding: var(--space-md);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 1rem;
   border: 2px solid var(--color-border);
   border-radius: var(--radius);
@@ -724,7 +728,7 @@ fieldset legend {
   width: 100%;
   max-width: 400px;
   padding: var(--space-md);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 1rem;
   border: 2px solid var(--color-border);
   border-radius: var(--radius);
@@ -1007,7 +1011,8 @@ fieldset legend {
   z-index: 1;
   font-family: var(--font-heading);
   font-size: 1.875rem;
-  font-weight: 400;
+  font-weight: 600;
+  text-transform: uppercase;
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
