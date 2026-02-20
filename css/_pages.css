@@ -1,0 +1,329 @@
+/* NAMEFED – Page-specific: banner, eligibility, FAQ, contact, etc. */
+.section--banner {
+  position: relative;
+  color: var(--color-white);
+  padding: var(--space-3xl) var(--space-lg);
+  text-align: center;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.section--banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 30, 0.88) 0%,
+    rgba(30, 30, 30, 0.75) 50%,
+    rgba(80, 80, 80, 0.4) 100%
+  );
+  z-index: 1;
+}
+
+.banner-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.banner-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.section--banner h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.875rem, 4.5vw, 2.75rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0 var(--space-md);
+  line-height: 1.25;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.banner-tagline {
+  font-size: 1.1875rem;
+  opacity: 0.98;
+  margin: 0 0 var(--space-xl);
+  line-height: 1.5;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.banner-ctas {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+/* Newsletter form */
+.newsletter-form {
+  max-width: 400px;
+  margin: 0 auto var(--space-lg);
+}
+
+.newsletter-form .form-row input {
+  max-width: 100%;
+}
+
+.form-note--light {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.875rem;
+}
+
+/* Feature grid */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+/* Eligibility checker & flow */
+.eligibility-checker {
+  max-width: 480px;
+  padding: var(--space-xl);
+  background: var(--color-bg-warm);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.eligibility-checker .form-row {
+  margin-bottom: var(--space-lg);
+}
+
+.eligibility-result {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+}
+
+.eligibility-result--success {
+  background: rgba(76, 175, 80, 0.15);
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  color: #2e7d32;
+}
+
+.eligibility-result--warning {
+  background: rgba(255, 152, 0, 0.15);
+  border: 1px solid rgba(255, 152, 0, 0.4);
+  color: #e65100;
+}
+
+.eligibility-result--info {
+  background: rgba(33, 150, 243, 0.15);
+  border: 1px solid rgba(33, 150, 243, 0.4);
+  color: #1565c0;
+}
+
+.eligibility-result a {
+  font-weight: 600;
+}
+
+.eligibility-result .eligibility-continue-btn {
+  margin-top: var(--space-md);
+}
+
+.eligibility-flow-inner {
+  display: grid;
+  grid-template-rows: 1fr 0fr;
+  transition: grid-template-rows 0.5s var(--transition-smooth);
+}
+
+.eligibility-flow.show-form .eligibility-flow-inner {
+  grid-template-rows: 0fr 1fr;
+}
+
+.eligibility-checker-wrap,
+.application-form-wrap {
+  overflow: hidden;
+  transition: opacity 0.4s var(--transition-smooth);
+}
+
+.eligibility-checker-wrap {
+  min-height: 0;
+}
+
+.eligibility-flow.show-form .eligibility-checker-wrap {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.application-form-wrap {
+  min-height: 0;
+  opacity: 0;
+  padding: var(--space-3xl) 0;
+  border-radius: var(--radius-lg);
+}
+
+.eligibility-flow.show-form .application-form-wrap {
+  opacity: 1;
+}
+
+.application-form-wrap[aria-hidden="true"] {
+  visibility: hidden;
+}
+
+.application-form-wrap[aria-hidden="false"] {
+  visibility: visible;
+}
+
+/* Step wizard */
+.wizard-progress {
+  margin-bottom: var(--space-2xl);
+}
+
+.wizard-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.wizard-step {
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.wizard-step.active {
+  background: var(--color-white);
+  color: var(--color-primary-dark);
+}
+
+.wizard-step.complete {
+  background: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.wizard-panel[hidden] {
+  display: none !important;
+}
+
+.wizard-nav {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.wizard-nav button[hidden] {
+  display: none !important;
+}
+
+/* FAQ */
+.faq-list {
+  margin-top: var(--space-xl);
+}
+
+.faq-item {
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.faq-question {
+  font-size: 1.25rem;
+  margin: 0 0 var(--space-md);
+  color: var(--color-primary);
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Contact page */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-info p {
+  margin: 0 0 var(--space-lg);
+}
+
+/* Holiday schedule */
+.holiday-schedule {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.holiday-schedule h3 {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.holiday-schedule h3:first-child {
+  margin-top: 0;
+}
+
+.holiday-schedule ul {
+  margin: 0 0 var(--space-lg);
+  padding-left: 1.5em;
+}
+
+/* Page title banner */
+.section--title {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary-warm) 100%
+  );
+  color: var(--color-white);
+  padding: var(--space-2xl) var(--space-lg);
+  text-align: center;
+  overflow: hidden;
+}
+
+.section--title::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Main_Street_North_Adams.jpg")
+    center/cover;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.section--title h1 {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-heading);
+  font-size: 1.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

@@ -20,6 +20,25 @@ Forms are visual only; submissions are not processed. Logo is included in `img/l
 - No build step
 - No dependencies
 
+## CSS structure
+
+Styles are modularized in `css/`:
+
+| File | Purpose |
+|------|---------|
+| `style.css` | Main entry – imports all modules |
+| `_variables.css` | Design tokens (colors, spacing, etc.) |
+| `_reset.css` | CSS reset (box-sizing, margins, etc.) |
+| `_base.css` | Document, body, skip-link |
+| `_typography.css` | Type scale, headings, lead, links |
+| `_layout.css` | Sections, container, grid |
+| `_header.css` | Header, nav (desktop + mobile overlay) |
+| `_footer.css` | Footer |
+| `_components.css` | Buttons, forms, cards, tables |
+| `_pages.css` | Banner, eligibility flow, FAQ, etc. |
+
+**Responsive approach:** Mobile-first with colocated media queries. Base styles target mobile; `@media (min-width: 768px)` blocks add desktop overrides, placed immediately after the selector they modify. Breakpoints: 768px (md), 1024px (lg).
+
 ## Local preview
 
 1. Open the project folder in a terminal.

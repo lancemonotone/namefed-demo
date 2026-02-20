@@ -26,8 +26,26 @@
       const qualifies = qualifyingEmployers.includes(employer) || (employer === 'other' && area === 'yes');
 
       if (qualifies) {
-        resultEl.innerHTML = 'You appear to qualify for membership! Proceed to the application below.';
+        resultEl.innerHTML = 'You appear to qualify for membership! <button type="button" class="btn btn-primary eligibility-continue-btn" id="eligibility-continue-btn">Continue to Application</button>';
         resultEl.className = 'eligibility-result eligibility-result--success';
+        resultEl.hidden = false;
+        const continueBtn = document.getElementById('eligibility-continue-btn');
+        if (continueBtn) {
+          continueBtn.addEventListener('click', function () {
+            const flow = document.getElementById('eligibility-flow');
+            const wrap = document.getElementById('eligibility-checker-wrap');
+            const formWrap = document.getElementById('application-form-wrap');
+            if (flow && wrap && formWrap) {
+              flow.classList.add('show-form');
+              wrap.setAttribute('aria-hidden', 'true');
+              formWrap.setAttribute('aria-hidden', 'false');
+              const firstField = formWrap.querySelector('input, select, button');
+              if (firstField) {
+                setTimeout(function () { firstField.focus(); }, 450);
+              }
+            }
+          });
+        }
       } else {
         resultEl.innerHTML = 'Based on your answers, you may not currently qualify. <a href="contact.html">Contact us</a> to discuss your options.';
         resultEl.className = 'eligibility-result eligibility-result--info';
@@ -107,4 +125,54 @@
       relationshipRow.hidden = eligibilityType.value !== 'family';
     });
   }
+
+  // Prefill for presentation demo – generated sample values
+  const demoData = {
+    'eligibility-employer': 'schools',
+    'eligibility-area': 'yes',
+    'first-name': 'Jamie',
+    'middle-name': 'Lynn',
+    'last-name': 'Martinez',
+    'dob': '1985-03-14',
+    'email': 'jamie.martinez@naps.org',
+    'phone': '(413) 555-0147',
+    'phone-alt': '(413) 555-0199',
+    'address-street': '42 Maple Street',
+    'address-city': 'North Adams',
+    'address-state': 'MA',
+    'address-zip': '01247',
+    'eligibility-type': 'employee',
+    'employer': 'North Adams Public Schools',
+    'department': 'Facilities',
+    'job-title': 'Maintenance Technician',
+    'ownership': 'single',
+    'funding-method': 'branch',
+    'funding-amount': '25',
+    'consent-terms': true,
+    'consent-privacy': true,
+    'consent-accurate': true,
+    'consent-credit': true,
+    'marketing_email': true
+  };
+
+  function prefillForm() {
+    Object.keys(demoData).forEach(function (id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const val = demoData[id];
+      if (el.type === 'checkbox') {
+        el.checked = !!val;
+      } else if (el.tagName === 'SELECT') {
+        el.value = val;
+      } else {
+        el.value = val;
+      }
+    });
+    const productsMembership = form.querySelector('input[name="products[]"][value="membership"]');
+    const productsChecking = form.querySelector('input[name="products[]"][value="checking"]');
+    if (productsMembership) productsMembership.checked = true;
+    if (productsChecking) productsChecking.checked = true;
+  }
+
+  prefillForm();
 })();

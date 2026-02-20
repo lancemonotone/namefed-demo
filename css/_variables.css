@@ -1,0 +1,34 @@
+/* NAMEFED – Design tokens */
+:root {
+  --color-primary: #c9a227;
+  --color-primary-dark: #2c2416;
+  --color-primary-warm: #a67c00;
+  --color-accent: #c9a227;
+  --color-accent-hover: #b08d1f;
+  --color-accent-soft: rgba(201, 162, 39, 0.15);
+  --color-text: #2d2a26;
+  --color-text-muted: #5c564d;
+  --color-bg: #fdfbf7;
+  --color-bg-alt: #f5f0e6;
+  --color-bg-warm: #faf6ee;
+  --color-white: #fff;
+  --color-border: rgba(201, 162, 39, 0.25);
+  --font-heading: "Inter", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --max-width: 1200px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow: 0 2px 12px rgba(44, 36, 22, 0.06);
+  --shadow-hover: 0 8px 24px rgba(44, 36, 22, 0.1);
+  --transition: 0.25s ease;
+  --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+}

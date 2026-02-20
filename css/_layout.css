@@ -1,0 +1,140 @@
+/* NAMEFED – Layout, sections, container */
+.section--strip,
+.strip {
+  background: var(--color-bg-alt);
+  padding: var(--space-md) var(--space-lg);
+  text-align: center;
+  font-size: 0.9375rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section--strip .strip-inner,
+.strip-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.section--alt {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.section--alt .lead,
+.section--alt p,
+.section--alt strong {
+  color: var(--color-white);
+}
+
+.section--alt .serve-list li::before {
+  color: var(--color-white);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
+.serve-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 var(--space-lg);
+}
+
+.serve-list li {
+  margin-bottom: var(--space-sm);
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.serve-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* Section variants */
+.section-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.section-split img {
+  order: -1;
+
+  @media (min-width: 768px) {
+    order: unset;
+  }
+}
+
+.section--alt .section-split {
+  @media (min-width: 768px) {
+    direction: rtl;
+  }
+}
+
+.section--alt .section-split > * {
+  @media (min-width: 768px) {
+    direction: ltr;
+  }
+}
+
+.section-split img,
+.feature-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.section--dark {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary-warm) 100%
+  );
+  color: var(--color-white);
+  padding: var(--space-3xl) var(--space-lg);
+  text-align: center;
+}
+
+.section--dark h2 {
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.section--dark p {
+  max-width: 50ch;
+  margin: 0 auto var(--space-xl);
+  opacity: 0.95;
+}
+
+.section--center {
+  text-align: center;
+  background: var(--color-bg-warm);
+}
+
+.section--center p {
+  margin: 0 0 var(--space-lg);
+  max-width: 50ch;
+  margin-left: auto;
+  margin-right: auto;
+}
