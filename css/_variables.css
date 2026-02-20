@@ -1,18 +1,37 @@
 /* NAMEFED – Design tokens */
 :root {
+  color-scheme: light dark;
+
+  /* Theme-aware (light-dark) */
+  --color-bg: light-dark(#fdfbf7, #1a1814);
+  --color-bg-alt: light-dark(#f5f0e6, #252019);
+  --color-bg-warm: light-dark(#faf6ee, #1f1c17);
+  --color-surface: light-dark(#fff, #2c2416);
+  --color-text: light-dark(#2d2a26, #efece6);
+  --color-text-muted: light-dark(#5c564d, #a8a299);
+  --color-border: light-dark(
+    rgba(201, 162, 39, 0.25),
+    rgba(201, 162, 39, 0.35)
+  );
+  --color-heading: light-dark(var(--color-primary-dark), var(--color-white));
+  --shadow: light-dark(
+    0 2px 12px rgba(44, 36, 22, 0.06),
+    0 2px 12px rgba(0, 0, 0, 0.3)
+  );
+  --shadow-hover: light-dark(
+    0 8px 24px rgba(44, 36, 22, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.4)
+  );
+
+  /* Brand (same in both themes) */
   --color-primary: #c9a227;
   --color-primary-dark: #2c2416;
   --color-primary-warm: #a67c00;
   --color-accent: #c9a227;
   --color-accent-hover: #b08d1f;
-  --color-accent-soft: rgba(201, 162, 39, 0.15);
-  --color-text: #2d2a26;
-  --color-text-muted: #5c564d;
-  --color-bg: #fdfbf7;
-  --color-bg-alt: #f5f0e6;
-  --color-bg-warm: #faf6ee;
+  --color-accent-soft: color-mix(in srgb, var(--color-primary) 15%, transparent);
   --color-white: #fff;
-  --color-border: rgba(201, 162, 39, 0.25);
+
   --font-heading: "Inter", system-ui, sans-serif;
   --font-body: "Nunito", system-ui, sans-serif;
   --space-xs: 0.25rem;
@@ -25,10 +44,7 @@
   --max-width: 1200px;
   --radius: 8px;
   --radius-lg: 12px;
-  --shadow: 0 2px 12px rgba(44, 36, 22, 0.06);
-  --shadow-hover: 0 8px 24px rgba(44, 36, 22, 0.1);
   --transition: 0.25s ease;
   --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
+  --flow-space: var(--space-lg);
 }

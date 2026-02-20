@@ -4,13 +4,14 @@ button.btn {
   --width: 100%;
   display: inline-block;
   width: var(--width);
-  padding: var(--space-sm) var(--space-lg);
+  padding: var(--space-lg) var(--space-xl);
   font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1;
   border-radius: var(--radius);
   text-decoration: none;
+  text-shadow: none !important;
   transition: all var(--transition);
   cursor: pointer;
   border: none;
@@ -34,36 +35,19 @@ button.btn-primary:hover {
 }
 
 .btn-secondary {
-  background: transparent;
-  color: var(--color-text);
-  border: 2px solid var(--color-border);
+  background: var(--color-accent-soft);
+  color: var(--color-white);
+  border: 2px solid rgba(255, 255, 255, 0.85);
 }
 
 .btn-secondary:hover {
-  color: var(--color-primary);
-  background: var(--color-accent-soft);
-  border-color: var(--color-primary);
-  text-decoration: none;
-}
-
-.section--banner .btn-secondary,
-.section--dark .btn-secondary {
-  color: var(--color-white);
-  border-color: rgba(255, 255, 255, 0.85);
-}
-
-.section--banner .btn-secondary:hover,
-.section--dark .btn-secondary:hover {
   color: var(--color-white);
   background: rgba(255, 255, 255, 0.2);
   border-color: var(--color-white);
+  text-decoration: none;
 }
 
 /* Forms */
-.form-row {
-  margin-bottom: var(--space-md);
-}
-
 .form-row label {
   display: block;
   font-weight: 600;
@@ -96,20 +80,18 @@ button.btn-primary:hover {
 .form-note {
   font-size: 0.875rem;
   color: var(--color-text-muted);
-  margin: 0 0 var(--space-md);
 }
 
 fieldset {
   border: none;
   padding: 0;
-  margin: 0 0 var(--space-xl);
+  margin: 0;
 }
 
 fieldset legend {
   font-size: 1.125rem;
   font-weight: 700;
-  margin-bottom: var(--space-md);
-  color: var(--color-primary);
+  color: var(--color-heading);
 }
 
 .section--alt fieldset legend {
@@ -124,7 +106,7 @@ fieldset legend {
   font-size: 1rem;
   border: 2px solid var(--color-border);
   border-radius: var(--radius);
-  background: var(--color-white);
+  background: var(--color-surface);
 }
 
 .form-row--inline {
@@ -160,7 +142,7 @@ fieldset legend {
 
 /* Feature cards */
 .feature-card {
-  background: var(--color-white);
+  background: var(--color-surface);
   padding: var(--space-xl);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
@@ -182,7 +164,7 @@ fieldset legend {
 .feature-card h3 {
   font-size: 1.25rem;
   margin: 0 0 var(--space-md);
-  color: var(--color-primary);
+  color: var(--color-heading);
 }
 
 .feature-card p {
@@ -218,13 +200,13 @@ fieldset legend {
 
 .rates-table th {
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-heading);
   background: var(--color-bg-alt);
 }
 
 /* Location card */
 .location-card {
-  background: var(--color-white);
+  background: var(--color-surface);
   padding: var(--space-xl);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);

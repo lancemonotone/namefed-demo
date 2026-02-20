@@ -38,6 +38,21 @@
   margin: 0 auto;
 }
 
+/* Lobotomized owl – apply .flow to content wrapper (e.g. main).
+   Resets block margins, adds spacing between siblings. */
+.flow * {
+  margin-block: 0;
+}
+
+.flow * + * {
+  margin-block-start: var(--flow-space);
+}
+
+/* Opt-out for gap-based layouts: reset direct children only */
+.flow-off > * {
+  margin-block: 0;
+}
+
 .quick-links {
   display: flex;
   flex-wrap: wrap;
@@ -47,7 +62,7 @@
 .serve-list {
   list-style: none;
   padding-left: 0;
-  margin: 0 0 var(--space-lg);
+  margin: 0;
 }
 
 .serve-list li {
@@ -66,34 +81,38 @@
 
 /* Section variants */
 .section-split {
+  --cols: 1;
+  --img-order: -1;
+
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(var(--cols), 1fr);
   gap: var(--space-2xl);
   align-items: center;
 
   @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+    --cols: 2;
+    --img-order: unset;
   }
 }
 
 .section-split img {
-  order: -1;
-
-  @media (min-width: 768px) {
-    order: unset;
-  }
+  order: var(--img-order);
 }
 
 .section--alt .section-split {
+  --split-dir: ltr;
+
+  direction: var(--split-dir);
+
   @media (min-width: 768px) {
-    direction: rtl;
+    --split-dir: rtl;
   }
 }
 
 .section--alt .section-split > * {
-  @media (min-width: 768px) {
-    direction: ltr;
-  }
+  --split-child-dir: ltr;
+
+  direction: var(--split-child-dir);
 }
 
 .section-split img,
@@ -118,12 +137,12 @@
 
 .section--dark h2 {
   color: var(--color-white);
-  margin-bottom: var(--space-md);
 }
 
 .section--dark p {
   max-width: 50ch;
-  margin: 0 auto var(--space-xl);
+  margin-left: auto;
+  margin-right: auto;
   opacity: 0.95;
 }
 
@@ -133,7 +152,6 @@
 }
 
 .section--center p {
-  margin: 0 0 var(--space-lg);
   max-width: 50ch;
   margin-left: auto;
   margin-right: auto;

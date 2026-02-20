@@ -15,7 +15,7 @@
   <script src="js/header.js"></script>
 
   <main id="main">
-    <section class="section--title">
+    <section class="section--title flow-off">
       <h1>Apply for Membership</h1>
     </section>
 
@@ -86,7 +86,7 @@
         <p>Complete the form below to start your membership application. We'll review it within 1–2 business days and contact you to finalize your account.</p>
 
         <div class="wizard-progress" aria-label="Application progress">
-          <div class="wizard-steps">
+          <div class="wizard-steps flow-off">
             <span class="wizard-step active" data-step="1">1. Personal</span>
             <span class="wizard-step" data-step="2">2. Address</span>
             <span class="wizard-step" data-step="3">3. Eligibility</span>
@@ -95,7 +95,7 @@
           </div>
         </div>
 
-        <form class="membership-form membership-wizard" action="#" method="post">
+        <form class="membership-wizard" action="#" method="post">
           <div class="wizard-panel" data-panel="1">
             <fieldset>
               <legend>Personal Information</legend>
@@ -157,7 +157,7 @@
                   Mailing address same as physical address
                 </label>
               </div>
-              <div id="mailing-address-fields" class="mailing-address-fields" hidden>
+              <div id="mailing-address-fields" hidden>
                 <div class="form-row">
                   <label for="mailing-street">Mailing Street Address</label>
                   <input type="text" id="mailing-street" name="mailing_street">

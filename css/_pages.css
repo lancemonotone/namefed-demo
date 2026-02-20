@@ -17,9 +17,9 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(30, 30, 30, 0.88) 0%,
-    rgba(30, 30, 30, 0.75) 50%,
-    rgba(80, 80, 80, 0.4) 100%
+    rgba(30, 30, 30, 0.7) 0%,
+    rgba(30, 30, 30, 0.55) 50%,
+    rgba(80, 80, 80, 0.2) 100%
   );
   z-index: 1;
 }
@@ -40,40 +40,46 @@
   margin: 0 auto;
 }
 
+.banner-inner * {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
 .section--banner h1 {
+  color: var(--color-white);
   font-family: var(--font-heading);
   font-size: clamp(1.875rem, 4.5vw, 2.75rem);
   font-weight: 600;
   text-transform: uppercase;
-  margin: 0 0 var(--space-md);
+  margin: 0;
   line-height: 1.25;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .banner-tagline {
   font-size: 1.1875rem;
   opacity: 0.98;
-  margin: 0 0 var(--space-xl);
+  margin: 0;
   line-height: 1.5;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 .banner-ctas {
+  --banner-ctas-flex-dir: column;
+
   display: flex;
-  flex-direction: column;
+  flex-direction: var(--banner-ctas-flex-dir);
   flex-wrap: wrap;
   gap: var(--space-md);
   justify-content: center;
 
   @media (min-width: 768px) {
-    flex-direction: row;
+    --banner-ctas-flex-dir: row;
   }
 }
 
 /* Newsletter form */
 .newsletter-form {
   max-width: 400px;
-  margin: 0 auto var(--space-lg);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .newsletter-form .form-row input {
@@ -90,7 +96,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-xl);
-  margin-top: var(--space-xl);
 }
 
 /* Eligibility checker & flow */
@@ -102,12 +107,7 @@
   border: 1px solid var(--color-border);
 }
 
-.eligibility-checker .form-row {
-  margin-bottom: var(--space-lg);
-}
-
 .eligibility-result {
-  margin-top: var(--space-lg);
   padding: var(--space-md);
   border-radius: var(--radius);
 }
@@ -132,10 +132,6 @@
 
 .eligibility-result a {
   font-weight: 600;
-}
-
-.eligibility-result .eligibility-continue-btn {
-  margin-top: var(--space-md);
 }
 
 .eligibility-flow-inner {
@@ -202,7 +198,7 @@
 }
 
 .wizard-step.active {
-  background: var(--color-white);
+  background: var(--color-surface);
   color: var(--color-primary-dark);
 }
 
@@ -233,13 +229,11 @@
 }
 
 .faq-item {
-  margin-bottom: var(--space-2xl);
   padding-bottom: var(--space-2xl);
   border-bottom: 1px solid var(--color-border);
 }
 
 .faq-item:last-child {
-  margin-bottom: 0;
   padding-bottom: 0;
   border-bottom: none;
 }
@@ -247,7 +241,7 @@
 .faq-question {
   font-size: 1.25rem;
   margin: 0 0 var(--space-md);
-  color: var(--color-primary);
+  color: var(--color-heading);
 }
 
 .faq-item p {
@@ -258,13 +252,15 @@
 
 /* Contact page */
 .contact-grid {
+  --contact-cols: 1;
+
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(var(--contact-cols), 1fr);
   gap: var(--space-2xl);
   align-items: start;
 
   @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+    --contact-cols: 2;
   }
 }
 
@@ -311,7 +307,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Main_Street_North_Adams.jpg")
+  background: url("https://upload.wikimedia.org/wikipedia/commons/7/7b/Main_Street_North_Adams.jpg")
     center/cover;
   opacity: 0.3;
   z-index: 0;
@@ -325,5 +321,6 @@
   font-weight: 600;
   text-transform: uppercase;
   margin: 0;
+  color: var(--color-white);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }

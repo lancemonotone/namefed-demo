@@ -24,12 +24,13 @@ h1, h2, h3 {
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1.25;
+  color: var(--color-heading);
 }
 
 .section h2 {
   font-size: 1.875rem;
-  margin: 0 0 var(--space-lg);
-  color: var(--color-primary-dark);
+  margin: 0;
+  color: var(--color-heading);
 }
 
 .section--alt h2 {
@@ -39,8 +40,8 @@ h1, h2, h3 {
 .section h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  margin: var(--space-xl) 0 var(--space-md);
-  color: var(--color-primary-dark);
+  margin: 0;
+  color: var(--color-heading);
 }
 
 /* Lead paragraph */
@@ -48,6 +49,6 @@ h1, h2, h3 {
   font-size: 1.125rem;
   color: var(--color-text-muted);
   max-width: 60ch;
-  margin: 0 0 var(--space-xl);
+  margin: 0;
   line-height: 1.7;
 }
