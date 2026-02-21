@@ -54,11 +54,3 @@
   max-width: var(--max-width);
   margin-inline: auto;
 }
-
-/* Lead paragraph */
-.lead {
-  font-size: 1.125rem;
-  color: var(--color-text-muted);
-  max-width: 60ch;
-  line-height: 1.7;
-}
