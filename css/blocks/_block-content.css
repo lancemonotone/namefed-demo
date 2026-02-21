@@ -14,7 +14,7 @@
 }
 
 .block-content--alt {
-  --block-content-bg: var(--color-primary);
+  --block-content-bg: var(--gradient-primary);
   color: var(--color-white);
 }
 
@@ -44,11 +44,7 @@
 }
 
 .block-content--dark {
-  --block-content-bg: linear-gradient(
-    135deg,
-    var(--color-primary-dark) 0%,
-    var(--color-primary-warm) 100%
-  );
+  --block-content-bg: var(--gradient-primary);
   --block-content-text-align: center;
   color: var(--color-white);
 }

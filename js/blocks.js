@@ -45,9 +45,7 @@
     grid: {
       template: "grid",
       prepare: function (data) {
-        return Object.assign({}, data, {
-          itemsHtml: (data.items || []).map(R.card).join(""),
-        });
+        return data;
       },
     },
     content: {
@@ -86,9 +84,35 @@
         return data ? T.replacePlaceholders(template, data) : template;
       });
     }
-    var prepared = prepareBlockData(type, data, shared || {});
     var config = blockRegistry[type];
     var templateName = (config && config.template) || type;
+
+    if (type === "grid") {
+      return Promise.all([
+        fetchTemplate(templateName),
+        fetchTemplate("card"),
+      ]).then(function (templates) {
+        var gridTemplate = templates[0];
+        var cardTemplate = templates[1];
+        var items = (data && data.items) || [];
+        var itemsHtml = items
+          .map(function (item) {
+            return T.replacePlaceholders(
+              cardTemplate,
+              R.prepareCardData(item)
+            );
+          })
+          .join("");
+        var prepared = prepareBlockData(
+          type,
+          Object.assign({}, data, { itemsHtml: itemsHtml }),
+          shared || {}
+        );
+        return T.replacePlaceholders(gridTemplate, prepared);
+      });
+    }
+
+    var prepared = prepareBlockData(type, data, shared || {});
     return fetchTemplate(templateName).then(function (template) {
       return T.replacePlaceholders(template, prepared);
     });

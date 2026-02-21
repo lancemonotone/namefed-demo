@@ -4,11 +4,7 @@
 
   position: relative;
   padding: var(--block-pagehead-padding);
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-dark) 0%,
-    var(--color-primary-warm) 100%
-  );
+  background: var(--gradient-primary);
   color: var(--color-white);
   text-align: center;
   overflow: hidden;

@@ -20,7 +20,10 @@
   --cluster-justify: start;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--cluster-min), max-content));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--cluster-min), max-content)
+  );
   gap: var(--cluster-gap);
   justify-content: var(--cluster-justify);
 }

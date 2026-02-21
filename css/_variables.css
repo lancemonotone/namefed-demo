@@ -41,6 +41,11 @@
   --color-accent-hover: #b08d1f;
   --color-accent-soft: color-mix(in srgb, var(--color-primary) 15%, transparent);
   --color-white: #fff;
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary-warm) 100%
+  );
   --color-transparent: transparent;
 
   --font-heading: "Inter", system-ui, sans-serif;

@@ -58,22 +58,16 @@
       .join("");
   }
 
-  function buildCardHtml(item) {
-    const imageHtml = item.image
-      ? '<img src="' + item.image + '" alt="' + (item.imageAlt || "") + '">'
-      : "";
-    const modifiers = item.modifiers || "";
-    return (
-      '<article class="block-card flow' +
-      (modifiers ? " " + modifiers : "") +
-      '">' +
-      imageHtml +
-      "<h3>" +
-      item.title +
-      "</h3><div>" +
-      item.body +
-      "</div></article>"
-    );
+  /** Prepares card data for block-card.html template. */
+  function prepareCardData(item) {
+    return {
+      modifiers: item.modifiers || "",
+      imageHtml: item.image
+        ? '<img src="' + item.image + '" alt="' + (item.imageAlt || "") + '">'
+        : "",
+      title: item.title || "",
+      bodyHtml: item.body || "",
+    };
   }
 
   function buildTableHtml(table) {
@@ -166,7 +160,7 @@
   window.BlockRenderers = {
     list: buildListHtml,
     ctas: buildCtasHtml,
-    card: buildCardHtml,
+    prepareCardData: prepareCardData,
     table: buildTableHtml,
     qanda: buildQandaHtml,
     contactCard: buildContactCardHtml,
