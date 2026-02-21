@@ -354,7 +354,15 @@
         {
           "type": "content",
           "data": {
-            "innerHtml": "<h2>Who Can Join?</h2><p class=\"lead\">NAMEFED membership is open to municipal employees, retirees, and their families. If you work for the city, school district, transit authority, or public safety—or if you're related to someone who does—you likely qualify.</p>{{@whoWeServe}}<h3>What You'll Need</h3>{{list2Html}}<p><strong>Once a Member – Always a Member!</strong> Even if you leave your employment or move out of the area, we just require annual activity in your account.</p>",
+            "innerHtml": "<h2>Who Can Join?</h2><p class=\"lead\">NAMEFED membership is open to municipal employees, retirees, and their families. If you work for the city, school district, transit authority, or public safety—or if you're related to someone who does—you likely qualify.</p>{{@whoWeServe}}<p><strong>Once a Member – Always a Member!</strong> Even if you leave your employment or move out of the area, we just require annual activity in your account.</p>"
+          }
+        },
+        {
+          "type": "content",
+          "data": {
+            "modifiers": "block-content--alt",
+            "innerHtml": "<h2>What You'll Need</h2>{{list2Html}}",
+            "listModifiers": "block-list--alt",
             "list2": [
               "Driver's license or other valid government-issued picture ID",
               "Social Security Card",
