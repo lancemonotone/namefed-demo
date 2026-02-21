@@ -76,6 +76,7 @@
   height: 100%;
   width: auto;
   display: block;
+  margin-inline: auto;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
 }
