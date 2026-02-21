@@ -9,12 +9,13 @@ button.btn {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1;
+  margin: 0;
   border-radius: var(--radius);
   text-decoration: none;
   text-shadow: none !important;
   transition: all var(--transition);
   cursor: pointer;
-  border: none;
+  border: 2px solid var(--color-transparent);
 
   @media (min-width: 768px) {
     --width: auto;
@@ -152,7 +153,6 @@ fieldset legend {
 }
 
 .feature-card:hover {
-  transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
   border-color: rgba(201, 162, 39, 0.4);
 }

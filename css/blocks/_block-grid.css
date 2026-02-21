@@ -1,0 +1,17 @@
+/* NAMEFED – block-grid: responsive card grid */
+.block-grid {
+  --block-grid-min: 280px;
+  --block-grid-gap: var(--space-xl);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--block-grid-min), 1fr));
+  gap: var(--block-grid-gap);
+
+  @media (min-width: 768px) {
+    --block-grid-gap: var(--space-2xl);
+  }
+}
+
+.block-grid > * {
+  margin-block: 0;
+}

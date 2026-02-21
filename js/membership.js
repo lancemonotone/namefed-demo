@@ -1,10 +1,12 @@
 /**
  * NAMEFED Membership – Eligibility checker & step wizard (demo)
+ * Runs after contentloaded (blocks injected) on membership page
  */
 (function () {
   'use strict';
 
-  // Eligibility checker
+  function init() {
+    // Eligibility checker
   const employerSelect = document.getElementById('eligibility-employer');
   const areaSelect = document.getElementById('eligibility-area');
   const checkBtn = document.getElementById('eligibility-check-btn');
@@ -175,4 +177,11 @@
   }
 
   prefillForm();
+  }
+
+  var main = document.getElementById('main');
+  if (main && main.dataset.page === 'membership') {
+    document.addEventListener('contentloaded', init);
+    if (document.getElementById('eligibility-flow')) init();
+  }
 })();

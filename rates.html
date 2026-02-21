@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- INCLUDE: partials/head-theme.html -->
   <title>Rates – NAMEFED</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,160 +15,13 @@
   <div id="header-placeholder"></div>
   <script src="js/header.js"></script>
 
-  <main id="main">
-    <section class="section--title flow-off">
-      <h1>Rates &amp; Products</h1>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Savings &amp; Dividends</h2>
-        <p class="lead">Share Savings and Christmas Clubs: .10% APY. Dividend rates are subject to change without prior notification. Minimum $5.00 to open and maintain your account with annual activity.</p>
-        <div class="rates-table-wrapper">
-          <table class="rates-table">
-            <caption class="visually-hidden">Savings rates</caption>
-            <thead>
-              <tr>
-                <th>Product</th>
-                <th>APY</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Share Savings / Christmas Clubs</td>
-                <td>.10%</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt">
-      <div class="container">
-        <h2>Loan Rates</h2>
-        <p class="lead">Rates approved by Board of Directors December 15, 2025. All rates based on APR. Loan rates are on a Risk-Based Pricing scale determined by Debt Ratio &amp; Credit Score. Rates subject to change without prior notification.</p>
-        <div class="rates-table-wrapper">
-          <table class="rates-table rates-table--wide">
-            <caption class="visually-hidden">Loan rates by product</caption>
-            <thead>
-              <tr>
-                <th>Product</th>
-                <th>Max Amount</th>
-                <th>Max Term</th>
-                <th>Rate</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Personal Loan</td>
-                <td>$7,500</td>
-                <td>5 years</td>
-                <td>9–12% APR</td>
-              </tr>
-              <tr>
-                <td>Share Secured</td>
-                <td>—</td>
-                <td>10 years</td>
-                <td>3.50% + dividend</td>
-              </tr>
-              <tr>
-                <td>New Vehicle (2025–2026)</td>
-                <td>$50,000</td>
-                <td>6 years</td>
-                <td>5.75–6.5% APR</td>
-              </tr>
-              <tr>
-                <td>Used Vehicle (2018–current)</td>
-                <td>$50,000</td>
-                <td>6 years</td>
-                <td>6.5–8% APR</td>
-              </tr>
-              <tr>
-                <td>Used Vehicle (2011–2017)</td>
-                <td>$50,000</td>
-                <td>5 years</td>
-                <td>7.5–10.5% APR</td>
-              </tr>
-              <tr>
-                <td>Antique/Classic (25+ years)</td>
-                <td>—</td>
-                <td>5 years</td>
-                <td>9.99% APR</td>
-              </tr>
-              <tr>
-                <td>Motorcycle, Trailers, Boats, Campers/ATV</td>
-                <td>—</td>
-                <td>4–6 years</td>
-                <td>6–12% APR</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p><a href="contact.html">Contact us</a> for full rate details. We will match any competitor's rate with Board approval—just ask!</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>2026 Loan Specials</h2>
-        <div class="rates-table-wrapper">
-          <table class="rates-table rates-table--wide">
-            <caption class="visually-hidden">Seasonal loan specials 2026</caption>
-            <thead>
-              <tr>
-                <th>Special</th>
-                <th>Available</th>
-                <th>Max Amount</th>
-                <th>APR</th>
-                <th>Max Term</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Credit Card / Consolidation</td>
-                <td>Jan–Mar</td>
-                <td>$7,500</td>
-                <td>6%</td>
-                <td>60 months</td>
-              </tr>
-              <tr>
-                <td>Home Repair</td>
-                <td>Apr–Jun</td>
-                <td>$7,500</td>
-                <td>6%</td>
-                <td>60 months</td>
-              </tr>
-              <tr>
-                <td>Vacation</td>
-                <td>Jul–Sep</td>
-                <td>$3,500</td>
-                <td>6%</td>
-                <td>36 months</td>
-              </tr>
-              <tr>
-                <td>Fuel</td>
-                <td>Aug–Oct</td>
-                <td>$7,500</td>
-                <td>6%</td>
-                <td>12 months</td>
-              </tr>
-              <tr>
-                <td>Holiday</td>
-                <td>Oct–Dec</td>
-                <td>$1,500</td>
-                <td>6%</td>
-                <td>12 months</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="form-note">* Subject to credit approval. Payroll deduction available once approved. See staff for details.</p>
-      </div>
-    </section>
-  </main>
+  <main id="main" data-page="rates"></main>
 
   <div id="footer-placeholder"></div>
+  <script src="js/renderers.js"></script>
+  <script src="js/transformers.js"></script>
+  <script src="js/blocks.js"></script>
+  <script src="js/content.js"></script>
   <script src="js/footer.js"></script>
   <script src="js/main.js"></script>
 </body>

@@ -1,28 +1,38 @@
-/* NAMEFED – Design tokens */
+/* NAMEFED – Design tokens (data-theme set by blocking script to prevent flash) */
 :root {
   color-scheme: light dark;
+}
 
-  /* Theme-aware (light-dark) */
-  --color-bg: light-dark(#fdfbf7, #1a1814);
-  --color-bg-alt: light-dark(#f5f0e6, #252019);
-  --color-bg-warm: light-dark(#faf6ee, #1f1c17);
-  --color-surface: light-dark(#fff, #2c2416);
-  --color-text: light-dark(#2d2a26, #efece6);
-  --color-text-muted: light-dark(#5c564d, #a8a299);
-  --color-border: light-dark(
-    rgba(201, 162, 39, 0.25),
-    rgba(201, 162, 39, 0.35)
-  );
-  --color-heading: light-dark(var(--color-primary-dark), var(--color-white));
-  --shadow: light-dark(
-    0 2px 12px rgba(44, 36, 22, 0.06),
-    0 2px 12px rgba(0, 0, 0, 0.3)
-  );
-  --shadow-hover: light-dark(
-    0 8px 24px rgba(44, 36, 22, 0.1),
-    0 8px 24px rgba(0, 0, 0, 0.4)
-  );
+:root,
+:root[data-theme="light"] {
+  --color-bg: #fdfbf7;
+  --color-bg-alt: #f5f0e6;
+  --color-bg-warm: #faf6ee;
+  --color-surface: #fff;
+  --color-text: #2d2a26;
+  --color-text-muted: #5c564d;
+  --color-border: rgba(201, 162, 39, 0.25);
+  --color-heading: var(--color-primary-dark);
+  --shadow: 0 2px 12px rgba(44, 36, 22, 0.06);
+  --shadow-hover: 0 8px 24px rgba(44, 36, 22, 0.1);
+}
 
+:root[data-theme="dark"] {
+  --color-bg: #1a1814;
+  --color-bg-alt: #252019;
+  --color-bg-warm: #1f1c17;
+  --color-surface: #2c2416;
+  --color-text: #efece6;
+  --color-text-muted: #a8a299;
+  --color-border: rgba(201, 162, 39, 0.35);
+  --color-heading: var(--color-white);
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+:root,
+:root[data-theme="light"],
+:root[data-theme="dark"] {
   /* Brand (same in both themes) */
   --color-primary: #c9a227;
   --color-primary-dark: #2c2416;
@@ -31,6 +41,7 @@
   --color-accent-hover: #b08d1f;
   --color-accent-soft: color-mix(in srgb, var(--color-primary) 15%, transparent);
   --color-white: #fff;
+  --color-transparent: transparent;
 
   --font-heading: "Inter", system-ui, sans-serif;
   --font-body: "Nunito", system-ui, sans-serif;

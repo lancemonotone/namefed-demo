@@ -1,0 +1,90 @@
+/* NAMEFED – block-list: bullet list block */
+.block-list {
+  --block-list-gap: var(--space-sm);
+  --block-list-bullet-color: var(--color-primary);
+
+  display: grid;
+  gap: var(--block-list-gap);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  & > * {
+    margin-block: 0;
+  }
+}
+
+.block-list--bordered {
+  --block-list-padding-top: var(--space-xl);
+  --block-list-group-gap: var(--space-lg);
+
+  display: grid;
+  gap: var(--block-list-group-gap);
+  padding-block-start: var(--block-list-padding-top);
+  border-block-start: 1px solid var(--color-border);
+}
+
+.block-list__item {
+  position: relative;
+  padding-inline-start: 1.5em;
+}
+
+.block-list__item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--block-list-bullet-color);
+  font-weight: bold;
+}
+
+/* Default: primary (visible on light). Dark blocks override below. */
+.block-list--alt .block-list__item::before {
+  color: var(--color-primary);
+}
+
+.block-content--alt .block-list__item::before,
+.block-split--alt .block-list__item::before {
+  color: var(--color-white);
+}
+
+.block-content--alt .block-list__group-title,
+.block-split--alt .block-list__group-title {
+  color: var(--color-white);
+}
+
+/* Grouped list (e.g. holiday schedule: h3 + ul) */
+.block-list__group * {
+  margin-block: 0;
+}
+
+.block-list__group * + * {
+  margin-block-start: var(--space-sm);
+}
+
+.block-list__group-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.block-list__group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.block-list__group li {
+  position: relative;
+  padding-inline-start: 1.5em;
+}
+
+.block-list__group li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--block-list-bullet-color);
+}
+
+.block-list__group li + li {
+  margin-block-start: var(--space-xs);
+}

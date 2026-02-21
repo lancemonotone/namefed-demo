@@ -38,11 +38,27 @@
   document.addEventListener('headerloaded', initNav);
   if (document.querySelector('#main-nav')) initNav();
 
-  // Mock-up forms: prevent submit, show message
-  document.querySelectorAll('form').forEach(function (form) {
-    form.addEventListener('submit', function (e) {
+  // Fade out body when navigating away
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a');
+    if (!link || !link.href) return;
+    if (link.target === '_blank' || link.hasAttribute('download')) return;
+    if (link.getAttribute('href') && link.getAttribute('href').charAt(0) === '#') return;
+    if (link.protocol === 'javascript:' || link.protocol === 'mailto:' || link.protocol === 'tel:') return;
+    if (link.pathname === window.location.pathname) return;
+
+    e.preventDefault();
+    document.body.classList.add('is-navigating');
+    setTimeout(function () {
+      window.location.href = link.href;
+    }, 300);
+  });
+
+  // Mock-up forms: prevent submit, show message (delegation for dynamic content)
+  document.addEventListener('submit', function (e) {
+    if (e.target.tagName === 'FORM') {
       e.preventDefault();
       alert('This is a mock-up. Form submissions are not processed.');
-    });
+    }
   });
 })();

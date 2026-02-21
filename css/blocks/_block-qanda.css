@@ -1,0 +1,35 @@
+/* NAMEFED – block-qanda: Q&A list */
+.block-qanda {
+  --block-qanda-gap: var(--space-2xl);
+
+  display: grid;
+  gap: var(--block-qanda-gap);
+}
+
+.block-qanda__item {
+  padding-block-end: var(--space-2xl);
+  border-block-end: 1px solid var(--color-border);
+}
+
+.block-qanda__item:last-child {
+  padding-block-end: 0;
+  border-block-end: none;
+}
+
+.block-qanda__item * {
+  margin-block: 0;
+}
+
+.block-qanda__item * + * {
+  margin-block-start: var(--space-md);
+}
+
+.block-qanda__question {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+
+.block-qanda__answer {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}

@@ -1,0 +1,254 @@
+<section class="section eligibility-flow" id="eligibility-flow">
+  <div class="container">
+    <div class="eligibility-flow-inner">
+      <div class="eligibility-checker-wrap" id="eligibility-checker-wrap">
+        <h2>Eligibility Checker</h2>
+        <p class="lead">Answer two quick questions to see if you qualify for membership. Documentation may be requested to verify eligibility.</p>
+        <div class="eligibility-checker">
+          <div class="form-row">
+            <label for="eligibility-employer">Where do you work (or where did you work, if retired)?</label>
+            <select id="eligibility-employer" name="eligibility_employer" required>
+              <option value="">— Select —</option>
+              <option value="city">City of North Adams</option>
+              <option value="city-yard">North Adams City Yard</option>
+              <option value="schools">North Adams Public Schools</option>
+              <option value="fire">North Adams Fire Department</option>
+              <option value="police">North Adams Police Department</option>
+              <option value="ems">Northern Berkshire EMS</option>
+              <option value="housing">North Adams Housing Authority</option>
+              <option value="retiree">Municipal retiree (former employee)</option>
+              <option value="family">Family of current member</option>
+              <option value="other">Other / Not sure</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="eligibility-area">Do you live or work in Berkshire County, Massachusetts?</label>
+            <select id="eligibility-area" name="eligibility_area" required>
+              <option value="">— Select —</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-primary" id="eligibility-check-btn">Check Eligibility</button>
+          <div id="eligibility-result" class="eligibility-result" aria-live="polite" hidden></div>
+        </div>
+      </div>
+
+      <div class="application-form-wrap section--alt" id="application-form-wrap" aria-hidden="true">
+        <h2>Membership Application</h2>
+        <p class="lead">You're eligible! Complete the form below to start your membership application. We'll review it within 1–2 business days and contact you to finalize your account.</p>
+        <div class="container">
+          <div class="wizard-progress" aria-label="Application progress">
+            <div class="wizard-steps flow-off">
+              <span class="wizard-step active" data-step="1">1. Personal</span>
+              <span class="wizard-step" data-step="2">2. Address</span>
+              <span class="wizard-step" data-step="3">3. Eligibility</span>
+              <span class="wizard-step" data-step="4">4. Account</span>
+              <span class="wizard-step" data-step="5">5. Review</span>
+            </div>
+          </div>
+
+          <form class="membership-wizard" action="#" method="post">
+            <div class="wizard-panel" data-panel="1">
+              <fieldset>
+                <legend>Personal Information</legend>
+                <div class="form-row">
+                  <label for="first-name">First Name *</label>
+                  <input type="text" id="first-name" name="first_name" required>
+                </div>
+                <div class="form-row">
+                  <label for="middle-name">Middle Name</label>
+                  <input type="text" id="middle-name" name="middle_name">
+                </div>
+                <div class="form-row">
+                  <label for="last-name">Last Name *</label>
+                  <input type="text" id="last-name" name="last_name" required>
+                </div>
+                <div class="form-row">
+                  <label for="dob">Date of Birth *</label>
+                  <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-row">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-row">
+                  <label for="phone">Phone (mobile preferred) *</label>
+                  <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-row">
+                  <label for="phone-alt">Alternate Phone</label>
+                  <input type="tel" id="phone-alt" name="phone_alt">
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="wizard-panel" data-panel="2" hidden>
+              <fieldset>
+                <legend>Address</legend>
+                <div class="form-row">
+                  <label for="address-street">Street Address *</label>
+                  <input type="text" id="address-street" name="address_street" placeholder="No P.O. boxes" required>
+                </div>
+                <div class="form-row form-row--inline">
+                  <div>
+                    <label for="address-city">City *</label>
+                    <input type="text" id="address-city" name="address_city" required>
+                  </div>
+                  <div>
+                    <label for="address-state">State *</label>
+                    <input type="text" id="address-state" name="address_state" value="MA" maxlength="2" required>
+                  </div>
+                  <div>
+                    <label for="address-zip">ZIP *</label>
+                    <input type="text" id="address-zip" name="address_zip" pattern="[0-9]{5}(-[0-9]{4})?" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="mailing-same" name="mailing_same" checked>
+                    Mailing address same as physical address
+                  </label>
+                </div>
+                <div id="mailing-address-fields" hidden>
+                  <div class="form-row">
+                    <label for="mailing-street">Mailing Street Address</label>
+                    <input type="text" id="mailing-street" name="mailing_street">
+                  </div>
+                  <div class="form-row form-row--inline">
+                    <div>
+                      <label for="mailing-city">City</label>
+                      <input type="text" id="mailing-city" name="mailing_city">
+                    </div>
+                    <div>
+                      <label for="mailing-state">State</label>
+                      <input type="text" id="mailing-state" name="mailing_state" maxlength="2">
+                    </div>
+                    <div>
+                      <label for="mailing-zip">ZIP</label>
+                      <input type="text" id="mailing-zip" name="mailing_zip" pattern="[0-9]{5}(-[0-9]{4})?">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="wizard-panel" data-panel="3" hidden>
+              <fieldset>
+                <legend>Eligibility Details</legend>
+                <div class="form-row">
+                  <label for="eligibility-type">How do you qualify for membership? *</label>
+                  <select id="eligibility-type" name="eligibility_type" required>
+                    <option value="">— Select —</option>
+                    <option value="employee">Municipal employee</option>
+                    <option value="retiree">Municipal retiree</option>
+                    <option value="family">Family of current member</option>
+                    <option value="live-work">Live/work/worship in area</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="employer">Employer / Organization *</label>
+                  <input type="text" id="employer" name="employer" placeholder="e.g., City of North Adams, NAPS, Fire Dept." required>
+                </div>
+                <div class="form-row">
+                  <label for="department">Department or Agency</label>
+                  <input type="text" id="department" name="department">
+                </div>
+                <div class="form-row">
+                  <label for="job-title">Job Title</label>
+                  <input type="text" id="job-title" name="job_title">
+                </div>
+                <div class="form-row" id="relationship-row" hidden>
+                  <label for="relationship">Relationship to member</label>
+                  <input type="text" id="relationship" name="relationship" placeholder="e.g., spouse, child, parent">
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="wizard-panel" data-panel="4" hidden>
+              <fieldset>
+                <legend>Account Setup</legend>
+                <div class="form-row">
+                  <label for="ownership">Account ownership *</label>
+                  <select id="ownership" name="ownership" required>
+                    <option value="">— Select —</option>
+                    <option value="single">Single</option>
+                    <option value="joint">Joint</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label>Products requested *</label>
+                  <div class="checkbox-group">
+                    <label class="checkbox-label"><input type="checkbox" name="products[]" value="membership" checked> Membership Savings (required, $5 min)</label>
+                    <label class="checkbox-label"><input type="checkbox" name="products[]" value="checking"> Checking</label>
+                    <label class="checkbox-label"><input type="checkbox" name="products[]" value="other"> Other (describe in comments)</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label for="funding-method">How will you fund your initial deposit? *</label>
+                  <select id="funding-method" name="funding_method" required>
+                    <option value="">— Select —</option>
+                    <option value="ach">ACH from another bank</option>
+                    <option value="card">Debit card</option>
+                    <option value="branch">Cash or check at branch</option>
+                    <option value="payroll">Payroll deduction (after approval)</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="funding-amount">Initial deposit amount ($)</label>
+                  <input type="number" id="funding-amount" name="funding_amount" min="5" step="1" value="5" placeholder="Minimum $5">
+                </div>
+                <div class="form-row">
+                  <label class="checkbox-label"><input type="checkbox" name="marketing_email" value="1"> I'd like to receive email updates about rates and specials</label>
+                </div>
+                <div class="form-row">
+                  <label class="checkbox-label"><input type="checkbox" name="marketing_sms" value="1"> I'd like to receive text message updates (standard rates may apply)</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="wizard-panel" data-panel="5" hidden>
+              <fieldset>
+                <legend>Disclosures &amp; Consent</legend>
+                <p>Before submitting, please review and acknowledge the following:</p>
+                <div class="form-row">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="consent-terms" name="consent_terms" required>
+                    I agree to the <a href="#">Membership and Account Agreement</a>, <a href="#">Truth-in-Savings</a>, and <a href="#">Fee Schedule</a>. *
+                  </label>
+                </div>
+                <div class="form-row">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="consent-privacy" name="consent_privacy" required>
+                    I have read and agree to the <a href="#">Privacy Policy</a>. *
+                  </label>
+                </div>
+                <div class="form-row">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="consent-accurate" name="consent_accurate" required>
+                    I certify that the information provided is accurate and complete. *
+                  </label>
+                </div>
+                <div class="form-row">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="consent-credit" name="consent_credit">
+                    I authorize NAMEFED to obtain a credit report and/or ChexSystems report if needed to process my application.
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn btn-secondary wizard-prev" disabled>Back</button>
+              <button type="button" class="btn btn-primary wizard-next">Next</button>
+              <button type="submit" class="btn btn-primary wizard-submit" hidden>Submit Application</button>
+            </div>
+
+            <p class="form-note">* Required. This is a mock-up form—submissions are not processed.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

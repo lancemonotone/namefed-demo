@@ -1,0 +1,50 @@
+/* NAMEFED – block-card: card with optional image */
+.block-card {
+  --block-card-padding: var(--space-xl);
+  --block-card-max-width: none;
+
+  display: grid;
+  gap: var(--space-lg);
+  padding: var(--block-card-padding);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
+  max-width: var(--block-card-max-width);
+  transition: all var(--transition-smooth);
+  overflow: hidden;
+}
+
+.block-card:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(201, 162, 39, 0.4);
+}
+
+.block-card--compact {
+  --block-card-padding: var(--space-lg);
+  --block-card-max-width: 400px;
+  --flow-space: var(--space-sm);
+}
+
+.block-card--compact:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.block-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.block-card h3 {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+
+.block-card p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+

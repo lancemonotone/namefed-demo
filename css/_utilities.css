@@ -1,0 +1,64 @@
+/* NAMEFED – Utilities: flow, cluster, stack, container */
+/* Owl selector: spacing between siblings. Avoid vertical margins elsewhere. */
+.flow * {
+  margin-block: 0;
+}
+
+.flow * + * {
+  margin-block-start: var(--flow-space);
+}
+
+/* Opt-out for grid/gap layouts */
+.flow-off > * {
+  margin-block: 0;
+}
+
+/* Cluster: horizontal wrap with gap (grid-based) */
+.cluster {
+  --cluster-gap: var(--space-md);
+  --cluster-min: 8rem;
+  --cluster-justify: start;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--cluster-min), max-content));
+  gap: var(--cluster-gap);
+  justify-content: var(--cluster-justify);
+}
+
+.cluster--center {
+  --cluster-justify: center;
+}
+
+.cluster--lg {
+  --cluster-gap: var(--space-lg);
+}
+
+/* Stack: vertical stack with gap */
+.stack {
+  --stack-gap: var(--space-md);
+
+  display: grid;
+  gap: var(--stack-gap);
+}
+
+.stack--lg {
+  --stack-gap: var(--space-lg);
+}
+
+.stack--xl {
+  --stack-gap: var(--space-xl);
+}
+
+/* Container */
+.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+/* Lead paragraph */
+.lead {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  max-width: 60ch;
+  line-height: 1.7;
+}

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- INCLUDE: partials/head-theme.html -->
   <title>Contact – NAMEFED</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,54 +15,13 @@
   <div id="header-placeholder"></div>
   <script src="js/header.js"></script>
 
-  <main id="main">
-    <section class="section--title flow-off">
-      <h1>Contact Us</h1>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="contact-grid flow-off">
-          <div class="contact-info">
-            <h2>Get in Touch</h2>
-            <p><strong>Address</strong><br>Norad Mill<br>60 Roberts Drive, Suite 112<br>North Adams, MA 01247</p>
-            <p><strong>Phone</strong><br>(413) 662-2657</p>
-            <p><strong>Fax</strong><br>(413) 662-2173</p>
-            <p><strong>Hours</strong><br>Mon–Fri 9am–4pm (Summer: Fri 9am–1pm)</p>
-            <h3>Staff</h3>
-            <p><strong>Cathy Corbosiero</strong> – Office Manager<br><a href="mailto:cathy.corbosiero@namefcu.com">cathy.corbosiero@namefcu.com</a></p>
-            <p><strong>Regina Riley</strong> – Office Clerk<br><a href="mailto:regina.riley@namefcu.com">regina.riley@namefcu.com</a></p>
-            <p><a href="https://facebook.com/NAMEFED" target="_blank" rel="noopener">Like us on Facebook</a></p>
-          </div>
-          <div class="contact-form">
-            <h2>Send a Message</h2>
-            <form action="#" method="post">
-              <div class="form-row">
-                <label for="contact-name">Name *</label>
-                <input type="text" id="contact-name" name="name" required>
-              </div>
-              <div class="form-row">
-                <label for="contact-email">Email *</label>
-                <input type="email" id="contact-email" name="email" required>
-              </div>
-              <div class="form-row">
-                <label for="contact-subject">Subject</label>
-                <input type="text" id="contact-subject" name="subject">
-              </div>
-              <div class="form-row">
-                <label for="contact-message">Message *</label>
-                <textarea id="contact-message" name="message" rows="5" required></textarea>
-              </div>
-              <p class="form-note">* Required. This is a mock-up form—submissions are not processed.</p>
-              <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+  <main id="main" data-page="contact"></main>
 
   <div id="footer-placeholder"></div>
+  <script src="js/renderers.js"></script>
+  <script src="js/transformers.js"></script>
+  <script src="js/blocks.js"></script>
+  <script src="js/content.js"></script>
   <script src="js/footer.js"></script>
   <script src="js/main.js"></script>
 </body>

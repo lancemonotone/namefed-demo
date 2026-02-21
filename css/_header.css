@@ -44,6 +44,7 @@
   display: block;
   text-decoration: none;
   transition: opacity var(--transition);
+  margin-block-end: 1rem;
 }
 
 .logo:hover {
@@ -331,10 +332,7 @@
 }
 
 .main-nav ul a[aria-current="page"] {
-  --nav-current-color: light-dark(
-    var(--color-primary-dark),
-    var(--color-white)
-  );
+  --nav-current-color: var(--color-primary-dark);
   --nav-current-weight: 700;
   --nav-current-border-color: transparent;
 
@@ -346,6 +344,10 @@
     --nav-current-weight: 600;
     --nav-current-border-color: var(--color-primary);
   }
+}
+
+:root[data-theme="dark"] .main-nav ul a[aria-current="page"] {
+  --nav-current-color: var(--color-white);
 }
 
 /* Alert bar */

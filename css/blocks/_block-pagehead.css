@@ -1,0 +1,41 @@
+/* NAMEFED – block-pagehead: page title with gradient */
+.block-pagehead {
+  --block-pagehead-padding: var(--space-2xl) var(--space-lg);
+
+  position: relative;
+  padding: var(--block-pagehead-padding);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary-warm) 100%
+  );
+  color: var(--color-white);
+  text-align: center;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    --block-pagehead-padding: var(--space-2xl) var(--space-xl);
+  }
+}
+
+.block-pagehead::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/7/7b/Main_Street_North_Adams.jpg")
+    center/cover;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.block-pagehead h1 {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-heading);
+  font-size: 1.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--color-white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

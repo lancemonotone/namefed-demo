@@ -1,0 +1,91 @@
+/* NAMEFED – block-content: standard content section */
+.block-content {
+  --block-content-padding: var(--space-3xl) var(--space-lg);
+  --block-content-bg: transparent;
+  --block-content-text-align: left;
+
+  padding: var(--block-content-padding);
+  background: var(--block-content-bg);
+  text-align: var(--block-content-text-align);
+
+  @media (min-width: 768px) {
+    --block-content-padding: var(--space-3xl) var(--space-xl);
+  }
+}
+
+.block-content--alt {
+  --block-content-bg: var(--color-primary);
+  color: var(--color-white);
+}
+
+.block-content--alt .lead,
+.block-content--alt p,
+.block-content--alt strong {
+  color: var(--color-white);
+}
+
+.block-content--alt h2 {
+  color: var(--color-white);
+}
+
+.block-content--alt fieldset legend {
+  color: var(--color-white);
+}
+
+/* Block-cards inside alt have white surface – need dark text */
+.block-content--alt .block-card,
+.block-content--alt .block-card strong,
+.block-content--alt .block-card p {
+  color: var(--color-text);
+}
+
+.block-content--alt .block-card a {
+  color: var(--color-primary);
+}
+
+.block-content--dark {
+  --block-content-bg: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary-warm) 100%
+  );
+  --block-content-text-align: center;
+  color: var(--color-white);
+}
+
+.block-content--dark h2 {
+  color: var(--color-white);
+}
+
+.block-content--dark p {
+  max-width: 50ch;
+  margin-inline: auto;
+  opacity: 0.95;
+}
+
+.block-content--dark .form-note {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.block-content--center {
+  --block-content-bg: var(--color-bg-warm);
+  --block-content-text-align: center;
+}
+
+.block-content--center p {
+  max-width: 50ch;
+  margin-inline: auto;
+}
+
+/* Text on light/white backgrounds uses primary for emphasis */
+.block-content:not(.block-content--alt):not(.block-content--dark) h2,
+.block-content:not(.block-content--alt):not(.block-content--dark) .lead {
+  color: var(--color-primary);
+}
+
+/* __inner constrains content; section stays full-width for backgrounds */
+.block-content__inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
