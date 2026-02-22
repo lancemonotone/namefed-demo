@@ -64,7 +64,6 @@
   --space-3xl: 4rem;
   --max-width: 1200px;
   --radius: 8px;
-  --radius-lg: 12px;
   --transition: 0.25s ease;
   --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --flow-space: var(--space-lg);

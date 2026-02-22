@@ -84,6 +84,6 @@
   width: auto;
   display: block;
   margin-inline: auto;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   box-shadow: var(--shadow);
 }

@@ -103,7 +103,7 @@
   max-width: 480px;
   padding: var(--space-xl);
   background: var(--color-bg-warm);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   border: 1px solid var(--color-border);
 }
 
@@ -163,7 +163,7 @@
   min-height: 0;
   opacity: 0;
   padding: var(--space-3xl) 0;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
 }
 
 .eligibility-flow.show-form .application-form-wrap {
