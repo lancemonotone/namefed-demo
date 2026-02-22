@@ -15,12 +15,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(30, 30, 30, 0.7) 0%,
-    rgba(30, 30, 30, 0.55) 50%,
-    rgba(80, 80, 80, 0.2) 100%
-  );
+  background: var(--gradient-overlay-neutral);
   z-index: 1;
 }
 
@@ -308,7 +303,8 @@
 /* Page title banner */
 .section--title {
   position: relative;
-  background: var(--gradient-primary);
+  background: url("https://upload.wikimedia.org/wikipedia/commons/7/7b/Main_Street_North_Adams.jpg")
+    center/cover;
   color: var(--color-white);
   padding: var(--space-2xl) var(--space-lg);
   text-align: center;
@@ -319,9 +315,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/7/7b/Main_Street_North_Adams.jpg")
-    center/cover;
-  opacity: 0.3;
+  background: var(--gradient-overlay-neutral);
   z-index: 0;
 }
 

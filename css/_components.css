@@ -3,7 +3,7 @@
 button.btn {
   --width: 100%;
   --btn-bg: var(--color-primary);
-  --btn-bg-hover: var(--color-primary-light);
+  --btn-bg-hover: var(--color-primary-table);
   --btn-color: var(--color-white);
   --btn-border: var(--color-white);
 
@@ -127,10 +127,6 @@ fieldset {
     font-weight: 700;
     color: var(--color-heading);
   }
-}
-
-.section--alt fieldset legend {
-  color: var(--color-white);
 }
 
 .checkbox-label {

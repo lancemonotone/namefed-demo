@@ -2,6 +2,7 @@
 .block-list {
   --block-list-gap: var(--space-sm);
   --block-list-bullet-color: var(--color-primary);
+  --block-list-group-title-color: var(--color-primary);
 
   display: grid;
   gap: var(--block-list-gap);
@@ -9,6 +10,19 @@
 
   & > * {
     margin-block: 0;
+  }
+
+  .block-list__item::before {
+    color: var(--block-list-bullet-color);
+  }
+
+  .block-list__group-title {
+    color: var(--block-list-group-title-color);
+  }
+
+  .section--alt & {
+    --block-list-bullet-color: var(--section-alt-text);
+    --block-list-group-title-color: var(--section-alt-text);
   }
 }
 
@@ -35,19 +49,10 @@
   font-weight: bold;
 }
 
-/* Default: dark gold on light. Dark blocks override below. */
-.block-list--alt .block-list__item::before {
-  color: var(--color-primary);
-}
-
-.block-content--alt .block-list__item::before,
-.block-split--alt .block-list__item::before {
-  color: var(--color-white);
-}
-
-.block-content--alt .block-list__group-title,
-.block-split--alt .block-list__group-title {
-  color: var(--color-white);
+.block-list__group-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--block-list-group-title-color);
 }
 
 /* Grouped list (e.g. holiday schedule: h3 + ul) */
@@ -57,12 +62,6 @@
 
 .block-list__group * + * {
   margin-block-start: var(--space-sm);
-}
-
-.block-list__group-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-primary);
 }
 
 .block-list__group ul {

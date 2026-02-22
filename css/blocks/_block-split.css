@@ -5,8 +5,10 @@
   --block-split-gap: var(--space-3xl);
   --block-split-img-order: -1;
   --block-split-dir: ltr;
+  --block-split-bg: transparent;
 
   padding: var(--block-split-padding);
+  background: var(--block-split-bg);
 
   @media (min-width: 768px) {
     --block-split-padding: var(--space-3xl) var(--space-xl);
@@ -15,46 +17,18 @@
     --block-split-img-order: unset;
   }
 
-  &.block-split--alt {
-    background: var(--gradient-primary);
-    color: var(--color-white);
+  &.section--alt {
+    --block-split-bg: var(--section-alt-bg);
+    --block-split-dir: ltr;
 
     @media (min-width: 768px) {
       --block-split-dir: rtl;
     }
-
-    & .lead,
-    & p,
-    & strong,
-    & h2 {
-      color: var(--color-white);
-    }
-
-    & a {
-      color: var(--color-white);
-      text-decoration: underline;
-    }
-
-    & a:hover {
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    & .block-card,
-    & .block-card p,
-    & .block-card strong {
-      color: var(--color-text);
-    }
-
-    & .block-card a {
-      color: var(--color-primary);
-    }
   }
 
-  &:not(.block-split--alt) {
-    & h2,
-    & .lead {
-      color: var(--color-primary);
-    }
+  &:not(.section--alt) h2,
+  &:not(.section--alt) .lead {
+    color: var(--color-heading-accent);
   }
 }
 

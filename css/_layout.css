@@ -1,17 +1,54 @@
-/* NAMEFED – Layout: section variants (used by eligibility flow) */
+/* NAMEFED – Layout: section base (eligibility flow), section--alt theme, content--center utility */
 .section {
-  background: var(--color-white);
-  padding-block: var(--space-3xl);
-  padding-inline: var(--space-lg);
+  --section-bg: var(--color-white);
+  --section-padding-block: var(--space-3xl);
+  --section-padding-inline: var(--space-lg);
 
-  &.section--alt {
-    background: var(--gradient-primary);
-    color: var(--color-white);
+  background: var(--section-bg);
+  padding-block: var(--section-padding-block);
+  padding-inline: var(--section-padding-inline);
+}
 
-    .lead,
-    p,
-    strong {
-      color: var(--color-white);
-    }
+.section--alt {
+  --section-bg: var(--section-alt-bg);
+  --section-text: var(--section-alt-text);
+  --section-link: var(--section-alt-link);
+  --section-link-hover: var(--section-alt-link-hover);
+  --section-note: var(--section-alt-note);
+
+  background: var(--section-bg);
+  color: var(--section-text);
+
+  .lead,
+  p,
+  strong,
+  h2,
+  fieldset legend {
+    color: inherit;
   }
+
+  a {
+    color: var(--section-link);
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: var(--section-link-hover);
+  }
+
+  .form-note {
+    color: var(--section-note);
+  }
+}
+
+.content--center {
+  --content-align: center;
+  --content-p-max-width: 50ch;
+
+  text-align: var(--content-align);
+}
+
+.content--center p {
+  max-width: var(--content-p-max-width);
+  margin-inline: auto;
 }

@@ -80,7 +80,7 @@
         {
           "type": "split",
           "data": {
-            "modifiers": "block-split--media block-content--center",
+            "modifiers": "block-split--media content--center",
             "contentHtml": "<h2>Welcome to NAMEFED</h2><p class=\"lead\">Chartered January 1, 1959, we've been serving North Adams municipal employees and their families for over 60 years. We're member-owned, not-for-profit, and focused on helping you save, borrow, and plan for the future.</p><p><strong>Once a Member – Always a Member!</strong> Even if you leave your employment or move out of the area, we just require annual activity in your account.</p>",
             "buttons": [
               {
@@ -108,13 +108,12 @@
         {
           "type": "split",
           "data": {
-            "modifiers": "block-split--alt block-split--media",
+            "modifiers": "section--alt block-split--media",
             "contentHtml": "<h2>Who We Serve</h2><p class=\"lead\">NAMEFED membership is open to employees and retirees of:</p>{{@whoWeServe}}",
             "media": {
               "src": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Seal_of_North_Adams%2C_Massachusetts.png",
               "alt": "Seal of the City of North Adams, Massachusetts"
-            },
-            "listModifiers": "block-list--alt"
+            }
           }
         },
         {
@@ -146,14 +145,14 @@
         {
           "type": "content",
           "data": {
-            "modifiers": "block-content--dark",
+            "modifiers": "section--alt content--center",
             "innerHtml": "<h2>Stay in the Loop</h2><p>Subscribe to our newsletter for rates, specials, and credit union news delivered to your inbox.</p><form class=\"newsletter-form\" action=\"#\" method=\"post\"><div class=\"form-row\"><label for=\"newsletter-email\" class=\"visually-hidden\">Email address</label><input type=\"email\" id=\"newsletter-email\" name=\"email\" placeholder=\"Enter your email\" required></div><div class=\"cluster cluster--lg\"><button type=\"submit\" class=\"btn btn-secondary\">Subscribe to Newsletter</button></div></form>"
           }
         },
         {
           "type": "content",
           "data": {
-            "modifiers": "block-content--center",
+            "modifiers": "content--center",
             "innerHtml": "<h2>Ready to Join?</h2><p>Eligibility is easy: if you're a municipal employee, retiree, or family member, you likely qualify.</p>",
             "buttons": [
               {
@@ -184,9 +183,8 @@
         {
           "type": "content",
           "data": {
-            "modifiers": "block-content--alt",
-            "innerHtml": "<h2>Who We Serve</h2><p>NAMEFED membership is open to employees and retirees of:</p>{{@whoWeServe}}",
-            "listModifiers": "block-list--alt"
+            "modifiers": "section--alt",
+            "innerHtml": "<h2>Who We Serve</h2><p>NAMEFED membership is open to employees and retirees of:</p>{{@whoWeServe}}"
           }
         },
         {
@@ -220,7 +218,7 @@
         {
           "type": "split",
           "data": {
-            "modifiers": "block-split--alt block-split--media",
+            "modifiers": "section--alt block-split--media",
             "contentHtml": "<h2>Our Location</h2>{{@location}}",
             "media": {
               "src": "https://upload.wikimedia.org/wikipedia/commons/1/10/Norad_Mill_60_Roberts_Drive_North_Adams_from_west.jpg",
@@ -248,7 +246,7 @@
         {
           "type": "content",
           "data": {
-            "modifiers": "block-content--alt",
+            "modifiers": "section--alt",
             "innerHtml": "<h2>Loan Rates</h2><p class=\"lead\">Rates approved by Board of Directors December 15, 2025. All rates based on APR. Loan rates are on a Risk-Based Pricing scale determined by Debt Ratio &amp; Credit Score. Rates subject to change without prior notification.</p>{{tableHtml}}<p><a href=\"contact.html\">Contact us</a> for full rate details. We will match any competitor's rate with Board approval. Just ask!</p>",
             "table": {
               "caption": "Loan rates by product",
@@ -397,9 +395,8 @@
         {
           "type": "content",
           "data": {
-            "modifiers": "block-content--alt",
+            "modifiers": "section--alt",
             "innerHtml": "<h2>What You'll Need</h2>{{list2Html}}",
-            "listModifiers": "block-list--alt",
             "list2": [
               "Driver's license or other valid government-issued picture ID",
               "Social Security Card",

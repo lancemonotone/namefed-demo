@@ -333,6 +333,10 @@
 
     &:hover {
       color: var(--color-primary);
+
+      @media (prefers-color-scheme: dark) {
+        color: var(--color-primary-light);
+      }
     }
 
     &[aria-current="page"] {
@@ -349,8 +353,10 @@
         --nav-current-border-color: var(--color-primary);
       }
 
-      :root[data-theme="dark"] & {
-        --nav-current-color: var(--color-white);
+      @media (prefers-color-scheme: dark) {
+        & {
+          --nav-current-color: var(--color-primary-light);
+        }
       }
     }
   }

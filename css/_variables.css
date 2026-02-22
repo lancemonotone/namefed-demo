@@ -1,10 +1,6 @@
-/* NAMEFED – Design tokens (data-theme set by blocking script to prevent flash) */
+/* NAMEFED – Design tokens (prefers-color-scheme for system theme) */
 :root {
   color-scheme: light dark;
-}
-
-:root,
-:root[data-theme="light"] {
   --color-bg: color-mix(in srgb, var(--color-primary) 3%, var(--color-white));
   --color-bg-alt: color-mix(
     in srgb,
@@ -20,41 +16,54 @@
   --color-text: var(--color-primary-dark);
   --color-text-muted: color-mix(
     in srgb,
-    var(--color-primary-dark) 55%,
+    var(--color-primary-dark) 75%,
     var(--color-white)
   );
   --color-border: color-mix(in srgb, var(--color-primary) 25%, transparent);
   --color-heading: var(--color-primary-dark);
+  /* Accent for h2/.lead on default sections: primary in light, white in dark */
+  --color-heading-accent: var(--color-primary);
+  --color-heading-accent: light-dark(var(--color-primary), var(--color-white));
   --shadow: 0 2px 12px
     color-mix(in srgb, var(--color-primary-dark) 6%, transparent);
   --shadow-hover: 0 8px 24px
     color-mix(in srgb, var(--color-primary-dark) 10%, transparent);
+
+  /* Section alt theme (dark gradient) – override in prefers-color-scheme: dark when needed */
+  --section-alt-bg: var(--gradient-primary);
+  --section-alt-text: var(--color-white);
+  --section-alt-link: var(--color-white);
+  --section-alt-link-hover: rgba(255, 255, 255, 0.9);
+  --section-alt-note: rgba(255, 255, 255, 0.85);
 }
 
-:root[data-theme="dark"] {
-  --color-bg: color-mix(in srgb, var(--color-primary-dark) 70%, black);
-  --color-bg-alt: color-mix(in srgb, var(--color-primary-dark) 85%, black);
-  --color-bg-warm: color-mix(in srgb, var(--color-primary-dark) 75%, black);
-  --color-surface: var(--color-primary-dark);
-  --color-text: color-mix(
-    in srgb,
-    var(--color-primary-light) 12%,
-    var(--color-white)
-  );
-  --color-text-muted: color-mix(
-    in srgb,
-    var(--color-primary) 35%,
-    var(--color-white)
-  );
-  --color-border: color-mix(in srgb, var(--color-primary) 35%, transparent);
-  --color-heading: var(--color-white);
-  --shadow: 0 2px 12px color-mix(in srgb, black 30%, transparent);
-  --shadow-hover: 0 8px 24px color-mix(in srgb, black 40%, transparent);
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Fallback for browsers without light-dark() support */
+    --color-heading-accent: var(--color-white);
+    /* section-alt can be overridden here when dark mode is tuned */
+    --color-bg: color-mix(in srgb, var(--color-primary-dark) 70%, black);
+    --color-bg-alt: color-mix(in srgb, var(--color-primary-dark) 85%, black);
+    --color-bg-warm: color-mix(in srgb, var(--color-primary-dark) 75%, black);
+    --color-surface: var(--color-primary-dark);
+    --color-text: color-mix(
+      in srgb,
+      var(--color-primary-light) 12%,
+      var(--color-white)
+    );
+    --color-text-muted: color-mix(
+      in srgb,
+      var(--color-primary-light) 15%,
+      var(--color-white)
+    );
+    --color-border: color-mix(in srgb, var(--color-primary) 35%, transparent);
+    --color-heading: var(--color-white);
+    --shadow: 0 2px 12px color-mix(in srgb, black 30%, transparent);
+    --shadow-hover: 0 8px 24px color-mix(in srgb, black 40%, transparent);
+  }
 }
 
-:root,
-:root[data-theme="light"],
-:root[data-theme="dark"] {
+:root {
   /* Brand (same in both themes) */
   --color-primary: #a67c00;
   --color-primary-light: #c9a227;
@@ -65,6 +74,13 @@
     135deg,
     var(--color-primary-dark) 0%,
     var(--color-primary) 100%
+  );
+  /* Neutral overlay for hero/pagehead (image + overlay pattern) */
+  --gradient-overlay-neutral: linear-gradient(
+    135deg,
+    rgba(30, 30, 30, 0.7) 0%,
+    rgba(30, 30, 30, 0.55) 50%,
+    rgba(80, 80, 80, 0.2) 100%
   );
   --color-transparent: transparent;
 

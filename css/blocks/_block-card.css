@@ -2,22 +2,45 @@
 .block-card {
   --block-card-padding: var(--space-xl);
   --block-card-max-width: none;
+  --card-bg: var(--color-bg-warm);
+  --card-text: var(--color-text-muted);
+  --card-link: var(--color-primary);
 
   display: grid;
   gap: var(--space-lg);
   padding: var(--block-card-padding);
-  background: var(--color-bg-warm);
+  background: var(--card-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   border: 1px solid var(--color-border);
   max-width: var(--block-card-max-width);
   transition: box-shadow var(--transition-smooth), border-color var(--transition-smooth);
   overflow: hidden;
-}
 
-.block-card:hover {
-  box-shadow: var(--shadow-hover);
-  border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+  & p {
+    color: var(--card-text);
+    line-height: 1.6;
+  }
+
+  & h3 {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+  }
+
+  &:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+  }
+
+  .section--alt & {
+    --card-bg: var(--color-surface);
+    --card-text: var(--color-text);
+    --card-link: var(--color-primary);
+  }
+
+  .section--alt & a {
+    color: var(--card-link);
+  }
 }
 
 .block-card--compact {
@@ -37,14 +60,3 @@
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
-
-.block-card h3 {
-  font-size: 1.25rem;
-  color: var(--color-primary);
-}
-
-.block-card p {
-  color: var(--color-text-muted);
-  line-height: 1.6;
-}
-

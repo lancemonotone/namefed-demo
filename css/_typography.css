@@ -39,10 +39,6 @@ h3 {
   color: var(--color-heading);
 }
 
-.section--alt h2 {
-  color: var(--color-white);
-}
-
 .section h3 {
   font-size: 1.25rem;
   font-weight: 700;

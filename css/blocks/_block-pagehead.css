@@ -1,10 +1,11 @@
-/* NAMEFED – block-pagehead: page title with gradient */
+/* NAMEFED – block-pagehead: page title with neutral overlay (matches hero) */
 .block-pagehead {
   --block-pagehead-padding: var(--space-2xl) var(--space-lg);
 
   position: relative;
   padding: var(--block-pagehead-padding);
-  background: var(--gradient-primary);
+  background: url("https://upload.wikimedia.org/wikipedia/commons/7/7b/Main_Street_North_Adams.jpg")
+    center/cover;
   color: var(--color-white);
   text-align: center;
   overflow: hidden;
@@ -18,9 +19,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/7/7b/Main_Street_North_Adams.jpg")
-    center/cover;
-  opacity: 0.3;
+  background: var(--gradient-overlay-neutral);
   z-index: 0;
 }
 
