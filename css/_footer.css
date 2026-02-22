@@ -1,8 +1,8 @@
-/* NAMEFED – Footer */
+/* NAMEFED – Footer (inherits section--alt styling; overrides bg to solid) */
 .site-footer {
-  background: var(--color-primary-dark);
-  color: var(--color-white);
-  padding: var(--space-2xl) var(--space-lg) var(--space-lg);
+  --section-alt-bg: var(--color-primary-dark);
+  --section-padding-block: var(--space-2xl) var(--space-lg);
+  padding: var(--section-padding-block) var(--section-padding-inline);
 }
 
 .footer-inner {
@@ -35,15 +35,6 @@
   opacity: 0.95;
 }
 
-.footer-col a {
-  color: rgba(255, 255, 255, 0.9);
-  transition: color var(--transition);
-}
-
-.footer-col a:hover {
-  color: var(--color-white);
-}
-
 .footer-logo {
   font-family: var(--font-heading);
   font-size: 1.25rem;
@@ -70,8 +61,4 @@
   text-align: center;
   font-size: 0.875rem;
   opacity: 0.9;
-}
-
-.footer-bottom a {
-  color: rgba(255, 255, 255, 0.95);
 }

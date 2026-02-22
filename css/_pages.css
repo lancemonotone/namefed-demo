@@ -93,13 +93,31 @@
   gap: var(--space-xl);
 }
 
-/* Eligibility checker & flow */
+/* Eligibility checker & flow (uses block-content for base layout) */
 .eligibility-checker {
+  --flow-space: var(--space-md);
+
   max-width: 480px;
   padding: var(--space-xl);
   background: var(--color-bg-warm);
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
+}
+
+.eligibility-checker .form-row {
+  --flow-space: var(--space-xs);
+}
+
+.eligibility-checker .form-row > * {
+  margin-block: 0;
+}
+
+.eligibility-checker .form-row > * + * {
+  margin-block-start: var(--flow-space);
+}
+
+.eligibility-checker .form-row label {
+  margin-bottom: 0;
 }
 
 .eligibility-result {

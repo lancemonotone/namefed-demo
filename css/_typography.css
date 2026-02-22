@@ -33,17 +33,17 @@ h3 {
   color: var(--color-heading);
 }
 
-.section h2 {
+.block-content h2,
+.block-split h2 {
   font-size: 1.875rem;
   margin: 0;
-  color: var(--color-heading);
 }
 
-.section h3 {
+.block-content h3,
+.block-split h3 {
   font-size: 1.25rem;
   font-weight: 700;
   margin: 0;
-  color: var(--color-heading);
 }
 
 /* Lead paragraph */
