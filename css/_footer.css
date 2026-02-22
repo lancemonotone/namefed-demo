@@ -1,64 +1,69 @@
-/* NAMEFED – Footer (inherits section--alt styling; overrides bg to solid) */
+/* NAMEFED – Footer */
 .site-footer {
-  --section-alt-bg: var(--color-primary-dark);
-  --section-padding-block: var(--space-2xl) var(--space-lg);
-  padding: var(--section-padding-block) var(--section-padding-inline);
-}
+  background: var(--color-primary-dark);
+  color: var(--color-white);
 
-.footer-inner {
-  --flow-space: var(--space-xl);
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
+  & .block-content__inner {
+    --flow-space: var(--space-xl);
+  }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-xl);
-}
+  & .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-xl);
+  }
 
-.footer-col {
-  --flow-space: var(--space-md);
-}
+  & .footer-col {
+    --flow-space: var(--space-md);
 
-.footer-col ul {
-  --flow-space: var(--space-xs);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    & ul {
+      --flow-space: var(--space-xs); /* tighter spacing between list items */
+      margin-block-start: var(--space-md); /* match h4→content gap in Contact column */
+      list-style: none;
+      padding: 0;
+    }
+  }
 
-.footer-col h4 {
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  opacity: 0.95;
-}
+  & .link-fb {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-primary);
+  }
 
-.footer-logo {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-}
+  & .fb-icon {
+    flex-shrink: 0;
+  }
 
-.footer-ncua {
-  justify-items: center;
-  text-align: center;
-}
+  & .fb-icon svg {
+    display: block;
+    vertical-align: middle;
+  }
 
-.footer-ncua img {
-  height: 40px;
-  width: auto;
-  opacity: 0.9;
-  display: block;
-  margin-inline: auto;
-}
+  & .footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+  }
 
-.footer-bottom {
-  --flow-space: var(--space-sm);
-  padding-top: var(--space-lg);
-  padding-bottom: var(--space-sm);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  text-align: center;
-  font-size: 0.875rem;
-  opacity: 0.9;
+  & .footer-ncua {
+    justify-items: center;
+    text-align: center;
+
+    & img {
+      height: 40px;
+      width: auto;
+      opacity: 0.9;
+      display: block;
+      margin-inline: auto;
+    }
+  }
+
+  & .footer-bottom {
+    --flow-space: var(--space-sm);
+    padding-block: var(--space-lg) var(--space-sm);
+    border-block-start: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    font-size: 0.875rem;
+    opacity: 0.9;
+  }
 }

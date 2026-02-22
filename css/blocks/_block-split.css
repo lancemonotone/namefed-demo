@@ -39,7 +39,7 @@
     repeat(var(--block-split-cols), 1fr)
   );
   gap: var(--block-split-gap);
-  align-items: center;
+  align-items: start;
   max-width: var(--max-width);
   margin-inline: auto;
   direction: var(--block-split-dir);

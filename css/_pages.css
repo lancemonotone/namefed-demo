@@ -281,11 +281,12 @@
   margin: 0 0 var(--space-lg);
 }
 
-/* Contact page: Facebook link with gold icon */
+/* Contact page: Facebook link with primary icon */
 [data-page="contact"] .link-fb {
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
+  color: var(--color-primary);
 }
 
 [data-page="contact"] .fb-icon {

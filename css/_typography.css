@@ -24,13 +24,14 @@ a:hover {
 /* Headings */
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--font-heading);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1.25;
-  color: var(--color-heading);
+  /* color: var(--color-heading); */
 }
 
 .block-content h2,
@@ -44,6 +45,13 @@ h3 {
   font-size: 1.25rem;
   font-weight: 700;
   margin: 0;
+}
+
+.block-content h4,
+.block-split h4 h4 {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 /* Lead paragraph */
