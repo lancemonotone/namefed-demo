@@ -39,7 +39,11 @@
   --color-primary-warm: #a67c00;
   --color-accent: #c9a227;
   --color-accent-hover: #b08d1f;
-  --color-accent-soft: color-mix(in srgb, var(--color-primary) 15%, transparent);
+  --color-accent-soft: color-mix(
+    in srgb,
+    var(--color-primary) 15%,
+    transparent
+  );
   --color-white: #fff;
   --gradient-primary: linear-gradient(
     135deg,

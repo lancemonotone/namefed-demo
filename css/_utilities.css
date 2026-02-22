@@ -17,7 +17,7 @@
 .cluster {
   --cluster-gap: var(--space-md);
   --cluster-min: 8rem;
-  --cluster-justify: start;
+  --cluster-justify: center;
 
   display: grid;
   grid-template-columns: repeat(
@@ -28,8 +28,8 @@
   justify-content: var(--cluster-justify);
 }
 
-.cluster--center {
-  --cluster-justify: center;
+.cluster--start {
+  --cluster-justify: start;
 }
 
 .cluster--lg {

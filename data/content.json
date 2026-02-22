@@ -89,8 +89,25 @@
         {
           "type": "split",
           "data": {
-            "modifiers": "block-split--media",
-            "contentHtml": "<h2>Welcome to NAMEFED</h2><p class=\"lead\">Chartered January 1, 1959, we've been serving North Adams municipal employees and their families for over 60 years. We're member-owned, not-for-profit, and focused on helping you save, borrow, and plan for the future.</p><p><strong>Once a Member – Always a Member!</strong> Even if you leave your employment or move out of the area, we just require annual activity in your account.</p><div class=\"cluster cluster--lg\"><a href=\"rates.html\" class=\"btn btn-primary\">View Rates</a><a href=\"hours-locations.html\" class=\"btn btn-primary\">Find Us</a><a href=\"membership.html\" class=\"btn btn-primary\">Join NAMEFED</a></div>",
+            "modifiers": "block-split--media block-content--center",
+            "contentHtml": "<h2>Welcome to NAMEFED</h2><p class=\"lead\">Chartered January 1, 1959, we've been serving North Adams municipal employees and their families for over 60 years. We're member-owned, not-for-profit, and focused on helping you save, borrow, and plan for the future.</p><p><strong>Once a Member – Always a Member!</strong> Even if you leave your employment or move out of the area, we just require annual activity in your account.</p>",
+            "buttons": [
+              {
+                "href": "rates.html",
+                "text": "View Rates",
+                "class": "btn btn-primary"
+              },
+              {
+                "href": "hours-locations.html",
+                "text": "Find Us",
+                "class": "btn btn-primary"
+              },
+              {
+                "href": "membership.html",
+                "text": "Join NAMEFED",
+                "class": "btn btn-primary"
+              }
+            ],
             "mediaHtml": "<img src=\"https://media.cnn.com/api/v1/images/stellar/prod/190524170003-01-north-adams-photos.jpg?q=w_1110,c_fill\" alt=\"Downtown North Adams, Massachusetts\">"
           }
         },
@@ -133,14 +150,21 @@
           "type": "content",
           "data": {
             "modifiers": "block-content--dark",
-            "innerHtml": "<h2>Stay in the Loop</h2><p>Subscribe to our newsletter for rates, specials, and credit union news delivered to your inbox.</p><form class=\"newsletter-form\" action=\"#\" method=\"post\"><div class=\"form-row\"><label for=\"newsletter-email\" class=\"visually-hidden\">Email address</label><input type=\"email\" id=\"newsletter-email\" name=\"email\" placeholder=\"Enter your email\" required></div><button type=\"submit\" class=\"btn btn-secondary\">Subscribe to Newsletter</button></form><p class=\"form-note form-note--light\">* Required. This is a mock-up form—submissions are not processed.</p>"
+            "innerHtml": "<h2>Stay in the Loop</h2><p>Subscribe to our newsletter for rates, specials, and credit union news delivered to your inbox.</p><form class=\"newsletter-form\" action=\"#\" method=\"post\"><div class=\"form-row\"><label for=\"newsletter-email\" class=\"visually-hidden\">Email address</label><input type=\"email\" id=\"newsletter-email\" name=\"email\" placeholder=\"Enter your email\" required></div><div class=\"cluster cluster--lg\"><button type=\"submit\" class=\"btn btn-secondary\">Subscribe to Newsletter</button></div></form>"
           }
         },
         {
           "type": "content",
           "data": {
             "modifiers": "block-content--center",
-            "innerHtml": "<h2>Ready to Join?</h2><p>Eligibility is easy—if you're a municipal employee, retiree, or family member, you likely qualify.</p><a href=\"membership.html\" class=\"btn btn-primary\">Apply for Membership</a>"
+            "innerHtml": "<h2>Ready to Join?</h2><p>Eligibility is easy—if you're a municipal employee, retiree, or family member, you likely qualify.</p>",
+            "buttons": [
+              {
+                "href": "membership.html",
+                "text": "Apply for Membership",
+                "class": "btn btn-primary"
+              }
+            ]
           }
         }
       ]
@@ -285,7 +309,7 @@
           "type": "split",
           "data": {
             "contentHtml": "<h2>Get in Touch</h2><p><strong>Address</strong><br>Norad Mill<br>60 Roberts Drive, Suite 112<br>North Adams, MA 01247</p><p><strong>Phone</strong><br>(413) 662-2657</p><p><strong>Fax</strong><br>(413) 662-2173</p><p><strong>Hours</strong><br>Mon–Fri 9am–4pm (Summer: Fri 9am–1pm)</p><h3>Staff</h3><p><strong>Cathy Corbosiero</strong> – Office Manager<br><a href=\"mailto:cathy.corbosiero@namefcu.com\">cathy.corbosiero@namefcu.com</a></p><p><strong>Regina Riley</strong> – Office Clerk<br><a href=\"mailto:regina.riley@namefcu.com\">regina.riley@namefcu.com</a></p><p><a href=\"https://facebook.com/NAMEFED\" target=\"_blank\" rel=\"noopener\">Like us on Facebook</a></p>",
-            "mediaHtml": "<h2>Send a Message</h2><form action=\"#\" method=\"post\"><div class=\"form-row\"><label for=\"contact-name\">Name *</label><input type=\"text\" id=\"contact-name\" name=\"name\" required></div><div class=\"form-row\"><label for=\"contact-email\">Email *</label><input type=\"email\" id=\"contact-email\" name=\"email\" required></div><div class=\"form-row\"><label for=\"contact-subject\">Subject</label><input type=\"text\" id=\"contact-subject\" name=\"subject\"></div><div class=\"form-row\"><label for=\"contact-message\">Message *</label><textarea id=\"contact-message\" name=\"message\" rows=\"5\" required></textarea></div><p class=\"form-note\">* Required. This is a mock-up form—submissions are not processed.</p><button type=\"submit\" class=\"btn btn-primary\">Send Message</button></form>"
+            "mediaHtml": "<h2>Send a Message</h2><form action=\"#\" method=\"post\"><div class=\"form-row\"><label for=\"contact-name\">Name *</label><input type=\"text\" id=\"contact-name\" name=\"name\" required></div><div class=\"form-row\"><label for=\"contact-email\">Email *</label><input type=\"email\" id=\"contact-email\" name=\"email\" required></div><div class=\"form-row\"><label for=\"contact-subject\">Subject</label><input type=\"text\" id=\"contact-subject\" name=\"subject\"></div><div class=\"form-row\"><label for=\"contact-message\">Message *</label><textarea id=\"contact-message\" name=\"message\" rows=\"5\" required></textarea></div><button type=\"submit\" class=\"btn btn-primary\">Send Message</button></form>"
           }
         }
       ]

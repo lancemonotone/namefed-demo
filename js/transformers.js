@@ -70,6 +70,14 @@
       outputKey: "tableHtml",
       fn: R.table,
     },
+    {
+      key: "buttons",
+      outputKey: "buttonsHtml",
+      fn: function (v) {
+        if (!v || !v.length) return "";
+        return '<div class="cluster cluster--lg">' + R.buttons(v) + "</div>";
+      },
+    },
   ];
 
   function applyGenericTransformers(data) {

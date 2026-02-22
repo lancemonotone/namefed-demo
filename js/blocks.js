@@ -36,10 +36,22 @@
         return data;
       },
     },
+    buttons: {
+      template: "buttons",
+      prepare: function (data) {
+        return Object.assign({}, data, {
+          buttonsHtml: data.buttons ? R.buttons(data.buttons) : "",
+        });
+      },
+    },
     split: {
       template: "split",
       prepare: function (data) {
-        return data;
+        const buttonsHtml =
+          data.buttons && data.buttons.length
+            ? '<div class="cluster cluster--lg">' + R.buttons(data.buttons) + "</div>"
+            : "";
+        return Object.assign({}, data, { buttonsHtml: buttonsHtml });
       },
     },
     grid: {

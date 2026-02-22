@@ -54,11 +54,9 @@
     }, 300);
   });
 
-  // Mock-up forms: prevent submit, show message (delegation for dynamic content)
   document.addEventListener('submit', function (e) {
     if (e.target.tagName === 'FORM') {
       e.preventDefault();
-      alert('This is a mock-up. Form submissions are not processed.');
     }
   });
 })();

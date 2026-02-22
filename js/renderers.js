@@ -48,14 +48,28 @@
     return html;
   }
 
-  function buildCtasHtml(ctas) {
-    if (!ctas || !ctas.length) return "";
-    return ctas
-      .map(function (c) {
-        const cls = c.class || "btn btn-primary";
-        return '<a href="' + (c.href || "#") + '" class="' + cls + '">' + c.text + "</a>";
+  function buildButtonsHtml(buttons) {
+    if (!buttons || !buttons.length) return "";
+    return buttons
+      .map(function (b) {
+        const cls = b.class || "btn btn-primary";
+        if (b.href != null) {
+          return '<a href="' + (b.href || "#") + '" class="' + cls + '">' + b.text + "</a>";
+        }
+        const type = b.type || "button";
+        const disabled = b.disabled ? " disabled" : "";
+        const idAttr = b.id ? ' id="' + b.id + '"' : "";
+        return (
+          "<button type=\"" + type + "\" class=\"" + cls + "\"" + idAttr + disabled + ">" +
+          b.text +
+          "</button>"
+        );
       })
       .join("");
+  }
+
+  function buildCtasHtml(ctas) {
+    return buildButtonsHtml(ctas);
   }
 
   /** Prepares card data for block-card.html template. */
@@ -159,6 +173,7 @@
 
   window.BlockRenderers = {
     list: buildListHtml,
+    buttons: buildButtonsHtml,
     ctas: buildCtasHtml,
     prepareCardData: prepareCardData,
     table: buildTableHtml,

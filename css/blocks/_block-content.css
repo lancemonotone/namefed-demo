@@ -66,6 +66,12 @@
 .block-content--center {
   --block-content-bg: var(--color-bg-warm);
   --block-content-text-align: center;
+  text-align: center;
+}
+
+/* One rule: all descendants inherit center. Overrides conflicting text-align. */
+.block-content--center * {
+  text-align: inherit;
 }
 
 .block-content--center p {
