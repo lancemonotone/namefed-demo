@@ -83,61 +83,64 @@
 }
 
 .block-table__row--header {
-  display: none;
+  --header-row-display: none;
+
+  display: var(--header-row-display);
 
   @media (min-width: 768px) {
-    display: table-row;
+    --header-row-display: table-row;
   }
 }
 
 .block-table__cell {
   --cell-padding: var(--space-md);
   --cell-padding-block: var(--space-xs);
-  --cell-padding-inline: 0;
+  --cell-padding-inline: var(--space-md);
+  --cell-data-title-display: table;
+  --cell-data-title-width: 100%;
+  --cell-before-content: attr(data-title);
+  --cell-value-display: table-cell;
+  --cell-value-padding: var(--cell-padding-block) var(--cell-padding-inline);
 
   display: var(--cell-display);
-  padding: var(--cell-padding-block) var(--cell-padding-inline);
+  padding: 0;
   text-align: left;
   margin-block: 0;
 
   &[data-title] {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: var(--space-xl);
+    display: var(--cell-data-title-display);
+    width: var(--cell-data-title-width);
   }
 
   &[data-title]::before {
-    content: attr(data-title);
+    display: table-cell;
+    content: var(--cell-before-content);
     font-weight: 700;
     color: var(--color-white);
-    background: color-mix(
-      in srgb,
-      var(--color-primary) 25%,
-      var(--color-primary-dark)
-    );
-    padding: var(--cell-padding-block) var(--space-md);
-    margin-inline-start: calc(var(--space-md) * -1);
+    background: var(--block-table-label-bg);
+    padding: var(--cell-padding-block) var(--cell-padding-inline);
+    width: 15vw;
+    white-space: nowrap;
+    min-width: 10ch;
   }
 
   &[data-title] .block-table__cell-value {
-    justify-self: start;
+    display: var(--cell-value-display);
     text-align: left;
+    padding: var(--cell-value-padding);
   }
 
   @media (min-width: 768px) {
     --cell-padding-block: var(--cell-padding);
     --cell-padding-inline: var(--cell-padding);
+    --cell-data-title-display: var(--cell-display);
+    --cell-data-title-width: unset;
+    --cell-before-content: none;
+    --cell-value-display: revert;
+    --cell-value-padding: 0;
+
     border-bottom: 1px solid var(--color-bg-alt);
-
-    &[data-title] {
-      display: var(--cell-display);
-      grid-template-columns: none;
-      gap: 0;
-    }
-
-    &[data-title]::before {
-      content: none;
-    }
+    padding: var(--cell-padding-block) var(--cell-padding-inline);
   }
 }
 

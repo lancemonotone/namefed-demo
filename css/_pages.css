@@ -268,6 +268,22 @@
   margin: 0 0 var(--space-lg);
 }
 
+/* Contact page: Facebook link with gold icon */
+[data-page="contact"] .link-fb {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+[data-page="contact"] .fb-icon {
+  flex-shrink: 0;
+}
+
+[data-page="contact"] .fb-icon svg {
+  display: block;
+  vertical-align: middle;
+}
+
 /* Holiday schedule */
 .holiday-schedule {
   margin-top: var(--space-xl);
