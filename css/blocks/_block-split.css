@@ -46,14 +46,14 @@
     }
 
     & .block-card a {
-      color: var(--color-primary-on-light);
+      color: var(--color-primary);
     }
   }
 
   &:not(.block-split--alt) {
     & h2,
     & .lead {
-      color: var(--color-primary-on-light);
+      color: var(--color-primary);
     }
   }
 }

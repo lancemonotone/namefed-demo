@@ -17,7 +17,7 @@
 
 .block-card:hover {
   box-shadow: var(--shadow-hover);
-  border-color: rgba(201, 162, 39, 0.4);
+  border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
 }
 
 .block-card--compact {
@@ -40,7 +40,7 @@
 
 .block-card h3 {
   font-size: 1.25rem;
-  color: var(--color-primary-on-light);
+  color: var(--color-primary);
 }
 
 .block-card p {

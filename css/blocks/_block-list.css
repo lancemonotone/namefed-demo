@@ -1,7 +1,7 @@
 /* NAMEFED – block-list: bullet list block */
 .block-list {
   --block-list-gap: var(--space-sm);
-  --block-list-bullet-color: var(--color-primary-on-light);
+  --block-list-bullet-color: var(--color-primary);
 
   display: grid;
   gap: var(--block-list-gap);
@@ -37,7 +37,7 @@
 
 /* Default: dark gold on light. Dark blocks override below. */
 .block-list--alt .block-list__item::before {
-  color: var(--color-primary-on-light);
+  color: var(--color-primary);
 }
 
 .block-content--alt .block-list__item::before,
@@ -62,7 +62,7 @@
 .block-list__group-title {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-primary-on-light);
+  color: var(--color-primary);
 }
 
 .block-list__group ul {

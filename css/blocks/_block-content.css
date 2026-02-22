@@ -49,7 +49,7 @@
 }
 
 .block-content--alt .block-card a {
-  color: var(--color-primary-on-light);
+  color: var(--color-primary);
 }
 
 .block-content--dark {
@@ -100,7 +100,7 @@
 /* Text on light/white backgrounds uses dark gold for contrast */
 .block-content:not(.block-content--alt):not(.block-content--dark) h2,
 .block-content:not(.block-content--alt):not(.block-content--dark) .lead {
-  color: var(--color-primary-on-light);
+  color: var(--color-primary);
 }
 
 /* __inner constrains content; section stays full-width for backgrounds */

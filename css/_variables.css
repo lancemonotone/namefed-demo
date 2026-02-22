@@ -5,51 +5,66 @@
 
 :root,
 :root[data-theme="light"] {
-  --color-bg: #fdfbf7;
-  --color-bg-alt: #f5f0e6;
-  --color-bg-warm: #faf6ee;
-  --color-surface: #fff;
-  --color-text: #2d2a26;
-  --color-text-muted: #5c564d;
-  --color-border: rgba(201, 162, 39, 0.25);
+  --color-bg: color-mix(in srgb, var(--color-primary) 3%, var(--color-white));
+  --color-bg-alt: color-mix(
+    in srgb,
+    var(--color-primary) 8%,
+    var(--color-white)
+  );
+  --color-bg-warm: color-mix(
+    in srgb,
+    var(--color-primary) 5%,
+    var(--color-white)
+  );
+  --color-surface: var(--color-white);
+  --color-text: var(--color-primary-dark);
+  --color-text-muted: color-mix(
+    in srgb,
+    var(--color-primary-dark) 55%,
+    var(--color-white)
+  );
+  --color-border: color-mix(in srgb, var(--color-primary) 25%, transparent);
   --color-heading: var(--color-primary-dark);
-  --shadow: 0 2px 12px rgba(44, 36, 22, 0.06);
-  --shadow-hover: 0 8px 24px rgba(44, 36, 22, 0.1);
+  --shadow: 0 2px 12px
+    color-mix(in srgb, var(--color-primary-dark) 6%, transparent);
+  --shadow-hover: 0 8px 24px
+    color-mix(in srgb, var(--color-primary-dark) 10%, transparent);
 }
 
 :root[data-theme="dark"] {
-  --color-bg: #1a1814;
-  --color-bg-alt: #252019;
-  --color-bg-warm: #1f1c17;
-  --color-surface: #2c2416;
-  --color-text: #efece6;
-  --color-text-muted: #a8a299;
-  --color-border: rgba(201, 162, 39, 0.35);
+  --color-bg: color-mix(in srgb, var(--color-primary-dark) 70%, black);
+  --color-bg-alt: color-mix(in srgb, var(--color-primary-dark) 85%, black);
+  --color-bg-warm: color-mix(in srgb, var(--color-primary-dark) 75%, black);
+  --color-surface: var(--color-primary-dark);
+  --color-text: color-mix(
+    in srgb,
+    var(--color-primary-light) 12%,
+    var(--color-white)
+  );
+  --color-text-muted: color-mix(
+    in srgb,
+    var(--color-primary) 35%,
+    var(--color-white)
+  );
+  --color-border: color-mix(in srgb, var(--color-primary) 35%, transparent);
   --color-heading: var(--color-white);
-  --shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow: 0 2px 12px color-mix(in srgb, black 30%, transparent);
+  --shadow-hover: 0 8px 24px color-mix(in srgb, black 40%, transparent);
 }
 
 :root,
 :root[data-theme="light"],
 :root[data-theme="dark"] {
   /* Brand (same in both themes) */
-  --color-primary: #c9a227;
+  --color-primary: #a67c00;
+  --color-primary-light: #c9a227;
+  --color-primary-table: #695924;
   --color-primary-dark: #2c2416;
-  --color-primary-warm: #a67c00;
-  --color-primary-on-light: var(--color-primary-warm);
-  --color-accent: #c9a227;
-  --color-accent-hover: #b08d1f;
-  --color-accent-soft: color-mix(
-    in srgb,
-    var(--color-primary) 15%,
-    transparent
-  );
   --color-white: #fff;
   --gradient-primary: linear-gradient(
     135deg,
     var(--color-primary-dark) 0%,
-    var(--color-primary-warm) 100%
+    var(--color-primary) 100%
   );
   --color-transparent: transparent;
 

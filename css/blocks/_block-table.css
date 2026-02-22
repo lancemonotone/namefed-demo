@@ -4,16 +4,8 @@
   --table-display: block;
   --row-display: block;
   --cell-display: block;
-  --block-table-bg: color-mix(
-    in srgb,
-    var(--color-primary) 42%,
-    var(--color-primary-dark)
-  );
-  --block-table-label-bg: color-mix(
-    in srgb,
-    var(--color-primary) 25%,
-    var(--color-primary-dark)
-  );
+  --block-table-bg: var(--color-primary-table);
+  --block-table-label-bg: var(--color-primary-dark);
 
   width: fit-content;
   color: var(--color-white);

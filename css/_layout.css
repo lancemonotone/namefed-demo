@@ -1,15 +1,17 @@
 /* NAMEFED – Layout: section variants (used by eligibility flow) */
 .section {
-  padding: var(--space-3xl) var(--space-lg);
-}
+  background: var(--color-white);
+  padding-block: var(--space-3xl);
+  padding-inline: var(--space-lg);
 
-.section--alt {
-  background: var(--gradient-primary);
-  color: var(--color-white);
-}
+  &.section--alt {
+    background: var(--gradient-primary);
+    color: var(--color-white);
 
-.section--alt .lead,
-.section--alt p,
-.section--alt strong {
-  color: var(--color-white);
+    .lead,
+    p,
+    strong {
+      color: var(--color-white);
+    }
+  }
 }

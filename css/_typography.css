@@ -7,7 +7,7 @@ body {
 }
 
 a {
-  color: var(--color-primary-on-light);
+  color: var(--color-primary);
   text-decoration: underline;
   text-decoration-color: transparent;
   text-underline-offset: 0.15em;
@@ -17,7 +17,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-primary-warm);
+  color: var(--color-primary-light);
   text-decoration-color: currentColor;
 }
 

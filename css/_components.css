@@ -3,7 +3,7 @@
 button.btn {
   --width: 100%;
   --btn-bg: var(--color-primary);
-  --btn-bg-hover: var(--color-accent-hover);
+  --btn-bg-hover: var(--color-primary-light);
   --btn-color: var(--color-white);
   --btn-border: var(--color-white);
 
@@ -53,8 +53,8 @@ button.btn {
   &.btn-secondary {
     --btn-bg: var(--color-white);
     --btn-bg-hover: var(--color-primary);
-    --btn-color: var(--color-primary-on-light);
-    --btn-border: var(--color-primary-on-light);
+    --btn-color: var(--color-primary);
+    --btn-border: var(--color-primary);
   }
 }
 
@@ -167,7 +167,7 @@ fieldset {
 
   &:hover {
     box-shadow: var(--shadow-hover);
-    border-color: rgba(201, 162, 39, 0.4);
+    border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
   }
 
   & img {
