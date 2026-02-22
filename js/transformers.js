@@ -16,52 +16,14 @@
 
   /**
    * Resolves {{@key}} from shared data.
-   * Uses explicit _render when present, else falls back to structure detection.
-   * Returns Promise when card/table (needs template fetch).
+   * Renders block if shared[key] has type.
    */
   function resolveSharedRef(key, context, shared, fetchTemplateFn) {
     const val = shared[key];
     if (val == null) return "";
 
-    const renderAs = val._render;
-    const listModifiers = (context && context.listModifiers) || "";
-
-    if (renderAs === "list" && fetchTemplateFn) {
-      return R.renderListHtml(val, listModifiers, fetchTemplateFn);
-    }
-    if (renderAs === "table" && fetchTemplateFn) {
-      return R.renderTableHtml(val, fetchTemplateFn).then(function (tableHtml) {
-        let out = tableHtml;
-        if (val.id) out = '<div id="' + val.id + '">' + out + "</div>";
-        if (val.note) out += '<p class="form-note">' + val.note + "</p>";
-        return out;
-      });
-    }
-    if (renderAs === "card" && fetchTemplateFn) {
-      const cardData = R.prepareCardData(val);
-      if (cardData.imageSrc) {
-        return R.renderImageHtml(
-          cardData.imageSrc,
-          cardData.imageAlt,
-          fetchTemplateFn,
-        ).then(function (imageHtml) {
-          cardData.imageHtml = imageHtml;
-          return fetchTemplateFn("card").then(function (tpl) {
-            return replacePlaceholders(tpl, cardData);
-          });
-        });
-      }
-      cardData.imageHtml = "";
-      return fetchTemplateFn("card").then(function (tpl) {
-        return replacePlaceholders(tpl, cardData);
-      });
-    }
-
-    if (!renderAs) {
-      if (Array.isArray(val) && fetchTemplateFn)
-        return R.renderListHtml(val, listModifiers, fetchTemplateFn);
-      if (val && Array.isArray(val.groups) && fetchTemplateFn)
-        return R.renderListHtml(val, listModifiers, fetchTemplateFn);
+    if (val?.type && fetchTemplateFn) {
+      return window.renderBlock(val.type, val.data || val, shared);
     }
 
     return String(val);

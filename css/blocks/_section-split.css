@@ -1,0 +1,63 @@
+/* NAMEFED – section-split: two-column layout. Section full-width; __inner constrains content. */
+.section-split {
+  --section-split-padding: var(--space-3xl) var(--space-lg);
+  --section-split-cols: 1;
+  --section-split-gap: var(--space-3xl);
+  --section-split-img-order: -1;
+  --section-split-dir: ltr;
+  --section-split-bg: transparent;
+
+  padding: var(--section-split-padding);
+  background: var(--section-split-bg);
+
+  @media (min-width: 768px) {
+    --section-split-padding: var(--space-3xl) var(--space-xl);
+    --section-split-cols: 2;
+    --section-split-col-template: 4fr 3fr;
+    --section-split-img-order: unset;
+  }
+
+  &.section--alt {
+    --section-split-bg: var(--section-alt-bg);
+    --section-split-dir: ltr;
+
+    @media (min-width: 768px) {
+      --section-split-dir: rtl;
+    }
+  }
+
+  &:not(.section--alt) h2,
+  &:not(.section--alt) .lead {
+    color: var(--color-heading-accent);
+  }
+}
+
+.section-split__inner {
+  display: grid;
+  grid-template-columns: var(
+    --section-split-col-template,
+    repeat(var(--section-split-cols), 1fr)
+  );
+  gap: var(--section-split-gap);
+  align-items: start;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  direction: var(--section-split-dir);
+}
+
+.section-split__inner > * {
+  direction: ltr;
+}
+
+.section-split__media {
+  order: var(--section-split-img-order);
+}
+
+.section-split.section-split--media .section-split__media img {
+  height: 100%;
+  width: auto;
+  display: block;
+  margin-inline: auto;
+  border-radius: var(--radius);
+  filter: drop-shadow(var(--shadow));
+}

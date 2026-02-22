@@ -1,23 +1,23 @@
-/* NAMEFED – block-hero: full-width hero with bg image */
-.block-hero {
-  --block-hero-padding: var(--space-3xl) var(--space-lg);
-  --block-hero-min-height: 380px;
+/* NAMEFED – section-hero: full-width hero with bg image */
+.section-hero {
+  --section-hero-padding: var(--space-3xl) var(--space-lg);
+  --section-hero-min-height: 380px;
 
   position: relative;
   display: grid;
   place-items: center;
-  min-height: var(--block-hero-min-height);
-  padding: var(--block-hero-padding);
+  min-height: var(--section-hero-min-height);
+  padding: var(--section-hero-padding);
   color: var(--color-white);
   text-align: center;
   overflow: hidden;
 
   @media (min-width: 768px) {
-    --block-hero-padding: var(--space-3xl) var(--space-xl);
+    --section-hero-padding: var(--space-3xl) var(--space-xl);
   }
 }
 
-.block-hero::before {
+.section-hero::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -25,7 +25,7 @@
   z-index: 1;
 }
 
-.block-hero__bg {
+.section-hero__bg {
   position: absolute;
   inset: 0;
   background-size: cover;
@@ -34,7 +34,7 @@
   z-index: 0;
 }
 
-.block-hero__inner {
+.section-hero__inner {
   --flow-space: var(--space-lg);
 
   position: relative;
@@ -42,11 +42,11 @@
   max-width: 720px;
 }
 
-.block-hero__inner * {
+.section-hero__inner * {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
-.block-hero h1 {
+.section-hero h1 {
   font-family: var(--font-heading);
   font-size: clamp(1.875rem, 4.5vw, 2.75rem);
   font-weight: 600;
@@ -55,23 +55,23 @@
   color: var(--color-white);
 }
 
-.block-hero__tagline {
+.section-hero__tagline {
   font-size: 1.1875rem;
   opacity: 0.98;
   line-height: 1.5;
 }
 
-.block-hero__ctas {
-  --block-hero-ctas-cols: 1;
-  --block-hero-ctas-gap: var(--space-md);
+.section-hero__ctas {
+  --section-hero-ctas-cols: 1;
+  --section-hero-ctas-gap: var(--space-md);
 
   display: grid;
-  grid-template-columns: repeat(var(--block-hero-ctas-cols), 1fr);
-  gap: var(--block-hero-ctas-gap);
+  grid-template-columns: repeat(var(--section-hero-ctas-cols), 1fr);
+  gap: var(--section-hero-ctas-gap);
   justify-items: center;
 
   @media (min-width: 768px) {
-    --block-hero-ctas-cols: auto;
+    --section-hero-ctas-cols: auto;
     grid-template-columns: repeat(auto-fit, minmax(0, max-content));
     justify-content: center;
   }

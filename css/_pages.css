@@ -70,16 +70,7 @@
   }
 }
 
-/* Newsletter form */
-.newsletter-form {
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.newsletter-form .form-row input {
-  max-width: 100%;
-}
+/* Newsletter form - now uses GF classes */
 
 .form-note--light {
   color: rgba(255, 255, 255, 0.85);
@@ -93,7 +84,7 @@
   gap: var(--space-xl);
 }
 
-/* Eligibility checker & flow (uses block-content for base layout) */
+/* Eligibility checker & flow (uses section-content for base layout) */
 .eligibility-checker {
   --flow-space: var(--space-md);
 
@@ -104,21 +95,7 @@
   border: 1px solid var(--color-border);
 }
 
-.eligibility-checker .form-row {
-  --flow-space: var(--space-xs);
-}
-
-.eligibility-checker .form-row > * {
-  margin-block: 0;
-}
-
-.eligibility-checker .form-row > * + * {
-  margin-block-start: var(--flow-space);
-}
-
-.eligibility-checker .form-row label {
-  margin-bottom: 0;
-}
+/* Eligibility checker form - now uses GF classes with flow-off */
 
 .eligibility-result {
   padding: var(--space-md);

@@ -1,9 +1,9 @@
-/* NAMEFED – block-pagehead: page title with neutral overlay (matches hero) */
-.block-pagehead {
-  --block-pagehead-padding: var(--space-2xl) var(--space-lg);
+/* NAMEFED – section-pagehead: page title with neutral overlay (matches hero) */
+.section-pagehead {
+  --section-pagehead-padding: var(--space-2xl) var(--space-lg);
 
   position: relative;
-  padding: var(--block-pagehead-padding);
+  padding: var(--section-pagehead-padding);
   background: url("https://upload.wikimedia.org/wikipedia/commons/7/7b/Main_Street_North_Adams.jpg")
     center/cover;
   color: var(--color-white);
@@ -11,11 +11,11 @@
   overflow: hidden;
 
   @media (min-width: 768px) {
-    --block-pagehead-padding: var(--space-2xl) var(--space-xl);
+    --section-pagehead-padding: var(--space-2xl) var(--space-xl);
   }
 }
 
-.block-pagehead::before {
+.section-pagehead::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -23,7 +23,7 @@
   z-index: 0;
 }
 
-.block-pagehead h1 {
+.section-pagehead h1 {
   position: relative;
   z-index: 1;
   font-family: var(--font-heading);

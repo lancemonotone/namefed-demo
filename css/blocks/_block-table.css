@@ -110,9 +110,9 @@
         color: var(--color-white);
         background: var(--block-table-label-bg);
         padding: var(--cell-padding-block) var(--cell-padding-inline);
-        width: 15vw;
+        width: 25vw;
         white-space: nowrap;
-        min-width: 10ch;
+        min-width: 14ch;
       }
 
       &[data-title] .block-table__cell-value {

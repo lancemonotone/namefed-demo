@@ -34,21 +34,24 @@ h4 {
   /* color: var(--color-heading); */
 }
 
-.block-content h2,
-.block-split h2 {
+.section-content h2,
+.section-split h2,
+.section-grid h2 {
   font-size: 1.875rem;
   margin: 0;
 }
 
-.block-content h3,
-.block-split h3 {
+.section-content h3,
+.section-split h3,
+.section-grid h3 {
   font-size: 1.25rem;
   font-weight: 700;
   margin: 0;
 }
 
-.block-content h4,
-.block-split h4 h4 {
+.section-content h4,
+.section-split h4,
+.section-grid h4 {
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;

@@ -1,0 +1,33 @@
+/* NAMEFED – section-grid: responsive card grid section */
+.section-grid {
+  --section-grid-padding: var(--space-3xl) var(--space-lg);
+  --section-grid-min: 280px;
+  --section-grid-gap: var(--space-xl);
+
+  padding: var(--section-grid-padding);
+
+  @media (min-width: 768px) {
+    --section-grid-padding: var(--space-3xl) var(--space-xl);
+    --section-grid-gap: var(--space-2xl);
+  }
+
+  &:not(.section--alt) h2,
+  &:not(.section--alt) .lead {
+    color: var(--color-heading-accent);
+  }
+}
+
+.section-grid__inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+.section-grid__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--section-grid-min), 1fr));
+  gap: var(--section-grid-gap);
+}
+
+.section-grid__items > * {
+  margin-block: 0;
+}

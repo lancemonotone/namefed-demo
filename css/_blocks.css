@@ -1,10 +1,10 @@
-/* NAMEFED – Block imports */
-@import url("blocks/_block-hero.css");
-@import url("blocks/_block-strip.css");
-@import url("blocks/_block-pagehead.css");
-@import url("blocks/_block-content.css");
-@import url("blocks/_block-split.css");
-@import url("blocks/_block-grid.css");
+/* NAMEFED – Section & block imports */
+@import url("blocks/_section-hero.css");
+@import url("blocks/_section-strip.css");
+@import url("blocks/_section-pagehead.css");
+@import url("blocks/_section-content.css");
+@import url("blocks/_section-split.css");
+@import url("blocks/_section-grid.css");
 @import url("blocks/_block-card.css");
 @import url("blocks/_block-table.css");
 @import url("blocks/_block-qanda.css");

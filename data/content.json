@@ -5,45 +5,51 @@
   },
   "shared": {
     "whoWeServe": {
-      "_render": "list",
-      "items": [
-        "City of North Adams employees",
-        "North Adams City Yard employees",
-        "North Adams Public Schools staff",
-        "North Adams Fire &amp; Police Departments",
-        "Northern Berkshire EMS",
-        "North Adams Housing Authority",
-        "Municipal retirees",
-        "<strong>Immediate family of current members</strong>"
-      ]
+      "type": "list",
+      "data": {
+        "items": [
+          "City of North Adams employees",
+          "North Adams City Yard employees",
+          "North Adams Public Schools staff",
+          "North Adams Fire &amp; Police Departments",
+          "Northern Berkshire EMS",
+          "North Adams Housing Authority",
+          "Municipal retirees",
+          "<strong>Immediate family of current members</strong>"
+        ]
+      }
     },
     "location": {
-      "_render": "card",
-      "title": "North Adams M.E. Federal Credit Union",
-      "body": "<p>Norad Mill<br>60 Roberts Drive, Suite 112<br>North Adams, MA 01247</p><p>Phone: (413) 662-2657<br>Fax: (413) 662-2173</p><p><a href=\"contact.html\">Contact us</a></p>",
-      "modifiers": "block-card--compact"
+      "type": "card",
+      "data": {
+        "title": "North Adams M.E. Federal Credit Union",
+        "body": "<p>Norad Mill<br>60 Roberts Drive, Suite 112<br>North Adams, MA 01247</p><p>Phone: (413) 662-2657<br>Fax: (413) 662-2173</p><p><a href=\"contact.html\">Contact us</a></p>",
+        "modifiers": "block-card--compact"
+      }
     },
     "holidays": {
-      "_render": "table",
-      "id": "holidays",
-      "caption": "2026 Holiday Schedule",
-      "note": "Note: We may close early on Christmas Eve and New Year's Eve. Check the homepage alert bar for current notices.",
-      "headers": [["Holiday", "Date"]],
-      "rows": [
-        ["New Year's Day", "Thursday, January 1"],
-        ["Martin Luther King Jr. Day", "Monday, January 19"],
-        ["Presidents' Day", "Monday, February 16"],
-        ["Patriots' Day", "Monday, April 20"],
-        ["Memorial Day", "Monday, May 25"],
-        ["Juneteenth", "Friday, June 19"],
-        ["Independence Day", "Saturday, July 4"],
-        ["Labor Day", "Monday, September 7"],
-        ["Columbus Day", "Monday, October 12"],
-        ["Veterans Day", "Wednesday, November 11"],
-        ["Thanksgiving", "Thursday, November 26"],
-        ["Day after Thanksgiving", "Friday, November 27"],
-        ["Christmas Day", "Friday, December 25"]
-      ]
+      "type": "table",
+      "data": {
+        "id": "holidays",
+        "caption": "2026 Holiday Schedule",
+        "note": "Note: We may close early on Christmas Eve and New Year's Eve. Check the homepage alert bar for current notices.",
+        "headers": [["Holiday", "Date"]],
+        "rows": [
+          ["New Year's Day", "Thursday, January 1"],
+          ["Martin Luther King Jr. Day", "Monday, January 19"],
+          ["Presidents' Day", "Monday, February 16"],
+          ["Patriots' Day", "Monday, April 20"],
+          ["Memorial Day", "Monday, May 25"],
+          ["Juneteenth", "Friday, June 19"],
+          ["Independence Day", "Saturday, July 4"],
+          ["Labor Day", "Monday, September 7"],
+          ["Columbus Day", "Monday, October 12"],
+          ["Veterans Day", "Wednesday, November 11"],
+          ["Thanksgiving", "Thursday, November 26"],
+          ["Day after Thanksgiving", "Friday, November 27"],
+          ["Christmas Day", "Friday, December 25"]
+        ]
+      }
     }
   },
   "pages": {
@@ -80,7 +86,7 @@
         {
           "type": "split",
           "data": {
-            "modifiers": "block-split--media content--center",
+            "modifiers": "section-split--media section-content--center",
             "contentHtml": "<h2>Welcome to NAMEFED</h2><p class=\"lead\">Chartered January 1, 1959, we've been serving North Adams municipal employees and their families for over 60 years. We're member-owned, not-for-profit, and focused on helping you save, borrow, and plan for the future.</p><p><strong>Once a Member – Always a Member!</strong> Even if you leave your employment or move out of the area, we just require annual activity in your account.</p>",
             "buttons": [
               {
@@ -108,7 +114,7 @@
         {
           "type": "split",
           "data": {
-            "modifiers": "section--alt block-split--media",
+            "modifiers": "section--alt section-split--media",
             "contentHtml": "<h2>Who We Serve</h2><p class=\"lead\">NAMEFED membership is open to employees and retirees of:</p>{{@whoWeServe}}",
             "media": {
               "src": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Seal_of_North_Adams%2C_Massachusetts.png",
@@ -143,10 +149,9 @@
           }
         },
         {
-          "type": "content",
+          "type": "newsletter",
           "data": {
-            "modifiers": "section--alt content--center",
-            "innerHtml": "<h2>Stay in the Loop</h2><p>Subscribe to our newsletter for rates, specials, and credit union news delivered to your inbox.</p><form class=\"newsletter-form\" action=\"#\" method=\"post\"><div class=\"form-row\"><label for=\"newsletter-email\" class=\"visually-hidden\">Email address</label><input type=\"email\" id=\"newsletter-email\" name=\"email\" placeholder=\"Enter your email\" required></div><div class=\"cluster cluster--lg\"><button type=\"submit\" class=\"btn btn-secondary\">Subscribe to Newsletter</button></div></form>"
+            "modifiers": "section--alt content--center"
           }
         },
         {
@@ -172,7 +177,7 @@
         {
           "type": "split",
           "data": {
-            "modifiers": "block-split--media",
+            "modifiers": "section-split--media",
             "contentHtml": "<h2>Who We Are</h2><p class=\"lead\">North Adams M.E. Federal Credit Union was chartered January 1, 1959, in North Adams, Massachusetts. For over 60 years, we've served municipal employees and their families.</p><p>We're member-owned, not-for-profit, and focused on helping you save, borrow, and plan for the future, without the fees and hassle of big banks.</p>",
             "media": {
               "src": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Bird%27s-eye_View_of_North_Adams%2C_MA.jpg",
@@ -218,7 +223,7 @@
         {
           "type": "split",
           "data": {
-            "modifiers": "section--alt block-split--media",
+            "modifiers": "section--alt section-split--media",
             "contentHtml": "<h2>Our Location</h2>{{@location}}",
             "media": {
               "src": "https://upload.wikimedia.org/wikipedia/commons/1/10/Norad_Mill_60_Roberts_Drive_North_Adams_from_west.jpg",
@@ -320,7 +325,10 @@
           "type": "split",
           "data": {
             "contentHtml": "<h2>Get in Touch</h2><p><strong>Address</strong><br>Norad Mill<br>60 Roberts Drive, Suite 112<br>North Adams, MA 01247</p><p><strong>Phone</strong><br>(413) 662-2657</p><p><strong>Fax</strong><br>(413) 662-2173</p><p><strong>Hours</strong><br>Mon–Fri 9am–4pm (Summer: Fri 9am–1pm)</p><h3>Staff</h3><p><strong>Cathy Corbosiero</strong> – Office Manager<br><a href=\"mailto:cathy.corbosiero@namefcu.com\">cathy.corbosiero@namefcu.com</a></p><p><strong>Regina Riley</strong> – Office Clerk<br><a href=\"mailto:regina.riley@namefcu.com\">regina.riley@namefcu.com</a></p><p><a href=\"https://facebook.com/NAMEFED\" target=\"_blank\" rel=\"noopener\" class=\"link-fb\"><span class=\"fb-icon\" aria-hidden=\"true\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"var(--color-primary)\" width=\"20\" height=\"20\"><path d=\"M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z\"/></svg></span> Like us on Facebook</a></p>",
-            "mediaHtml": "<h2>Send a Message</h2><form action=\"#\" method=\"post\"><div class=\"form-row\"><label for=\"contact-name\">Name *</label><input type=\"text\" id=\"contact-name\" name=\"name\" required></div><div class=\"form-row\"><label for=\"contact-email\">Email *</label><input type=\"email\" id=\"contact-email\" name=\"email\" required></div><div class=\"form-row\"><label for=\"contact-subject\">Subject</label><input type=\"text\" id=\"contact-subject\" name=\"subject\"></div><div class=\"form-row\"><label for=\"contact-message\">Message *</label><textarea id=\"contact-message\" name=\"message\" rows=\"5\" required></textarea></div><button type=\"submit\" class=\"btn btn-primary\">Send Message</button></form>"
+            "media": {
+              "type": "contact-form",
+              "data": {}
+            }
           }
         }
       ]
@@ -404,7 +412,7 @@
             ]
           }
         },
-        { "type": "partial", "data": { "name": "eligibility" } }
+        { "type": "eligibility", "data": {} }
       ]
     }
   }

@@ -4,10 +4,20 @@ html {
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: var(--color-bg);
   text-wrap: balance;
   animation: bodyFadeIn 0.5s ease-out forwards;
   transition: opacity 0.3s ease-out;
+}
+
+.site {
+  flex: 1;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 0;
 }
 /* 
 body.is-navigating {

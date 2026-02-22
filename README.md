@@ -18,7 +18,15 @@ Forms are visual only; submissions are not processed. Logo is included in `img/l
 
 - Plain HTML, CSS, JavaScript
 - No build step
-- No dependencies
+
+## Block system
+
+The site uses a block-based content management system:
+
+- **Sections** = layout containers (hero, strip, split, grid, content, pagehead) with slots for content. Templates live in `partials/sections/section-{type}.html`.
+- **Blocks** = content units (form, image, list, table, card, buttons, qanda, etc.) that produce HTML. Templates live in `partials/blocks/block-{type}.html`.
+- **Shared refs** = reusable content like lists/tables that resolve via `{{@key}}` syntax
+- **Block refs** = sections can reference blocks in their slots (e.g. split media can be a contact-form block)
 
 ## CSS structure
 
@@ -34,7 +42,8 @@ Styles are modularized in `css/`:
 | `_layout.css` | Sections, container, grid |
 | `_header.css` | Header, nav (desktop + mobile overlay) |
 | `_footer.css` | Footer |
-| `_components.css` | Buttons, forms, cards, tables |
+| `_forms.css` | Form styles (Gravity Forms–aligned) |
+| `_components.css` | Buttons, cards, tables |
 | `_pages.css` | Banner, eligibility flow, FAQ, etc. |
 
 **Responsive approach:** Mobile-first with colocated media queries. Base styles target mobile; `@media (min-width: 768px)` blocks add desktop overrides, placed immediately after the selector they modify. Breakpoints: 768px (md), 1024px (lg).

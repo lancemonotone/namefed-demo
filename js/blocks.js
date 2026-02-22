@@ -7,12 +7,16 @@
   const R = window.BlockRenderers;
   const T = window.BlockTransformers;
   const templateCache = {};
+  const SECTION_TYPES = new Set(['hero', 'strip', 'split', 'grid', 'content', 'pagehead']);
 
   function fetchTemplate(type) {
     if (templateCache[type]) return Promise.resolve(templateCache[type]);
-    return fetch("partials/blocks/block-" + type + ".html")
+    var dir = SECTION_TYPES.has(type) ? 'partials/sections' : 'partials/blocks';
+    var prefix = SECTION_TYPES.has(type) ? 'section' : 'block';
+    var path = dir + '/' + prefix + '-' + type + '.html';
+    return fetch(path)
       .then(function (r) {
-        if (!r.ok) throw new Error("Template not found: block-" + type);
+        if (!r.ok) throw new Error("Template not found: " + path);
         return r.text();
       })
       .then(function (html) {
@@ -57,7 +61,16 @@
       prepare: function (data, fetchTemplateFn) {
         var next = Object.assign({}, data);
         var promises = [];
-        if (data.media && data.media.src) {
+        if (data.media && data.media.type) {
+          // Block reference
+          promises.push(
+            renderBlock(data.media.type, data.media.data || {}, next.shared || {}).then(function (mediaHtml) {
+              next.mediaHtml = mediaHtml;
+              delete next.media;
+            })
+          );
+        } else if (data.media && data.media.src) {
+          // Image
           promises.push(
             R.renderImageHtml(
               data.media.src,
@@ -144,6 +157,69 @@
             return Object.assign({}, data, { itemsHtml: itemsHtml });
           },
         );
+      },
+    },
+    list: {
+      template: "output",
+      prepare: function (data, fetchTemplateFn) {
+        const listModifiers = data.listModifiers || "";
+        return R.renderListHtml(data, listModifiers, fetchTemplateFn).then(
+          function (outputHtml) {
+            return Object.assign({}, data, { outputHtml: outputHtml });
+          },
+        );
+      },
+    },
+    table: {
+      template: "output",
+      prepare: function (data, fetchTemplateFn) {
+        return R.renderTableHtml(data, fetchTemplateFn).then(
+          function (outputHtml) {
+            return Object.assign({}, data, { outputHtml: outputHtml });
+          },
+        );
+      },
+    },
+    card: {
+      template: "output",
+      prepare: function (data, fetchTemplateFn) {
+        const cardData = R.prepareCardData(data);
+        if (cardData.imageSrc) {
+          return R.renderImageHtml(
+            cardData.imageSrc,
+            cardData.imageAlt,
+            fetchTemplateFn,
+          ).then(function (imageHtml) {
+            cardData.imageHtml = imageHtml;
+            return fetchTemplateFn("card").then(function (tpl) {
+              const outputHtml = T.replacePlaceholders(tpl, cardData);
+              return Object.assign({}, data, { outputHtml: outputHtml });
+            });
+          });
+        }
+        cardData.imageHtml = "";
+        return fetchTemplateFn("card").then(function (tpl) {
+          const outputHtml = T.replacePlaceholders(tpl, cardData);
+          return Object.assign({}, data, { outputHtml: outputHtml });
+        });
+      },
+    },
+    newsletter: {
+      template: "newsletter",
+      prepare: function (data) {
+        return data;
+      },
+    },
+    "contact-form": {
+      template: "contact-form",
+      prepare: function (data) {
+        return data;
+      },
+    },
+    eligibility: {
+      template: "eligibility",
+      prepare: function (data) {
+        return data;
       },
     },
   };
