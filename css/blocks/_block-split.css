@@ -30,23 +30,30 @@
       color: var(--color-white);
     }
 
-    & .block-card {
+    & a {
+      color: var(--color-white);
+      text-decoration: underline;
+    }
+
+    & a:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    & .block-card,
+    & .block-card p,
+    & .block-card strong {
       color: var(--color-text);
+    }
 
-      & strong {
-        color: var(--color-text);
-      }
-
-      & a {
-        color: var(--color-primary);
-      }
+    & .block-card a {
+      color: var(--color-primary-on-light);
     }
   }
 
   &:not(.block-split--alt) {
     & h2,
     & .lead {
-      color: var(--color-primary);
+      color: var(--color-primary-on-light);
     }
   }
 }

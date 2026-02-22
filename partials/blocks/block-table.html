@@ -1,11 +1,7 @@
-<div class="block-table {{modifiers}}">
-  <table class="block-table__table">
-    <caption class="visually-hidden">{{caption}}</caption>
-    <thead>
-      {{headersHtml}}
-    </thead>
-    <tbody>
-      {{rowsHtml}}
-    </tbody>
-  </table>
+<div class="block-table {{modifiers}}" role="region" aria-labelledby="{{captionId}}" tabindex="0">
+  <div id="{{captionId}}" class="block-table__caption visually-hidden">{{caption}}</div>
+  <div class="block-table__table">
+    {{headersHtml}}
+    {{rowsHtml}}
+  </div>
 </div>

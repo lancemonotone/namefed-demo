@@ -45,34 +45,37 @@
   text-decoration: none;
   transition: opacity var(--transition);
   margin-block-end: 1rem;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.9;
+  }
+
+  & img {
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+  }
 }
 
-.logo:hover {
-  text-decoration: none;
-  opacity: 0.9;
-}
+.site-name {
+  & a {
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 1rem + 1vw, 2.2rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: var(--color-primary-on-light);
+    text-decoration: none;
+    display: inline-block;
+    max-width: 32ch; /* Break after "Municipal" */
+  }
 
-.logo img {
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.site-name a {
-  font-family: var(--font-heading);
-  font-size: clamp(1rem, 1rem + 1vw, 2.2rem);
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 1.2;
-  color: var(--color-primary);
-  text-decoration: none;
-  display: inline-block;
-}
-
-.site-name a:hover {
-  text-decoration: none;
-  opacity: 0.9;
+  & a:hover {
+    text-decoration: none;
+    opacity: 0.9;
+  }
 }
 
 .header-nav-row {
@@ -98,18 +101,18 @@
   @media (min-width: 768px) {
     --nav-toggle-display: none;
   }
-}
 
-.nav-toggle:hover {
-  opacity: 0.8;
-}
+  &:hover {
+    opacity: 0.8;
+  }
 
-.nav-toggle span {
-  width: 24px;
-  height: 2px;
-  background: var(--color-primary);
-  border-radius: 1px;
-  transition: transform var(--transition);
+  & span {
+    width: 24px;
+    height: 2px;
+    background: var(--color-primary);
+    border-radius: 1px;
+    transition: transform var(--transition);
+  }
 }
 
 /* Main nav – mobile overlay base */
@@ -159,16 +162,16 @@
     --nav-visibility: visible;
     --nav-pointer: auto;
   }
-}
 
-.main-nav.is-open {
-  --nav-opacity: 1;
-  --nav-visibility: visible;
-  --nav-pointer: auto;
+  &.is-open {
+    --nav-opacity: 1;
+    --nav-visibility: visible;
+    --nav-pointer: auto;
 
-  opacity: var(--nav-opacity);
-  visibility: var(--nav-visibility);
-  pointer-events: var(--nav-pointer);
+    opacity: var(--nav-opacity);
+    visibility: var(--nav-visibility);
+    pointer-events: var(--nav-pointer);
+  }
 }
 
 .nav-overlay-header {
@@ -181,6 +184,10 @@
   @media (min-width: 768px) {
     display: none;
   }
+
+  & .nav-close {
+    justify-self: end;
+  }
 }
 
 .nav-overlay-logo {
@@ -188,12 +195,12 @@
   justify-self: start;
   padding: 0;
   margin: 0;
-}
 
-.nav-overlay-logo img {
-  height: 2.8rem;
-  width: auto;
-  display: block;
+  & img {
+    height: 2.8rem;
+    width: auto;
+    display: block;
+  }
 }
 
 .nav-overlay-title {
@@ -202,19 +209,16 @@
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1.2;
+  max-width: 32ch; /* Break after "Municipal" */
   color: var(--color-heading);
   text-align: center;
   justify-self: center;
   text-decoration: none;
-}
 
-.nav-overlay-title:hover {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-.nav-overlay-header .nav-close {
-  justify-self: end;
+  &:hover {
+    color: var(--color-primary-on-light);
+    text-decoration: none;
+  }
 }
 
 .nav-close {
@@ -231,16 +235,16 @@
   @media (min-width: 768px) {
     --nav-close-display: none;
   }
-}
 
-.nav-close:hover {
-  color: var(--color-primary);
-}
+  &:hover {
+    color: var(--color-primary-on-light);
+  }
 
-.nav-close span {
-  font-size: 1.75rem;
-  font-weight: 300;
-  line-height: 1;
+  & span {
+    font-size: 1.75rem;
+    font-weight: 300;
+    line-height: 1;
+  }
 }
 
 .main-nav ul {
@@ -268,108 +272,114 @@
     --nav-ul-justify: end;
     --nav-ul-text-align: left;
   }
-}
 
-.main-nav li {
-  --nav-li-display: block;
-  --nav-li-border: 1px solid var(--color-bg-alt);
+  & li {
+    --nav-li-display: block;
+    --nav-li-border: 1px solid var(--color-bg-alt);
 
-  display: var(--nav-li-display);
-  border-bottom: var(--nav-li-border);
+    display: var(--nav-li-display);
+    border-bottom: var(--nav-li-border);
+    align-items: end;
 
-  @media (min-width: 768px) {
-    --nav-li-display: grid;
-    --nav-li-border: none;
+    @media (min-width: 768px) {
+      --nav-li-display: grid;
+      --nav-li-border: none;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    & + li {
+      --nav-li-border-left: none;
+
+      border-left: var(--nav-li-border-left);
+
+      @media (min-width: 768px) {
+        --nav-li-border-left: 1px solid var(--color-border);
+      }
+    }
   }
-}
 
-.main-nav li:last-child {
-  border-bottom: none;
-}
+  & a {
+    --nav-a-display: block;
+    --nav-a-font-weight: 400;
+    --nav-a-font-size: 1.25rem;
+    --nav-a-letter-spacing: normal;
+    --nav-a-padding: var(--space-lg) var(--space-xl);
+    --nav-a-color: var(--color-text);
+    --nav-a-border-bottom: 3px solid transparent;
 
-.main-nav li + li {
-  --nav-li-border-left: none;
+    display: var(--nav-a-display);
+    padding: var(--nav-a-padding);
+    color: var(--nav-a-color);
+    font-weight: var(--nav-a-font-weight);
+    font-size: var(--nav-a-font-size);
+    letter-spacing: var(--nav-a-letter-spacing);
+    transition: color var(--transition);
+    text-align: center;
+    text-decoration: none;
+    border-bottom: var(--nav-a-border-bottom);
 
-  border-left: var(--nav-li-border-left);
+    @media (min-width: 768px) {
+      --nav-a-display: grid;
+      --nav-a-font-weight: 500;
+      --nav-a-font-size: 0.875rem;
+      --nav-a-letter-spacing: 0.02em;
+      --nav-a-padding: var(--space-md) var(--space-lg);
+      --nav-a-color: var(--color-text-muted);
+      line-height: 1.2;
+    }
 
-  @media (min-width: 768px) {
-    --nav-li-border-left: 1px solid var(--color-border);
+    &:hover {
+      color: var(--color-primary-on-light);
+    }
+
+    &[aria-current="page"] {
+      --nav-current-color: var(--color-primary-dark);
+      --nav-current-weight: 700;
+      --nav-current-border-color: transparent;
+
+      color: var(--nav-current-color);
+      font-weight: var(--nav-current-weight);
+      border-bottom-color: var(--nav-current-border-color);
+
+      @media (min-width: 768px) {
+        --nav-current-weight: 600;
+        --nav-current-border-color: var(--color-primary-on-light);
+      }
+
+      :root[data-theme="dark"] & {
+        --nav-current-color: var(--color-white);
+      }
+    }
   }
-}
-
-.main-nav ul a {
-  --nav-a-display: block;
-  --nav-a-font-weight: 400;
-  --nav-a-font-size: 1.25rem;
-  --nav-a-letter-spacing: normal;
-  --nav-a-padding: var(--space-lg) var(--space-xl);
-  --nav-a-color: var(--color-text);
-  --nav-a-border-bottom: 3px solid transparent;
-
-  display: var(--nav-a-display);
-  padding: var(--nav-a-padding);
-  color: var(--nav-a-color);
-  font-weight: var(--nav-a-font-weight);
-  font-size: var(--nav-a-font-size);
-  letter-spacing: var(--nav-a-letter-spacing);
-  transition: color var(--transition);
-  text-align: center;
-  text-decoration: none;
-  border-bottom: var(--nav-a-border-bottom);
-
-  @media (min-width: 768px) {
-    --nav-a-display: grid;
-    --nav-a-font-weight: 500;
-    --nav-a-font-size: 0.875rem;
-    --nav-a-letter-spacing: 0.02em;
-    --nav-a-padding: var(--space-md) var(--space-lg);
-    --nav-a-color: var(--color-text-muted);
-  }
-}
-
-.main-nav ul a:hover {
-  color: var(--color-primary);
-}
-
-.main-nav ul a[aria-current="page"] {
-  --nav-current-color: var(--color-primary-dark);
-  --nav-current-weight: 700;
-  --nav-current-border-color: transparent;
-
-  color: var(--nav-current-color);
-  font-weight: var(--nav-current-weight);
-  border-bottom-color: var(--nav-current-border-color);
-
-  @media (min-width: 768px) {
-    --nav-current-weight: 600;
-    --nav-current-border-color: var(--color-primary);
-  }
-}
-
-:root[data-theme="dark"] .main-nav ul a[aria-current="page"] {
-  --nav-current-color: var(--color-white);
 }
 
 /* Alert bar */
 .alert-bar {
-  background: var(--color-primary);
+  background: color-mix(
+    in srgb,
+    var(--color-primary) 35%,
+    var(--color-primary-dark)
+  );
   color: var(--color-white);
   padding: var(--space-sm) var(--space-lg);
   text-align: center;
   font-size: 0.9375rem;
-}
 
-.alert-bar-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
+  &-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
 
-.alert-bar a {
-  color: var(--color-white);
-  text-decoration: underline;
-  font-weight: 600;
-}
+  & a {
+    color: var(--color-white);
+    text-decoration: underline;
+    font-weight: 600;
 
-.alert-bar a:hover {
-  color: rgba(255, 255, 255, 0.9);
+    &:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
 }

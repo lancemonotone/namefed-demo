@@ -17,36 +17,84 @@
   /**
    * Resolves {{@key}} from shared data.
    * Uses explicit _render when present, else falls back to structure detection.
+   * Returns Promise when card/table (needs template fetch).
    */
-  function resolveSharedRef(key, context, shared) {
+  function resolveSharedRef(key, context, shared, fetchTemplateFn) {
     const val = shared[key];
     if (val == null) return "";
 
     const renderAs = val._render;
     const listModifiers = (context && context.listModifiers) || "";
 
-    if (renderAs === "list") {
-      return R.list(val, listModifiers);
+    if (renderAs === "list" && fetchTemplateFn) {
+      return R.renderListHtml(val, listModifiers, fetchTemplateFn);
     }
-    if (renderAs === "contact-card") {
-      return R.contactCard(val);
+    if (renderAs === "table" && fetchTemplateFn) {
+      return R.renderTableHtml(val, fetchTemplateFn).then(function (tableHtml) {
+        let out = tableHtml;
+        if (val.id) out = '<div id="' + val.id + '">' + out + "</div>";
+        if (val.note) out += '<p class="form-note">' + val.note + "</p>";
+        return out;
+      });
+    }
+    if (renderAs === "card" && fetchTemplateFn) {
+      const cardData = R.prepareCardData(val);
+      if (cardData.imageSrc) {
+        return R.renderImageHtml(
+          cardData.imageSrc,
+          cardData.imageAlt,
+          fetchTemplateFn,
+        ).then(function (imageHtml) {
+          cardData.imageHtml = imageHtml;
+          return fetchTemplateFn("card").then(function (tpl) {
+            return replacePlaceholders(tpl, cardData);
+          });
+        });
+      }
+      cardData.imageHtml = "";
+      return fetchTemplateFn("card").then(function (tpl) {
+        return replacePlaceholders(tpl, cardData);
+      });
     }
 
     if (!renderAs) {
-      if (Array.isArray(val)) return R.list(val, listModifiers);
-      if (val && Array.isArray(val.groups)) return R.list(val, listModifiers);
-      if (val && typeof val === "object" && val.name != null && val.address != null) {
-        return R.contactCard(val);
-      }
+      if (Array.isArray(val) && fetchTemplateFn)
+        return R.renderListHtml(val, listModifiers, fetchTemplateFn);
+      if (val && Array.isArray(val.groups) && fetchTemplateFn)
+        return R.renderListHtml(val, listModifiers, fetchTemplateFn);
     }
 
     return String(val);
   }
 
-  function replaceSharedRefs(str, context, shared) {
-    if (!str || !shared) return str;
-    return String(str).replace(/\{\{@(\w+)\}\}/g, function (_, key) {
-      return resolveSharedRef(key, context, shared);
+  function replaceSharedRefs(str, context, shared, fetchTemplateFn) {
+    if (!str || !shared) return Promise.resolve(str);
+    if (str.indexOf("{{@") === -1) return Promise.resolve(str);
+    const keys = [];
+    const seen = {};
+    let m;
+    const re = /\{\{@(\w+)\}\}/g;
+    while ((m = re.exec(str)) !== null) {
+      if (!seen[m[1]]) {
+        seen[m[1]] = true;
+        keys.push(m[1]);
+      }
+    }
+    if (!keys.length) return Promise.resolve(str);
+    return Promise.all(
+      keys.map(function (k) {
+        return Promise.resolve(
+          resolveSharedRef(k, context, shared, fetchTemplateFn),
+        );
+      }),
+    ).then(function (results) {
+      const map = {};
+      keys.forEach(function (k, i) {
+        map[k] = results[i];
+      });
+      return String(str).replace(/\{\{@(\w+)\}\}/g, function (_, key) {
+        return map[key] != null ? map[key] : "";
+      });
     });
   }
 
@@ -54,57 +102,89 @@
     {
       key: "list",
       outputKey: "listHtml",
-      fn: function (v, data) {
-        return R.list(v, data.listModifiers);
+      fn: function (v, data, fetchTemplateFn) {
+        return fetchTemplateFn
+          ? R.renderListHtml(v, data.listModifiers, fetchTemplateFn)
+          : "";
       },
     },
     {
       key: "list2",
       outputKey: "list2Html",
-      fn: function (v, data) {
-        return R.list(v, data.listModifiers);
+      fn: function (v, data, fetchTemplateFn) {
+        return fetchTemplateFn
+          ? R.renderListHtml(v, data.listModifiers, fetchTemplateFn)
+          : "";
       },
-    },
-    {
-      key: "table",
-      outputKey: "tableHtml",
-      fn: R.table,
     },
     {
       key: "buttons",
       outputKey: "buttonsHtml",
-      fn: function (v) {
-        if (!v || !v.length) return "";
-        return '<div class="cluster cluster--lg">' + R.buttons(v) + "</div>";
+      fn: function (v, data, fetchTemplateFn) {
+        if (!v || !v.length) return Promise.resolve("");
+        if (!fetchTemplateFn) return Promise.resolve("");
+        return R.renderButtonsHtml(v, fetchTemplateFn).then(
+          function (buttonsHtml) {
+            return fetchTemplateFn("buttons").then(function (tpl) {
+              return replacePlaceholders(tpl, { buttonsHtml: buttonsHtml });
+            });
+          },
+        );
       },
     },
   ];
 
-  function applyGenericTransformers(data) {
+  function applyGenericTransformers(data, fetchTemplateFn) {
     const result = Object.assign({}, data);
     result.modifiers = result.modifiers || "";
+    const promises = [];
     for (var i = 0; i < genericTransformers.length; i++) {
-      const t = genericTransformers[i];
-      if (result[t.key] != null) {
-        result[t.outputKey] = t.fn(result[t.key], result);
-      }
+      (function (t) {
+        if (result[t.key] != null) {
+          const p = Promise.resolve(
+            t.fn(result[t.key], result, fetchTemplateFn),
+          );
+          promises.push(
+            p.then(function (val) {
+              result[t.outputKey] = val;
+            }),
+          );
+        }
+      })(genericTransformers[i]);
     }
-    return result;
+    return Promise.all(promises).then(function () {
+      return result;
+    });
   }
 
-  function resolvePlaceholdersInData(data, shared) {
+  function resolvePlaceholdersInData(data, shared, fetchTemplateFn) {
     const result = Object.assign({}, data);
-    var keys = ["innerHtml", "contentHtml"];
-    for (var i = 0; i < keys.length; i++) {
-      var k = keys[i];
+    const keys = ["innerHtml", "contentHtml"];
+    let p = Promise.resolve();
+    keys.forEach(function (k) {
       if (result[k]) {
         if (shared && result[k].indexOf("{{@") !== -1) {
-          result[k] = replaceSharedRefs(result[k], result, shared);
+          p = p
+            .then(function () {
+              return replaceSharedRefs(
+                result[k],
+                result,
+                shared,
+                fetchTemplateFn,
+              );
+            })
+            .then(function (html) {
+              result[k] = html;
+            });
         }
-        result[k] = replacePlaceholders(result[k], result);
       }
-    }
-    return result;
+    });
+    return p.then(function () {
+      keys.forEach(function (k) {
+        if (result[k]) result[k] = replacePlaceholders(result[k], result);
+      });
+      return result;
+    });
   }
 
   window.BlockTransformers = {

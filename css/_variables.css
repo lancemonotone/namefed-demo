@@ -37,6 +37,7 @@
   --color-primary: #c9a227;
   --color-primary-dark: #2c2416;
   --color-primary-warm: #a67c00;
+  --color-primary-on-light: var(--color-primary-warm);
   --color-accent: #c9a227;
   --color-accent-hover: #b08d1f;
   --color-accent-soft: color-mix(

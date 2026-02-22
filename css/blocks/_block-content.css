@@ -32,6 +32,15 @@
   color: var(--color-white);
 }
 
+.block-content--alt a {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.block-content--alt a:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* Block-cards inside alt have white surface – need dark text */
 .block-content--alt .block-card,
 .block-content--alt .block-card strong,
@@ -40,7 +49,7 @@
 }
 
 .block-content--alt .block-card a {
-  color: var(--color-primary);
+  color: var(--color-primary-on-light);
 }
 
 .block-content--dark {
@@ -63,6 +72,15 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
+.block-content--dark a {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.block-content--dark a:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .block-content--center {
   --block-content-bg: var(--color-bg-warm);
   --block-content-text-align: center;
@@ -79,10 +97,10 @@
   margin-inline: auto;
 }
 
-/* Text on light/white backgrounds uses primary for emphasis */
+/* Text on light/white backgrounds uses dark gold for contrast */
 .block-content:not(.block-content--alt):not(.block-content--dark) h2,
 .block-content:not(.block-content--alt):not(.block-content--dark) .lead {
-  color: var(--color-primary);
+  color: var(--color-primary-on-light);
 }
 
 /* __inner constrains content; section stays full-width for backgrounds */

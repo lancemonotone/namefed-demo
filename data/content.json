@@ -18,40 +18,31 @@
       ]
     },
     "location": {
-      "_render": "contact-card",
-      "name": "North Adams M.E. Federal Credit Union",
-      "address": "Norad Mill<br>60 Roberts Drive, Suite 112<br>North Adams, MA 01247",
-      "phone": "(413) 662-2657",
-      "fax": "(413) 662-2173",
-      "contactLink": "contact.html",
-      "phoneLabel": "Phone:",
-      "faxLabel": "Fax:",
-      "contactLinkText": "Contact us"
+      "_render": "card",
+      "title": "North Adams M.E. Federal Credit Union",
+      "body": "<p>Norad Mill<br>60 Roberts Drive, Suite 112<br>North Adams, MA 01247</p><p>Phone: (413) 662-2657<br>Fax: (413) 662-2173</p><p><a href=\"contact.html\">Contact us</a></p>",
+      "modifiers": "block-card--compact"
     },
     "holidays": {
-      "_render": "list",
+      "_render": "table",
       "id": "holidays",
+      "caption": "2026 Holiday Schedule",
       "note": "Note: We may close early on Christmas Eve and New Year's Eve. Check the homepage alert bar for current notices.",
-      "groups": [
-        {
-          "title": "2026 Holiday Schedule",
-          "intro": "NAMEFED follows the Federal Reserve Bank of Boston holiday schedule. We are closed on the following dates:",
-          "items": [
-            "New Year's Day – Thursday, January 1",
-            "Martin Luther King Jr. Day – Monday, January 19",
-            "Presidents' Day – Monday, February 16",
-            "Patriots' Day – Monday, April 20",
-            "Memorial Day – Monday, May 25",
-            "Juneteenth – Friday, June 19",
-            "Independence Day – Saturday, July 4",
-            "Labor Day – Monday, September 7",
-            "Columbus Day – Monday, October 12",
-            "Veterans Day – Wednesday, November 11",
-            "Thanksgiving – Thursday, November 26",
-            "Day after Thanksgiving – Friday, November 27",
-            "Christmas Day – Friday, December 25"
-          ]
-        }
+      "headers": [["Holiday", "Date"]],
+      "rows": [
+        ["New Year's Day", "Thursday, January 1"],
+        ["Martin Luther King Jr. Day", "Monday, January 19"],
+        ["Presidents' Day", "Monday, February 16"],
+        ["Patriots' Day", "Monday, April 20"],
+        ["Memorial Day", "Monday, May 25"],
+        ["Juneteenth", "Friday, June 19"],
+        ["Independence Day", "Saturday, July 4"],
+        ["Labor Day", "Monday, September 7"],
+        ["Columbus Day", "Monday, October 12"],
+        ["Veterans Day", "Wednesday, November 11"],
+        ["Thanksgiving", "Thursday, November 26"],
+        ["Day after Thanksgiving", "Friday, November 27"],
+        ["Christmas Day", "Friday, December 25"]
       ]
     }
   },
@@ -63,7 +54,7 @@
           "type": "hero",
           "data": {
             "title": "Have You Joined Your Credit Union Yet?",
-            "tagline": "North Adams Municipal Employees Federal Credit Union—serving those who serve our community since 1959.",
+            "tagline": "North Adams Municipal Employees Federal Credit Union, serving those who serve our community since 1959.",
             "bgImage": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Main_Street_North_Adams.jpg",
             "bgAlt": "Main Street, North Adams, Massachusetts",
             "ctas": [
@@ -108,7 +99,10 @@
                 "class": "btn btn-primary"
               }
             ],
-            "mediaHtml": "<img src=\"https://media.cnn.com/api/v1/images/stellar/prod/190524170003-01-north-adams-photos.jpg?q=w_1110,c_fill\" alt=\"Downtown North Adams, Massachusetts\">"
+            "media": {
+              "src": "https://media.cnn.com/api/v1/images/stellar/prod/190524170003-01-north-adams-photos.jpg?q=w_1110,c_fill",
+              "alt": "Downtown North Adams, Massachusetts"
+            }
           }
         },
         {
@@ -116,7 +110,10 @@
           "data": {
             "modifiers": "block-split--alt block-split--media",
             "contentHtml": "<h2>Who We Serve</h2><p class=\"lead\">NAMEFED membership is open to employees and retirees of:</p>{{@whoWeServe}}",
-            "mediaHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f3/Seal_of_North_Adams%2C_Massachusetts.png\" alt=\"Seal of the City of North Adams, Massachusetts\">",
+            "media": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Seal_of_North_Adams%2C_Massachusetts.png",
+              "alt": "Seal of the City of North Adams, Massachusetts"
+            },
             "listModifiers": "block-list--alt"
           }
         },
@@ -135,13 +132,13 @@
                 "image": "https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "imageAlt": "Car keys representing auto loans",
                 "title": "Loans",
-                "body": "Auto, personal, motorcycle, utility trailers, snowmobiles, boats, campers, ATVs—plus seasonal loan specials throughout the year."
+                "body": "Auto, personal, motorcycle, utility trailers, snowmobiles, boats, campers, ATVs, plus seasonal loan specials throughout the year."
               },
               {
                 "image": "https://images.pexels.com/photos/3944406/pexels-photo-3944406.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "imageAlt": "Mobile banking and direct deposit",
                 "title": "Payroll Deduction",
-                "body": "Simplify the process and ensure payments are on time. Direct deposit available—choose any amount."
+                "body": "Simplify the process and ensure payments are on time. Direct deposit available; choose any amount."
               }
             ]
           }
@@ -157,7 +154,7 @@
           "type": "content",
           "data": {
             "modifiers": "block-content--center",
-            "innerHtml": "<h2>Ready to Join?</h2><p>Eligibility is easy—if you're a municipal employee, retiree, or family member, you likely qualify.</p>",
+            "innerHtml": "<h2>Ready to Join?</h2><p>Eligibility is easy: if you're a municipal employee, retiree, or family member, you likely qualify.</p>",
             "buttons": [
               {
                 "href": "membership.html",
@@ -177,8 +174,11 @@
           "type": "split",
           "data": {
             "modifiers": "block-split--media",
-            "contentHtml": "<h2>Who We Are</h2><p class=\"lead\">North Adams M.E. Federal Credit Union was chartered January 1, 1959, in North Adams, Massachusetts. For over 60 years, we've served municipal employees and their families.</p><p>We're member-owned, not-for-profit, and focused on helping you save, borrow, and plan for the future—without the fees and hassle of big banks.</p>",
-            "mediaHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/6/6c/Bird%27s-eye_View_of_North_Adams%2C_MA.jpg\" alt=\"Bird's-eye View of North Adams, MA; from a 1905 postcard published by the Detroit Photographic Company.\">"
+            "contentHtml": "<h2>Who We Are</h2><p class=\"lead\">North Adams M.E. Federal Credit Union was chartered January 1, 1959, in North Adams, Massachusetts. For over 60 years, we've served municipal employees and their families.</p><p>We're member-owned, not-for-profit, and focused on helping you save, borrow, and plan for the future, without the fees and hassle of big banks.</p>",
+            "media": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Bird%27s-eye_View_of_North_Adams%2C_MA.jpg",
+              "alt": "Bird's-eye View of North Adams, MA; from a 1905 postcard published by the Detroit Photographic Company."
+            }
           }
         },
         {
@@ -204,7 +204,17 @@
         {
           "type": "content",
           "data": {
-            "innerHtml": "<h2>Branch Hours</h2><p><strong>Business Hours:</strong> Monday – Friday, 9:00 AM – 4:00 PM</p><p><strong>Summer Hours:</strong> Monday – Thursday 9am–4pm, Friday 9am–1pm</p><p>Saturday – Sunday: Closed</p><p>We are closed on federal and Massachusetts bank holidays.</p>{{@holidays}}<p><strong>Friendly Reminder:</strong> Due to our day closing procedures, all transactions must be in by 3:30 PM for same-day processing. Requests after 3:30 PM will be processed the next business day.</p>"
+            "innerHtml": "<h2>Branch Hours</h2>{{hoursTableHtml}}<p>We are closed on federal and Massachusetts bank holidays. NAMEFED follows the Federal Reserve Bank of Boston holiday schedule.</p>{{@holidays}}<p><strong>Friendly Reminder:</strong> Due to our day closing procedures, all transactions must be in by 3:30 PM for same-day processing. Requests after 3:30 PM will be processed the next business day.</p>",
+            "hoursTable": {
+              "caption": "Branch hours",
+              "headers": [["Day(s)", "Hours"]],
+              "rows": [
+                ["Monday – Friday", "9:00 AM – 4:00 PM"],
+                ["Monday – Thursday (Summer)", "9:00 AM – 4:00 PM"],
+                ["Friday (Summer)", "9:00 AM – 1:00 PM"],
+                ["Saturday – Sunday", "Closed"]
+              ]
+            }
           }
         },
         {
@@ -212,7 +222,10 @@
           "data": {
             "modifiers": "block-split--alt block-split--media",
             "contentHtml": "<h2>Our Location</h2>{{@location}}",
-            "mediaHtml": "<img src=\"https://upload.wikimedia.org/wikipedia/commons/1/10/Norad_Mill_60_Roberts_Drive_North_Adams_from_west.jpg\" alt=\"Norad Mill, 60 Roberts Drive, North Adams\">"
+            "media": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/1/10/Norad_Mill_60_Roberts_Drive_North_Adams_from_west.jpg",
+              "alt": "Norad Mill, 60 Roberts Drive, North Adams"
+            }
           }
         }
       ]
@@ -236,14 +249,14 @@
           "type": "content",
           "data": {
             "modifiers": "block-content--alt",
-            "innerHtml": "<h2>Loan Rates</h2><p class=\"lead\">Rates approved by Board of Directors December 15, 2025. All rates based on APR. Loan rates are on a Risk-Based Pricing scale determined by Debt Ratio &amp; Credit Score. Rates subject to change without prior notification.</p>{{tableHtml}}<p><a href=\"contact.html\">Contact us</a> for full rate details. We will match any competitor's rate with Board approval—just ask!</p>",
+            "innerHtml": "<h2>Loan Rates</h2><p class=\"lead\">Rates approved by Board of Directors December 15, 2025. All rates based on APR. Loan rates are on a Risk-Based Pricing scale determined by Debt Ratio &amp; Credit Score. Rates subject to change without prior notification.</p>{{tableHtml}}<p><a href=\"contact.html\">Contact us</a> for full rate details. We will match any competitor's rate with Board approval. Just ask!</p>",
             "table": {
               "caption": "Loan rates by product",
-              "wide": true,
+              "modifiers": "block-table--wide",
               "headers": [["Product", "Max Amount", "Max Term", "Rate"]],
               "rows": [
                 ["Personal Loan", "$7,500", "5 years", "9–12% APR"],
-                ["Share Secured", "—", "10 years", "3.50% + dividend"],
+                ["Share Secured", "n/a", "10 years", "3.50% + dividend"],
                 [
                   "New Vehicle (2025–2026)",
                   "$50,000",
@@ -262,10 +275,10 @@
                   "5 years",
                   "7.5–10.5% APR"
                 ],
-                ["Antique/Classic (25+ years)", "—", "5 years", "9.99% APR"],
+                ["Antique/Classic (25+ years)", "n/a", "5 years", "9.99% APR"],
                 [
                   "Motorcycle, Trailers, Boats, Campers/ATV",
-                  "—",
+                  "n/a",
                   "4–6 years",
                   "6–12% APR"
                 ]
@@ -279,7 +292,7 @@
             "innerHtml": "<h2>2026 Loan Specials</h2>{{tableHtml}}<p class=\"form-note\">* Subject to credit approval. Payroll deduction available once approved. See staff for details.</p>",
             "table": {
               "caption": "Seasonal loan specials 2026",
-              "wide": true,
+              "modifiers": "block-table--wide",
               "headers": [
                 ["Special", "Available", "Max Amount", "APR", "Max Term"]
               ],
@@ -324,7 +337,7 @@
         {
           "type": "qanda",
           "data": {
-            "introHtml": "<p class=\"lead\">Find answers to common questions about NAMEFED. Can't find what you need? <a href=\"contact.html\">Contact us</a>—we're happy to help.</p>",
+            "introHtml": "<p class=\"lead\">Find answers to common questions about NAMEFED. Can't find what you need? <a href=\"contact.html\">Contact us</a>. We're happy to help.</p>",
             "items": [
               {
                 "q": "What is NAMEFED's routing number?",
@@ -364,7 +377,7 @@
               },
               {
                 "q": "How do I apply for a loan?",
-                "a": "Visit the branch or call (413) 662-2657 to speak with staff. We offer auto, personal, and seasonal loans. <a href=\"rates.html\">View current rates</a>. We will match competitor rates with Board approval—just ask!"
+                "a": "Visit the branch or call (413) 662-2657 to speak with staff. We offer auto, personal, and seasonal loans. <a href=\"rates.html\">View current rates</a>. We will match competitor rates with Board approval. Just ask!"
               }
             ]
           }
@@ -378,7 +391,7 @@
         {
           "type": "content",
           "data": {
-            "innerHtml": "<h2>Who Can Join?</h2><p class=\"lead\">NAMEFED membership is open to municipal employees, retirees, and their families. If you work for the city, school district, transit authority, or public safety—or if you're related to someone who does—you likely qualify.</p>{{@whoWeServe}}<p><strong>Once a Member – Always a Member!</strong> Even if you leave your employment or move out of the area, we just require annual activity in your account.</p>"
+            "innerHtml": "<h2>Who Can Join?</h2><p class=\"lead\">NAMEFED membership is open to municipal employees, retirees, and their families. If you work for the city, school district, transit authority, or public safety, or if you're related to someone who does, you likely qualify.</p>{{@whoWeServe}}<p><strong>Once a Member – Always a Member!</strong> Even if you leave your employment or move out of the area, we just require annual activity in your account.</p>"
           }
         },
         {

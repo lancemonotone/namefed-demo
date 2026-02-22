@@ -1,7 +1,0 @@
-{
-  "name": "namefed-demo",
-  "private": true,
-  "scripts": {
-    "build": "node build.js"
-  }
-}
