@@ -19,19 +19,9 @@
     border-color var(--transition-smooth);
   overflow: hidden;
 
-  /* Higher specificity than .section--alt p so card text color wins */
-  .block-card__body p {
+  p {
     color: var(--card-text);
     line-height: 1.6;
-  }
-
-  /* Override .section--alt color:inherit – card has its own bg, text must use --card-text */
-  .section--alt & .lead,
-  .section--alt & p,
-  .section--alt & strong,
-  .section--alt & h2,
-  .section--alt & fieldset legend {
-    color: var(--card-text);
   }
 
   h3 {
