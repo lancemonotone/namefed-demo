@@ -14,15 +14,18 @@
   box-shadow: var(--shadow);
   border: 1px solid var(--color-border);
   max-width: var(--block-card-max-width);
-  transition: box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+  transition:
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-smooth);
   overflow: hidden;
 
-  & p {
+  /* Higher specificity than .section--alt p so card text color wins */
+  .block-card__body p {
     color: var(--card-text);
     line-height: 1.6;
   }
 
-  & h3 {
+  h3 {
     font-size: 1.25rem;
     color: var(--color-primary);
   }

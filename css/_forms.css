@@ -1,187 +1,157 @@
 /* NAMEFED – Form styles (Gravity Forms–aligned) */
-
-/* Form wrapper */
 .gform_wrapper {
-  max-width: 100%;
-}
+  --gform-max-width: 100%;
 
-/* Form fields container */
-.gform_fields {
-  display: block;
-  --flow-space: var(--space-md);
-}
+  max-width: var(--gform-max-width);
 
-/* Turn off flow for forms to avoid margin issues */
-.gform_fields.flow-off * {
-  margin-block: 0;
-}
+  &.newsletter-form {
+    --gform-max-width: 50%;
+    margin-inline: auto;
+  }
 
-.gform_fields.flow-off * + * {
-  margin-block-start: var(--flow-space);
-}
+  /* Form fields container – flex + gap for consistent spacing (no flow) */
+  .gform_fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
 
-/* Individual field wrapper */
-.gfield {
-  margin-bottom: var(--space-md);
-}
+    * {
+      margin-block: 0;
+      line-height: 1;
+    }
+  }
 
-.gfield:last-child {
-  margin-bottom: 0;
-}
+  /* Field label */
+  .gfield_label {
+    display: block;
+    font-weight: 600;
+    /* Labels are always visually hidden for placeholder-only UX */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
 
-/* Field label */
-.gfield_label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: var(--space-xs);
-  /* Labels are always visually hidden for placeholder-only UX */
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
+  /* Input container */
+  .ginput_container {
+    display: block;
 
-/* Input container */
-.ginput_container {
-  display: block;
-}
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: var(--space-md);
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius);
+      transition: border-color var(--transition);
+      background: var(--color-surface);
 
-.ginput_container input,
-.ginput_container textarea,
-.ginput_container select {
-  width: 100%;
-  padding: var(--space-md);
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius);
-  transition: border-color var(--transition);
-  background: var(--color-surface);
-}
+      &:focus {
+        outline: none;
+        border-color: var(--color-primary);
+      }
+    }
 
-.ginput_container input:focus,
-.ginput_container textarea:focus,
-.ginput_container select:focus {
-  outline: none;
-  border-color: var(--color-primary);
-}
+    textarea {
+      width: 100%;
+      resize: vertical;
+    }
+  }
 
-.ginput_container textarea {
-  width: 100%;
-  max-width: 500px;
-  resize: vertical;
-}
+  /* Form rows (for inline layouts) */
+  .gfield.form-row--inline {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
 
-/* Form rows (for inline layouts) */
-.gfield.form-row--inline {
-  display: flex;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-}
+    > .ginput_container {
+      flex: 1;
+      min-width: 100px;
+    }
+  }
 
-.gfield.form-row--inline > .ginput_container {
-  flex: 1;
-  min-width: 100px;
-}
+  /* Form notes */
+  .gfield_description {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
 
-/* Form notes */
-.gfield_description {
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
-  margin-top: var(--space-xs);
-}
+  /* Fieldsets – flex + gap for spacing between legend, inputs, etc. */
+  fieldset.gfield {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    border: none;
+    padding: 0;
+    margin: 0;
 
-/* Fieldsets */
-fieldset.gfield {
-  border: none;
-  padding: 0;
-  margin: 0;
-}
+    &[hidden] {
+      display: none !important;
+    }
 
-fieldset.gfield legend.gfield_label {
-  /* Override visually-hidden for legends in complex fields */
-  position: static;
-  width: auto;
-  height: auto;
-  padding: 0;
-  margin: -1px 0 var(--space-xs);
-  overflow: visible;
-  clip: auto;
-  white-space: normal;
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--color-heading);
-}
+    legend.gfield_label {
+      /* Override visually-hidden for legends (section headers) */
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--color-heading);
+      margin-block-end: var(--space-md);
+    }
+  }
 
-/* Complex inputs (Name, Address) */
-.ginput_complex {
-  display: flex;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-}
+  /* Input group – flex column, full-width children, gap for spacing */
+  .ginput_column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
 
-.ginput_complex .name_first,
-.ginput_complex .name_last,
-.ginput_complex .address_city,
-.ginput_complex .address_state,
-.ginput_complex .address_zip,
-.ginput_complex .mailing_city,
-.ginput_complex .mailing_state,
-.ginput_complex .mailing_zip {
-  flex: 1;
-  min-width: 100px;
-}
+    &[hidden] {
+      display: none !important;
+    }
 
-/* Sub-labels */
-.ginput_complex label {
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 400;
-  margin-top: var(--space-xs);
-  color: var(--color-text);
-  /* Not visually hidden - these are actual sub-labels */
-  position: static;
-  width: auto;
-  height: auto;
-  padding: 0;
-  margin-top: var(--space-xs);
-  overflow: visible;
-  clip: auto;
-  white-space: normal;
-}
+    label {
+      /* Sub-labels – visually hidden for placeholder-only UX */
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  }
 
-/* Checkboxes */
-.checkbox-label {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-sm);
-  font-weight: 400;
-  cursor: pointer;
-  margin: var(--space-sm) 0;
-}
+  /* Checkboxes */
+  .checkbox-label {
+    display: flex;
+    align-items: start;
+    gap: var(--space-sm);
+    font-weight: 400;
+    cursor: pointer;
 
-.checkbox-label input[type="checkbox"] {
-  width: auto;
-  max-width: none;
-  margin-top: 0.25em;
-}
+    input[type="checkbox"] {
+      width: 1.25em;
+      height: 1.25em;
+      flex-shrink: 0;
+    }
+  }
 
-.checkbox-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-/* Submit button container */
-.gform_footer {
-  margin-top: var(--space-lg);
-}
-
-.gform_footer .gform_button {
-  /* Use existing btn classes */
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
 }

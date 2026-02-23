@@ -1,15 +1,17 @@
 <section class="section-content eligibility-flow" id="eligibility-flow">
   <div class="section-content__inner flow">
     <div class="eligibility-checker-wrap flow" id="eligibility-checker-wrap">
-      <h2>Eligibility Checker</h2>
+      <h2>Apply for Membership</h2>
       <p class="lead">Answer two quick questions to see if you qualify for membership. Documentation may be requested to verify eligibility.</p>
       <form class="eligibility-checker gform_wrapper" action="#" method="get" id="eligibility-check-form">
         <div class="gform_body">
-          <div class="gform_fields flow-off">
+          <div class="gform_fields">
             <fieldset class="gfield">
-              <label for="eligibility-employer" class="gfield_label">Where do you work (or where did you work, if retired)?</label>
-              <div class="ginput_container">
-                <select id="eligibility-employer" name="eligibility_employer" placeholder="Select your employer" required>
+              <legend class="gfield_label gfield_label_before_complex">Eligibility</legend>
+              <div class="ginput_column ginput_container">
+                <span>
+                  <label for="eligibility-employer" class="gfield_label">Where do you work (or where did you work, if retired)?</label>
+                  <select id="eligibility-employer" name="eligibility_employer" placeholder="Select your employer" required>
                   <option value="">— Select —</option>
                   <option value="city">City of North Adams</option>
                   <option value="city-yard">North Adams City Yard</option>
@@ -22,16 +24,15 @@
                   <option value="family">Family of current member</option>
                   <option value="other">Other / Not sure</option>
                 </select>
-              </div>
-            </fieldset>
-            <fieldset class="gfield">
-              <label for="eligibility-area" class="gfield_label">Do you live or work in Berkshire County, Massachusetts?</label>
-              <div class="ginput_container">
-                <select id="eligibility-area" name="eligibility_area" placeholder="Select yes or no" required>
+                </span>
+                <span>
+                  <label for="eligibility-area" class="gfield_label">Do you live or work in Berkshire County, Massachusetts?</label>
+                  <select id="eligibility-area" name="eligibility_area" placeholder="Select yes or no" required>
                   <option value="">— Select —</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
+                </span>
               </div>
             </fieldset>
           </div>

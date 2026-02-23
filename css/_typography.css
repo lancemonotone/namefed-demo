@@ -6,8 +6,16 @@ body {
   color: var(--color-text);
 }
 
-p {
-  max-width: var(--max-text-width);
+main {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    max-width: var(--max-text-width);
+  }
 }
 
 a {

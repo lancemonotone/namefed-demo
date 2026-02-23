@@ -30,55 +30,66 @@
     --modal-max-width: calc(var(--max-text-width) + 5vw);
     --border-radius: var(--radius);
   }
-}
 
-.modal__content {
-  position: relative;
-  padding: var(--modal-padding);
-  max-block-size: calc(100dvh - var(--space-xl) * 2);
-  overflow-y: auto;
-  border-radius: inherit;
-}
-
-.modal__content.section--alt {
-  background: var(--section-alt-bg);
-  color: var(--section-alt-text);
-}
-
-.modal__close {
-  position: absolute;
-  inset-block-start: var(--space-md);
-  inset-inline-end: var(--space-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  inline-size: 2.5rem;
-  block-size: 2.5rem;
-  padding: 0;
-  font-size: 1.5rem;
-  line-height: 1;
-  color: inherit;
-  background: rgba(255, 255, 255, 0.15);
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: background var(--transition-smooth);
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.25);
+  .section-content {
+    padding-block: var(--space-2xl);
   }
-}
 
-.modal__content:not(.section--alt) .modal__close {
-  color: var(--color-text);
-  background: var(--color-bg-alt);
-}
+  .modal__content {
+    position: relative;
+    padding: var(--modal-padding);
+    max-block-size: calc(100dvh - var(--space-xl) * 2);
+    overflow-y: auto;
+    border-radius: inherit;
 
-.modal__content h2 {
-  padding-inline-end: 3rem;
-  margin-block-end: var(--space-sm);
-}
+    h2 {
+      margin-block-end: var(--space-sm);
+    }
+  }
 
-.modal__body {
-  margin-block-start: var(--space-xl);
+  .modal__content.section--alt {
+    background: var(--section-alt-bg);
+    color: var(--section-alt-text);
+  }
+
+  .modal__header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 0 1rem;
+  }
+
+  /* Match nav-close from mobile overlay: no background pill, same × styling */
+  .nav-close {
+    display: block;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    transition: color var(--transition);
+    justify-self: end;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    span {
+      font-size: 1.75rem;
+      font-weight: 300;
+      line-height: 1;
+    }
+  }
+
+  .section--alt .nav-close {
+    color: inherit;
+
+    &:hover {
+      color: var(--color-primary-light);
+    }
+  }
+
+  .modal__body {
+    margin-block-start: var(--space-xl);
+  }
 }

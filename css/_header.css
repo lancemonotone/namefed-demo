@@ -374,9 +374,14 @@
   text-align: center;
   font-size: 0.9375rem;
 
-  &-inner {
+  .alert-bar-inner {
     max-width: var(--max-width);
     margin: 0 auto;
+
+    p {
+      max-width: var(--max-width);
+      margin: auto;
+    }
   }
 
   & a {
