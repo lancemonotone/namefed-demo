@@ -93,6 +93,7 @@
   --space-xl: 2rem;
   --space-2xl: 3rem;
   --space-3xl: 4rem;
+  --max-text-width: 60ch;
   --max-width: 1200px;
   --radius: 8px;
   --transition: 0.25s ease;

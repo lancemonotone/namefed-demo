@@ -32,20 +32,10 @@
         resultEl.className = 'eligibility-result eligibility-result--success';
         resultEl.hidden = false;
         const continueBtn = document.getElementById('eligibility-continue-btn');
-        if (continueBtn) {
+        const wizardModal = document.getElementById('wizard-modal');
+        if (continueBtn && wizardModal && window.Modal) {
           continueBtn.addEventListener('click', function () {
-            const flow = document.getElementById('eligibility-flow');
-            const wrap = document.getElementById('eligibility-checker-wrap');
-            const formWrap = document.getElementById('application-form-wrap');
-            if (flow && wrap && formWrap) {
-              flow.classList.add('show-form');
-              wrap.setAttribute('aria-hidden', 'true');
-              formWrap.setAttribute('aria-hidden', 'false');
-              const firstField = formWrap.querySelector('input, select, button');
-              if (firstField) {
-                setTimeout(function () { firstField.focus(); }, 450);
-              }
-            }
+            Modal.open(wizardModal, { focusSelector: 'input, select' });
           });
         }
       } else {
@@ -107,6 +97,12 @@
   }
 
   showStep(1);
+
+  // Modal: init wizard modal (close btn, reset wizard on close)
+  const wizardModal = document.getElementById('wizard-modal');
+  if (wizardModal && window.Modal) {
+    Modal.init(wizardModal, { onClose: function () { showStep(1); } });
+  }
 
   // Mailing address toggle
   const mailingSame = document.getElementById('mailing-same');

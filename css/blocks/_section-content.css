@@ -1,7 +1,7 @@
 /* NAMEFED – section-content: standard content section */
 .section-content {
   --section-content-padding: var(--space-3xl) var(--space-lg);
-  --section-content-bg: transparent;
+  --section-content-bg: var(--color-bg);
   --section-content-text-align: left;
 
   padding: var(--section-content-padding);

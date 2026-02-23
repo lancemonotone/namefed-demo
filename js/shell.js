@@ -35,6 +35,7 @@
       return loadScript("js/renderers.js")
         .then(function () { return loadScript("js/transformers.js"); })
         .then(function () { return loadScript("js/blocks.js"); })
+        .then(function () { return loadScript("js/modal.js"); })
         .then(function () { return loadScript("js/header.js"); })
         .then(function () { return loadScript("js/content.js"); })
         .then(function () { return loadScript("js/footer.js"); })

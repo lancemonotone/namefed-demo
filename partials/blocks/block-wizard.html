@@ -1,0 +1,257 @@
+<div class="wizard-progress" aria-label="Application progress">
+  <div class="wizard-steps flow-off">
+    <span class="wizard-step active" data-step="1">1. Personal</span>
+    <span class="wizard-step" data-step="2">2. Address</span>
+    <span class="wizard-step" data-step="3">3. Eligibility</span>
+    <span class="wizard-step" data-step="4">4. Account</span>
+    <span class="wizard-step" data-step="5">5. Review</span>
+  </div>
+</div>
+
+<form class="membership-wizard gform_wrapper" action="#" method="post">
+  <div class="wizard-panel" data-panel="1">
+    <fieldset class="gfield">
+      <legend class="gfield_label">Personal Information</legend>
+      <div class="gform_fields flow-off">
+        <fieldset class="gfield">
+          <label for="first-name" class="gfield_label">First Name *</label>
+          <div class="ginput_container">
+            <input type="text" id="first-name" name="first_name" placeholder="Your first name" required>
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <label for="middle-name" class="gfield_label">Middle Name</label>
+          <div class="ginput_container">
+            <input type="text" id="middle-name" name="middle_name" placeholder="Your middle name">
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <label for="last-name" class="gfield_label">Last Name *</label>
+          <div class="ginput_container">
+            <input type="text" id="last-name" name="last_name" placeholder="Your last name" required>
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <label for="dob" class="gfield_label">Date of Birth *</label>
+          <div class="ginput_container">
+            <input type="date" id="dob" name="dob" placeholder="MM/DD/YYYY" required>
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <label for="email" class="gfield_label">Email *</label>
+          <div class="ginput_container">
+            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <label for="phone" class="gfield_label">Phone (mobile preferred) *</label>
+          <div class="ginput_container">
+            <input type="tel" id="phone" name="phone" placeholder="(413) 555-0123" required>
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <label for="phone-alt" class="gfield_label">Alternate Phone</label>
+          <div class="ginput_container">
+            <input type="tel" id="phone-alt" name="phone_alt" placeholder="(413) 555-0123">
+          </div>
+        </fieldset>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="wizard-panel" data-panel="2" hidden>
+    <fieldset class="gfield">
+      <legend class="gfield_label">Address</legend>
+      <div class="gform_fields flow-off">
+        <fieldset class="gfield">
+          <label for="address-street" class="gfield_label">Street Address *</label>
+          <div class="ginput_container">
+            <input type="text" id="address-street" name="address_street" placeholder="No P.O. boxes" required>
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <div class="ginput_complex ginput_container">
+            <span class="address_city">
+              <input type="text" id="address-city" name="address_city" placeholder="North Adams" required>
+              <label for="address-city">City *</label>
+            </span>
+            <span class="address_state">
+              <input type="text" id="address-state" name="address_state" value="MA" maxlength="2" placeholder="MA" required>
+              <label for="address-state">State *</label>
+            </span>
+            <span class="address_zip">
+              <input type="text" id="address-zip" name="address_zip" placeholder="01247" pattern="[0-9]{5}(-[0-9]{4})?" required>
+              <label for="address-zip">ZIP *</label>
+            </span>
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <label class="checkbox-label">
+            <input type="checkbox" id="mailing-same" name="mailing_same" checked>
+            Mailing address same as physical address
+          </label>
+        </fieldset>
+        <div id="mailing-address-fields" hidden>
+          <fieldset class="gfield">
+            <label for="mailing-street" class="gfield_label">Mailing Street Address</label>
+            <div class="ginput_container">
+              <input type="text" id="mailing-street" name="mailing_street" placeholder="Street address">
+            </div>
+          </fieldset>
+          <fieldset class="gfield">
+            <div class="ginput_complex ginput_container">
+              <span class="mailing_city">
+                <input type="text" id="mailing-city" name="mailing_city" placeholder="City">
+                <label for="mailing-city">City</label>
+              </span>
+              <span class="mailing_state">
+                <input type="text" id="mailing-state" name="mailing_state" maxlength="2" placeholder="State">
+                <label for="mailing-state">State</label>
+              </span>
+              <span class="mailing_zip">
+                <input type="text" id="mailing-zip" name="mailing_zip" placeholder="01247" pattern="[0-9]{5}(-[0-9]{4})?">
+                <label for="mailing-zip">ZIP</label>
+              </span>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="wizard-panel" data-panel="3" hidden>
+    <fieldset class="gfield">
+      <legend class="gfield_label">Eligibility Details</legend>
+      <div class="gform_fields flow-off">
+        <fieldset class="gfield">
+          <label for="eligibility-type" class="gfield_label">How do you qualify for membership? *</label>
+          <div class="ginput_container">
+            <select id="eligibility-type" name="eligibility_type" placeholder="Select qualification type" required>
+              <option value="">— Select —</option>
+              <option value="employee">Municipal employee</option>
+              <option value="retiree">Municipal retiree</option>
+              <option value="family">Family of current member</option>
+              <option value="live-work">Live/work/worship in area</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <label for="employer" class="gfield_label">Employer / Organization *</label>
+          <div class="ginput_container">
+            <input type="text" id="employer" name="employer" placeholder="e.g., City of North Adams, NAPS, Fire Dept." required>
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <label for="department" class="gfield_label">Department or Agency</label>
+          <div class="ginput_container">
+            <input type="text" id="department" name="department" placeholder="Your department">
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <label for="job-title" class="gfield_label">Job Title</label>
+          <div class="ginput_container">
+            <input type="text" id="job-title" name="job_title" placeholder="Your job title">
+          </div>
+        </fieldset>
+        <fieldset class="gfield" id="relationship-row" hidden>
+          <label for="relationship" class="gfield_label">Relationship to member</label>
+          <div class="ginput_container">
+            <input type="text" id="relationship" name="relationship" placeholder="e.g., spouse, child, parent">
+          </div>
+        </fieldset>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="wizard-panel" data-panel="4" hidden>
+    <fieldset class="gfield">
+      <legend class="gfield_label">Account Setup</legend>
+      <div class="gform_fields flow-off">
+        <fieldset class="gfield">
+          <label for="ownership" class="gfield_label">Account ownership *</label>
+          <div class="ginput_container">
+            <select id="ownership" name="ownership" placeholder="Select account type" required>
+              <option value="">— Select —</option>
+              <option value="single">Single</option>
+              <option value="joint">Joint</option>
+            </select>
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <legend class="gfield_label">Products requested *</legend>
+          <div class="checkbox-group">
+            <label class="checkbox-label"><input type="checkbox" name="products[]" value="membership" checked> Membership Savings (required, $5 min)</label>
+            <label class="checkbox-label"><input type="checkbox" name="products[]" value="checking"> Checking</label>
+            <label class="checkbox-label"><input type="checkbox" name="products[]" value="other"> Other (describe in comments)</label>
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <label for="funding-method" class="gfield_label">How will you fund your initial deposit? *</label>
+          <div class="ginput_container">
+            <select id="funding-method" name="funding_method" placeholder="Select funding method" required>
+              <option value="">— Select —</option>
+              <option value="ach">ACH from another bank</option>
+              <option value="card">Debit card</option>
+              <option value="branch">Cash or check at branch</option>
+              <option value="payroll">Payroll deduction (after approval)</option>
+            </select>
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <label for="funding-amount" class="gfield_label">Initial deposit amount ($)</label>
+          <div class="ginput_container">
+            <input type="number" id="funding-amount" name="funding_amount" min="5" step="1" value="5" placeholder="Minimum $5">
+          </div>
+        </fieldset>
+        <fieldset class="gfield">
+          <label class="checkbox-label"><input type="checkbox" name="marketing_email" value="1"> I'd like to receive email updates about rates and specials</label>
+        </fieldset>
+        <fieldset class="gfield">
+          <label class="checkbox-label"><input type="checkbox" name="marketing_sms" value="1"> I'd like to receive text message updates (standard rates may apply)</label>
+        </fieldset>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="wizard-panel" data-panel="5" hidden>
+    <fieldset class="gfield">
+      <legend class="gfield_label">Disclosures &amp; Consent</legend>
+      <div class="gform_fields flow-off">
+        <p>Before submitting, please review and acknowledge the following:</p>
+        <fieldset class="gfield">
+          <label class="checkbox-label">
+            <input type="checkbox" id="consent-terms" name="consent_terms" required>
+            I agree to the <a href="#">Membership and Account Agreement</a>, <a href="#">Truth-in-Savings</a>, and <a href="#">Fee Schedule</a>. *
+          </label>
+        </fieldset>
+        <fieldset class="gfield">
+          <label class="checkbox-label">
+            <input type="checkbox" id="consent-privacy" name="consent_privacy" required>
+            I have read and agree to the <a href="#">Privacy Policy</a>. *
+          </label>
+        </fieldset>
+        <fieldset class="gfield">
+          <label class="checkbox-label">
+            <input type="checkbox" id="consent-accurate" name="consent_accurate" required>
+            I certify that the information provided is accurate and complete. *
+          </label>
+        </fieldset>
+        <fieldset class="gfield">
+          <label class="checkbox-label">
+            <input type="checkbox" id="consent-credit" name="consent_credit">
+            I authorize NAMEFED to obtain a credit report and/or ChexSystems report if needed to process my application.
+          </label>
+        </fieldset>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="gform_footer">
+    <div class="wizard-nav">
+      <button type="button" class="btn btn-secondary wizard-prev" disabled>Back</button>
+      <button type="button" class="btn btn-primary wizard-next">Next</button>
+      <button type="submit" class="btn btn-primary gform_button wizard-submit" hidden>Submit Application</button>
+    </div>
+  </div>
+</form>

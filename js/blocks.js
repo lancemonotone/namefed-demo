@@ -218,6 +218,37 @@
     },
     eligibility: {
       template: "eligibility",
+      prepare: function (data, fetchTemplateFn) {
+        return renderBlock("wizard", {}).then(function (wizardHtml) {
+          return renderBlock("modal", {
+            modalClass: "modal--wizard",
+            modalId: "wizard-modal",
+            modalTitleId: "wizard-modal-title",
+            modalDescId: "wizard-modal-desc",
+            modalCloseId: "wizard-modal-close",
+            modalTitle: "Membership Application",
+            modalDesc: "You're eligible! Complete the form below to start your membership application. We'll review it within 1–2 business days and contact you to finalize your account.",
+            contentHtml: wizardHtml,
+          });
+        }).then(function (modalHtml) {
+          return Object.assign({}, data, { modalHtml: modalHtml });
+        });
+      },
+    },
+    modal: {
+      template: "modal",
+      prepare: function (data) {
+        return Object.assign({}, data, {
+          modalClass: data.modalClass || "",
+          modalId: data.modalId || "modal",
+          modalTitleId: data.modalTitleId || "modal-title",
+          modalDescId: data.modalDescId || "modal-desc",
+          modalCloseId: data.modalCloseId || "modal-close",
+        });
+      },
+    },
+    wizard: {
+      template: "wizard",
       prepare: function (data) {
         return data;
       },

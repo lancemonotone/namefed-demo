@@ -55,7 +55,6 @@
 .ginput_container textarea,
 .ginput_container select {
   width: 100%;
-  max-width: 400px;
   padding: var(--space-md);
   font-family: var(--font-heading);
   font-size: 1rem;
@@ -130,7 +129,10 @@ fieldset.gfield legend.gfield_label {
 .ginput_complex .name_last,
 .ginput_complex .address_city,
 .ginput_complex .address_state,
-.ginput_complex .address_zip {
+.ginput_complex .address_zip,
+.ginput_complex .mailing_city,
+.ginput_complex .mailing_state,
+.ginput_complex .mailing_zip {
   flex: 1;
   min-width: 100px;
 }

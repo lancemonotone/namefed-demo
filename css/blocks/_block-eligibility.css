@@ -1,0 +1,92 @@
+/* NAMEFED – Eligibility checker & membership wizard block */
+.eligibility-flow {
+  --flow-space: var(--space-md);
+}
+
+.eligibility-checker {
+  max-width: 480px;
+  padding: var(--space-xl);
+  background: var(--color-bg-warm);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+/* Eligibility result states (semantic colors) */
+.eligibility-result {
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--flow-space);
+  width: max-content;
+}
+
+.eligibility-result--success {
+  background: color-mix(in srgb, #2e7d32 15%, transparent);
+  border: 1px solid color-mix(in srgb, #2e7d32 40%, transparent);
+  color: #2e7d32;
+}
+
+.eligibility-result--warning {
+  background: color-mix(in srgb, #e65100 15%, transparent);
+  border: 1px solid color-mix(in srgb, #e65100 40%, transparent);
+  color: #e65100;
+}
+
+.eligibility-result--info {
+  background: color-mix(in srgb, #1565c0 15%, transparent);
+  border: 1px solid color-mix(in srgb, #1565c0 40%, transparent);
+  color: #1565c0;
+}
+
+.eligibility-result a {
+  font-weight: 600;
+}
+
+/* Step wizard */
+.wizard-progress {
+  margin-bottom: var(--space-2xl);
+}
+
+.wizard-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.wizard-step {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg-alt);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.wizard-step.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.wizard-step.complete {
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+}
+
+.wizard-panel[hidden] {
+  display: none !important;
+}
+
+.wizard-nav {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+  justify-content: flex-end;
+}
+
+.wizard-nav button[hidden] {
+  display: none !important;
+}
