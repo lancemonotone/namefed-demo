@@ -25,6 +25,15 @@
     line-height: 1.6;
   }
 
+  /* Override .section--alt color:inherit – card has its own bg, text must use --card-text */
+  .section--alt & .lead,
+  .section--alt & p,
+  .section--alt & strong,
+  .section--alt & h2,
+  .section--alt & fieldset legend {
+    color: var(--card-text);
+  }
+
   h3 {
     font-size: 1.25rem;
     color: var(--color-primary);
