@@ -38,7 +38,6 @@
     display: inline-flex;
     align-items: center;
     gap: var(--space-sm);
-    color: var(--color-primary);
   }
 
   & .fb-icon {
