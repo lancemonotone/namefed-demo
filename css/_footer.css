@@ -4,11 +4,10 @@
   color: var(--color-white);
 
   & a {
-    color: var(--color-primary);
+    color: var(--color-primary-light);
   }
 
   & a:hover {
-    color: var(--color-primary);
     text-decoration-color: currentColor;
   }
 
@@ -27,7 +26,9 @@
 
     & ul {
       --flow-space: var(--space-xs); /* tighter spacing between list items */
-      margin-block-start: var(--space-md); /* match h4→content gap in Contact column */
+      margin-block-start: var(
+        --space-md
+      ); /* match h4→content gap in Contact column */
       list-style: none;
       padding: 0;
     }
