@@ -3,6 +3,15 @@
   background: var(--color-primary-dark);
   color: var(--color-white);
 
+  & a {
+    color: var(--color-primary);
+  }
+
+  & a:hover {
+    color: var(--color-primary);
+    text-decoration-color: currentColor;
+  }
+
   & .section-content__inner {
     --flow-space: var(--space-xl);
   }
