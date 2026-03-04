@@ -20,7 +20,7 @@
   overflow: hidden;
 
   p {
-    color: var(--card-text);
+    color: var(--card-text) !important;
     line-height: 1.6;
   }
 
