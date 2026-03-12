@@ -12,7 +12,7 @@
   --header-padding-top: var(--space-md);
 
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 200px 1fr;
   gap: clamp(var(--space-md), 2vw, var(--space-xl));
   align-items: end;
   max-width: var(--max-width);
@@ -66,7 +66,7 @@
     font-weight: 600;
     text-transform: uppercase;
     line-height: 1.2;
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     text-decoration: none;
     display: inline-block;
     max-width: 32ch; /* Break after "Municipal" */
@@ -216,7 +216,7 @@
   text-decoration: none;
 
   &:hover {
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     text-decoration: none;
   }
 }
@@ -237,7 +237,7 @@
   }
 
   &:hover {
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
   }
 
   & span {
@@ -332,7 +332,7 @@
     }
 
     &:hover {
-      color: var(--color-primary);
+      color: var(--color-primary-dark);
 
       @media (prefers-color-scheme: dark) {
         color: var(--color-primary-light);
@@ -350,7 +350,7 @@
 
       @media (min-width: 768px) {
         --nav-current-weight: 600;
-        --nav-current-border-color: var(--color-primary);
+        --nav-current-border-color: var(--color-primary-light);
       }
 
       @media (prefers-color-scheme: dark) {

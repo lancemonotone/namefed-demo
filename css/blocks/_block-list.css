@@ -1,8 +1,8 @@
 /* NAMEFED – block-list: bullet list block */
 .block-list {
   --block-list-gap: var(--space-sm);
-  --block-list-bullet-color: var(--color-primary);
-  --block-list-group-title-color: var(--color-primary);
+  --block-list-bullet-color: var(--color-primary-dark);
+  --block-list-group-title-color: var(--color-primary-dark);
 
   display: grid;
   gap: var(--block-list-gap);

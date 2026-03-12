@@ -4,7 +4,7 @@
   --block-card-max-width: none;
   --card-bg: var(--color-bg-warm);
   --card-text: var(--color-text-muted);
-  --card-link: var(--color-primary);
+  --card-link: var(--color-primary-dark);
 
   display: grid;
   gap: var(--space-lg);
@@ -12,7 +12,7 @@
   background: var(--card-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-primary-table);
   max-width: var(--block-card-max-width);
   transition:
     box-shadow var(--transition-smooth),
@@ -26,7 +26,10 @@
 
   h3 {
     font-size: 1.25rem;
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-primary);
+    }
   }
 
   &:hover {
@@ -37,11 +40,13 @@
   .section--alt & {
     --card-bg: var(--color-surface);
     --card-text: var(--color-text);
-    --card-link: var(--color-primary);
   }
 
   .section--alt & a {
-    color: var(--card-link);
+    color: var(--color-primary-dark);
+    &:hover {
+      color: var(--color-primary-light);
+    }
   }
 }
 

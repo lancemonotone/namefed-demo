@@ -19,11 +19,10 @@
     var(--color-primary-dark) 75%,
     var(--color-white)
   );
-  --color-border: color-mix(in srgb, var(--color-primary) 25%, transparent);
+  --color-border: var(--color-primary-light);
   --color-heading: var(--color-primary-dark);
   /* Accent for h2/.lead on default sections: primary in light, white in dark */
-  --color-heading-accent: var(--color-primary);
-  --color-heading-accent: light-dark(var(--color-primary), var(--color-white));
+  --color-heading-accent: var(--color-primary-light);
   --shadow: 0 2px 12px
     color-mix(in srgb, var(--color-primary-dark) 6%, transparent);
   --shadow-hover: 0 8px 24px
@@ -56,7 +55,11 @@
       var(--color-primary-light) 15%,
       var(--color-white)
     );
-    --color-border: color-mix(in srgb, var(--color-primary) 35%, transparent);
+    --color-border: color-mix(
+      in srgb,
+      var(--color-primary-dark) 35%,
+      transparent
+    );
     --color-heading: var(--color-white);
     --shadow: 0 2px 12px color-mix(in srgb, black 30%, transparent);
     --shadow-hover: 0 8px 24px color-mix(in srgb, black 40%, transparent);
@@ -65,7 +68,7 @@
 
 :root {
   /* Brand (same in both themes) */
-  --color-primary: #a67c00;
+  --color-primary: #fbc927;
   --color-primary-light: #c9a227;
   --color-primary-table: #695924;
   --color-primary-dark: #2c2416;

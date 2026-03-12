@@ -19,10 +19,11 @@ main {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
   text-decoration: underline;
   text-decoration-color: transparent;
   text-underline-offset: 0.15em;
+  text-shadow: none;
   transition:
     color var(--transition),
     text-decoration-color var(--transition);

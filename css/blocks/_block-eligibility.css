@@ -64,7 +64,7 @@
 
       &.active {
         background: var(--color-primary);
-        color: var(--color-white);
+        color: var(--color-primary-dark);
       }
 
       &.complete {
