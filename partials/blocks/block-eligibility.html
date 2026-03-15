@@ -7,10 +7,10 @@
         <div class="gform_body">
           <div class="gform_fields">
             <fieldset class="gfield">
-              <legend class="gfield_label gfield_label_before_complex">Eligibility</legend>
+              <legend class="gfield_label gfield_label_before_complex">Where do you work (or where did you work, if retired)? *</legend>
               <div class="ginput_column ginput_container">
                 <span>
-                  <label for="eligibility-employer" class="gfield_label">Where do you work (or where did you work, if retired)?</label>
+                  <label for="eligibility-employer" class="gfield_label">Where do you work (or where did you work, if retired)? *</label>
                   <select id="eligibility-employer" name="eligibility_employer" placeholder="Select your employer" required>
                   <option value="">— Select —</option>
                   <option value="city">City of North Adams</option>
@@ -25,8 +25,13 @@
                   <option value="other">Other / Not sure</option>
                 </select>
                 </span>
+              </div>
+            </fieldset>
+            <fieldset class="gfield">
+              <legend class="gfield_label gfield_label_before_complex">Do you live or work in Berkshire County, Massachusetts? *</legend>
+              <div class="ginput_column ginput_container">
                 <span>
-                  <label for="eligibility-area" class="gfield_label">Do you live or work in Berkshire County, Massachusetts?</label>
+                  <label for="eligibility-area" class="gfield_label">Do you live or work in Berkshire County, Massachusetts? *</label>
                   <select id="eligibility-area" name="eligibility_area" placeholder="Select yes or no" required>
                   <option value="">— Select —</option>
                   <option value="yes">Yes</option>
