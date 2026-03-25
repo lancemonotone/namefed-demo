@@ -7,6 +7,7 @@
   --cell-display: block;
   --block-table-bg: var(--color-primary-table);
   --block-table-label-bg: var(--color-primary-dark);
+  --block-table-section-bg: var(--color-primary-dark);
 
   width: fit-content;
   color: var(--color-white);
@@ -32,6 +33,31 @@
 
   &.block-table--wide {
     --block-table-max-width: 100%;
+  }
+
+  /* Rates “full sheet” variant: adds section header rows but uses the same mobile stacking behavior. */
+  &.block-table--rates-sheet {
+    & .block-table__row.block-table__row--section {
+      background: var(--block-table-section-bg);
+
+      & .block-table__cell {
+        border-bottom: 0;
+      }
+
+      & .block-table__cell.block-table__cell--header {
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+
+      & .block-table__cell.block-table__cell--section-spacer {
+        display: none;
+
+        @media (min-width: 768px) {
+          display: table-cell;
+        }
+      }
+    }
   }
 
   & .block-table__caption {
@@ -79,6 +105,10 @@
 
         @media (min-width: 768px) {
           --header-row-display: table-row;
+        }
+
+        & .block-table__cell.block-table__cell--header {
+          white-space: nowrap;
         }
       }
     }
@@ -138,6 +168,7 @@
         font-weight: 700;
         color: var(--color-white);
         background: var(--block-table-label-bg);
+        padding: var(--cell-padding-block) var(--cell-padding-inline);
 
         &::before {
           content: none;

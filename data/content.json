@@ -1,419 +1,516 @@
 {
-  "site": {
-    "name": "North Adams Municipal Employees Federal Credit Union",
-    "shortName": "NAMEFED"
-  },
-  "shared": {
-    "whoWeServe": {
-      "type": "list",
-      "data": {
-        "items": [
-          "City of North Adams employees",
-          "North Adams City Yard employees",
-          "North Adams Public Schools staff",
-          "North Adams Fire &amp; Police Departments",
-          "Northern Berkshire EMS",
-          "North Adams Housing Authority",
-          "Municipal retirees",
-          "<strong>Immediate family of current members</strong>"
-        ]
-      }
+    "site": {
+        "name": "North Adams Municipal Employees Federal Credit Union",
+        "shortName": "NAMEFED"
     },
-    "location": {
-      "type": "card",
-      "data": {
-        "title": "North Adams M.E. Federal Credit Union",
-        "body": "<p>Norad Mill<br>60 Roberts Drive, Suite 112<br>North Adams, MA 01247</p><p>Phone: (413) 662-2657<br>Fax: (413) 662-2173</p><p><a href=\"contact.html\">Contact us</a></p>",
-        "modifiers": "block-card--compact"
-      }
-    },
-    "holidays": {
-      "type": "table",
-      "data": {
-        "id": "holidays",
-        "caption": "2026 Holiday Schedule",
-        "note": "Note: We may close early on Christmas Eve and New Year's Eve. Check the homepage alert bar for current notices.",
-        "headers": [["Holiday", "Date"]],
-        "rows": [
-          ["New Year's Day", "Thursday, January 1"],
-          ["Martin Luther King Jr. Day", "Monday, January 19"],
-          ["Presidents' Day", "Monday, February 16"],
-          ["Patriots' Day", "Monday, April 20"],
-          ["Memorial Day", "Monday, May 25"],
-          ["Juneteenth", "Friday, June 19"],
-          ["Independence Day", "Saturday, July 4"],
-          ["Labor Day", "Monday, September 7"],
-          ["Columbus Day", "Monday, October 12"],
-          ["Veterans Day", "Wednesday, November 11"],
-          ["Thanksgiving", "Thursday, November 26"],
-          ["Day after Thanksgiving", "Friday, November 27"],
-          ["Christmas Day", "Friday, December 25"]
-        ]
-      }
-    }
-  },
-  "pages": {
-    "index": {
-      "title": "North Adams Municipal Employees Federal Credit Union – NAMEFED",
-      "blocks": [
-        {
-          "type": "hero",
-          "data": {
-            "title": "Have You Joined Your Credit Union Yet?",
-            "tagline": "North Adams Municipal Employees Federal Credit Union, serving those who serve our community since 1959.",
-            "bgImage": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Main_Street_North_Adams.jpg",
-            "bgAlt": "Main Street, North Adams, Massachusetts",
-            "ctas": [
-              {
-                "href": "membership.html",
-                "text": "Apply for Membership",
-                "class": "btn btn-primary"
-              },
-              {
-                "href": "contact.html",
-                "text": "Contact Us",
-                "class": "btn btn-secondary"
-              }
-            ]
-          }
-        },
-        {
-          "type": "strip",
-          "data": {
-            "contentHtml": "<p><strong>Branch hours:</strong> Mon–Fri 9am–4pm. Transactions must be in by 3:30pm for same-day processing. Closed on federal holidays.</p>"
-          }
-        },
-        {
-          "type": "split",
-          "data": {
-            "modifiers": "section-split--media section-content--center",
-            "contentHtml": "<h2>Welcome to NAMEFED</h2><p class=\"lead\">Chartered January 1, 1959, we've been serving North Adams municipal employees and their families for over 60 years. We're member-owned, not-for-profit, and focused on helping you save, borrow, and plan for the future.</p><p><strong>Once a Member – Always a Member!</strong> Even if you leave your employment or move out of the area, we just require annual activity in your account.</p>",
-            "buttons": [
-              {
-                "href": "rates.html",
-                "text": "View Rates",
-                "class": "btn btn-primary"
-              },
-              {
-                "href": "hours-locations.html",
-                "text": "Find Us",
-                "class": "btn btn-primary"
-              },
-              {
-                "href": "membership.html",
-                "text": "Join NAMEFED",
-                "class": "btn btn-primary"
-              }
-            ],
-            "media": {
-              "src": "https://media.cnn.com/api/v1/images/stellar/prod/190524170003-01-north-adams-photos.jpg?q=w_1110,c_fill",
-              "alt": "Downtown North Adams, Massachusetts"
-            }
-          }
-        },
-        {
-          "type": "split",
-          "data": {
-            "modifiers": "section--alt section-split--media",
-            "contentHtml": "<h2>Who We Serve</h2><p class=\"lead\">NAMEFED membership is open to employees and retirees of:</p>{{@whoWeServe}}",
-            "media": {
-              "src": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Seal_of_North_Adams%2C_Massachusetts.png",
-              "alt": "Seal of the City of North Adams, Massachusetts"
-            }
-          }
-        },
-        {
-          "type": "grid",
-          "data": {
-            "heading": "What We Offer",
-            "items": [
-              {
-                "image": "https://images.pexels.com/photos/12357530/pexels-photo-12357530.jpeg",
-                "imageAlt": "Free A close-up of an adult's hand dropping a coin into a piggy bank, symbolizing savings and investment.",
-                "title": "Savings &amp; Christmas Clubs",
-                "body": "Share Savings at a competitive rate. Just $5 to open. Christmas Clubs with checks printed October 1st. Lil Buck Savers for ages 0–17."
-              },
-              {
-                "image": "https://images.pexels.com/photos/7567304/pexels-photo-7567304.jpeg",
-                "imageAlt": "Free A stack of $100 bills placed on a tablet displaying financial graphs, representing modern finance.",
-                "title": "Loans",
-                "body": "Auto, personal, motorcycle, utility trailers, snowmobiles, boats, campers, ATVs, plus seasonal loan specials throughout the year."
-              },
-              {
-                "image": "https://images.pexels.com/photos/6693656/pexels-photo-6693656.jpeg",
-                "imageAlt": "Professional woman analyzing financial documents and counting cash at office desk.",
-                "title": "Payroll Deduction",
-                "body": "Simplify the process and ensure payments are on time. Direct deposit available; choose any amount."
-              }
-            ]
-          }
-        },
-        {
-          "type": "newsletter",
-          "data": {
-            "modifiers": "section--alt content--center"
-          }
-        },
-        {
-          "type": "content",
-          "data": {
-            "modifiers": "content--center",
-            "innerHtml": "<h2>Ready to Join?</h2><p>Eligibility is easy: if you're a municipal employee, retiree, or family member, you likely qualify.</p>",
-            "buttons": [
-              {
-                "href": "membership.html",
-                "text": "Apply for Membership",
-                "class": "btn btn-primary"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "about": {
-      "title": "About Us – North Adams Municipal Employees Federal Credit Union",
-      "blocks": [
-        { "type": "pagehead", "data": { "title": "About NAMEFED" } },
-        {
-          "type": "split",
-          "data": {
-            "modifiers": "section-split--media",
-            "contentHtml": "<h2>Who We Are</h2><p class=\"lead\">North Adams M.E. Federal Credit Union was chartered January 1, 1959, in North Adams, Massachusetts. For over 60 years, we've served municipal employees and their families.</p><p>We're member-owned, not-for-profit, and focused on helping you save, borrow, and plan for the future, without the fees and hassle of big banks.</p>",
-            "media": {
-              "src": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Bird%27s-eye_View_of_North_Adams%2C_MA.jpg",
-              "alt": "Bird's-eye View of North Adams, MA; from a 1905 postcard published by the Detroit Photographic Company."
-            }
-          }
-        },
-        {
-          "type": "content",
-          "data": {
-            "modifiers": "section--alt",
-            "innerHtml": "<h2>Who We Serve</h2><p>NAMEFED membership is open to employees and retirees of:</p>{{@whoWeServe}}"
-          }
-        },
-        {
-          "type": "content",
-          "data": {
-            "innerHtml": "<h2>Board of Directors</h2><p>We have a volunteer Board of Directors that sets loan and dividend rates, amends policies, and makes important decisions for the Credit Union. Meetings are held on the second Monday of every month at 4:30 PM at the Credit Union office.</p><p><strong>Board positions are open.</strong> If you're interested in serving, please call us at (413) 662-2657.</p>"
-          }
-        }
-      ]
-    },
-    "hours-locations": {
-      "title": "Hours &amp; Locations – NAMEFED",
-      "blocks": [
-        { "type": "pagehead", "data": { "title": "Hours &amp; Locations" } },
-        {
-          "type": "content",
-          "data": {
-            "innerHtml": "<h2>Branch Hours</h2>{{hoursTableHtml}}<p>We are closed on federal and Massachusetts bank holidays. NAMEFED follows the Federal Reserve Bank of Boston holiday schedule.</p>{{@holidays}}<p><strong>Friendly Reminder:</strong> Due to our day closing procedures, all transactions must be in by 3:30 PM for same-day processing. Requests after 3:30 PM will be processed the next business day.</p>",
-            "hoursTable": {
-              "caption": "Branch hours",
-              "headers": [["Day(s)", "Hours"]],
-              "rows": [
-                ["Monday – Friday", "9:00 AM – 4:00 PM"],
-                ["Monday – Thursday (Summer)", "9:00 AM – 4:00 PM"],
-                ["Friday (Summer)", "9:00 AM – 1:00 PM"],
-                ["Saturday – Sunday", "Closed"]
-              ]
-            }
-          }
-        },
-        {
-          "type": "split",
-          "data": {
-            "modifiers": "section--alt section-split--media",
-            "contentHtml": "<h2>Our Location</h2>{{@location}}",
-            "media": {
-              "src": "https://upload.wikimedia.org/wikipedia/commons/1/10/Norad_Mill_60_Roberts_Drive_North_Adams_from_west.jpg",
-              "alt": "Norad Mill, 60 Roberts Drive, North Adams"
-            }
-          }
-        }
-      ]
-    },
-    "rates": {
-      "title": "Rates – NAMEFED",
-      "blocks": [
-        { "type": "pagehead", "data": { "title": "Rates &amp; Products" } },
-        {
-          "type": "content",
-          "data": {
-            "innerHtml": "<h2>Savings &amp; Dividends</h2><p class=\"lead\">Share Savings and Christmas Clubs: .10% APY. Dividend rates are subject to change without prior notification. Minimum $5.00 to open and maintain your account with annual activity.</p>{{tableHtml}}",
-            "table": {
-              "caption": "Savings rates",
-              "headers": [["Product", "APY"]],
-              "rows": [["Share Savings / Christmas Clubs", ".10%"]]
-            }
-          }
-        },
-        {
-          "type": "content",
-          "data": {
-            "modifiers": "section--alt",
-            "innerHtml": "<h2>Loan Rates</h2><p class=\"lead\">Rates approved by Board of Directors December 15, 2025. All rates based on APR. Loan rates are on a Risk-Based Pricing scale determined by Debt Ratio &amp; Credit Score. Rates subject to change without prior notification.</p>{{tableHtml}}<p><a href=\"contact.html\">Contact us</a> for full rate details. We will match any competitor's rate with Board approval. Just ask!</p>",
-            "table": {
-              "caption": "Loan rates by product",
-              "modifiers": "block-table--wide",
-              "headers": [["Product", "Max Amount", "Max Term", "Rate"]],
-              "rows": [
-                ["Personal Loan", "$7,500", "5 years", "9–12% APR"],
-                ["Share Secured", "n/a", "10 years", "3.50% + dividend"],
-                [
-                  "New Vehicle (2025–2026)",
-                  "$50,000",
-                  "6 years",
-                  "5.75–6.5% APR"
-                ],
-                [
-                  "Used Vehicle (2018–current)",
-                  "$50,000",
-                  "6 years",
-                  "6.5–8% APR"
-                ],
-                [
-                  "Used Vehicle (2011–2017)",
-                  "$50,000",
-                  "5 years",
-                  "7.5–10.5% APR"
-                ],
-                ["Antique/Classic (25+ years)", "n/a", "5 years", "9.99% APR"],
-                [
-                  "Motorcycle, Trailers, Boats, Campers/ATV",
-                  "n/a",
-                  "4–6 years",
-                  "6–12% APR"
+    "shared": {
+        "whoWeServe": {
+            "type": "list",
+            "data": {
+                "items": [
+                    "City of North Adams employees",
+                    "North Adams City Yard employees",
+                    "North Adams Public Schools staff",
+                    "North Adams Fire &amp; Police Departments",
+                    "Northern Berkshire EMS",
+                    "North Adams Housing Authority",
+                    "Municipal retirees",
+                    "<strong>Immediate family of current members</strong>"
                 ]
-              ]
             }
-          }
         },
-        {
-          "type": "content",
-          "data": {
-            "innerHtml": "<h2>2026 Loan Specials</h2>{{tableHtml}}<p class=\"form-note\">* Subject to credit approval. Payroll deduction available once approved. See staff for details.</p>",
-            "table": {
-              "caption": "Seasonal loan specials 2026",
-              "modifiers": "block-table--wide",
-              "headers": [
-                ["Special", "Available", "Max Amount", "APR", "Max Term"]
-              ],
-              "rows": [
-                [
-                  "Credit Card / Consolidation",
-                  "Jan–Mar",
-                  "$7,500",
-                  "6%",
-                  "60 months"
+        "location": {
+            "type": "card",
+            "data": {
+                "title": "North Adams M.E. Federal Credit Union",
+                "body": "<p>Norad Mill<br>60 Roberts Drive, Suite 112<br>North Adams, MA 01247</p><p>Phone: (413) 662-2657<br>Fax: (413) 662-2173</p><p><a href=\"contact.html\">Contact us</a></p>",
+                "modifiers": "block-card--compact"
+            }
+        },
+        "holidays": {
+            "type": "table",
+            "data": {
+                "id": "holidays",
+                "caption": "2026 Holiday Schedule",
+                "note": "Note: We may close early on Christmas Eve and New Year's Eve. Check the homepage alert bar for current notices.",
+                "headers": [
+                    [
+                        "Holiday",
+                        "Date"
+                    ]
                 ],
-                ["Home Repair", "Apr–Jun", "$7,500", "6%", "60 months"],
-                ["Vacation", "Jul–Sep", "$3,500", "6%", "36 months"],
-                ["Fuel", "Aug–Oct", "$7,500", "6%", "12 months"],
-                ["Holiday", "Oct–Dec", "$1,500", "6%", "12 months"]
-              ]
+                "rows": [
+                    [
+                        "New Year's Day",
+                        "Thursday, January 1"
+                    ],
+                    [
+                        "Martin Luther King Jr. Day",
+                        "Monday, January 19"
+                    ],
+                    [
+                        "Presidents' Day",
+                        "Monday, February 16"
+                    ],
+                    [
+                        "Patriots' Day",
+                        "Monday, April 20"
+                    ],
+                    [
+                        "Memorial Day",
+                        "Monday, May 25"
+                    ],
+                    [
+                        "Juneteenth",
+                        "Friday, June 19"
+                    ],
+                    [
+                        "Independence Day",
+                        "Saturday, July 4"
+                    ],
+                    [
+                        "Labor Day",
+                        "Monday, September 7"
+                    ],
+                    [
+                        "Columbus Day",
+                        "Monday, October 12"
+                    ],
+                    [
+                        "Veterans Day",
+                        "Wednesday, November 11"
+                    ],
+                    [
+                        "Thanksgiving",
+                        "Thursday, November 26"
+                    ],
+                    [
+                        "Day after Thanksgiving",
+                        "Friday, November 27"
+                    ],
+                    [
+                        "Christmas Day",
+                        "Friday, December 25"
+                    ]
+                ]
             }
-          }
         }
-      ]
     },
-    "contact": {
-      "title": "Contact – NAMEFED",
-      "blocks": [
-        { "type": "pagehead", "data": { "title": "Contact Us" } },
-        {
-          "type": "split",
-          "data": {
-            "contentHtml": "<h2>Get in Touch</h2><p><strong>Address</strong><br>Norad Mill<br>60 Roberts Drive, Suite 112<br>North Adams, MA 01247</p><p><strong>Phone</strong><br>(413) 662-2657</p><p><strong>Fax</strong><br>(413) 662-2173</p><p><strong>Hours</strong><br>Mon–Fri 9am–4pm (Summer: Fri 9am–1pm)</p><h3>Staff</h3><p><strong>Cathy Corbosiero</strong> – Office Manager<br><a href=\"mailto:cathy.corbosiero@namefcu.com\">cathy.corbosiero@namefcu.com</a></p><p><strong>Regina Riley</strong> – Office Clerk<br><a href=\"mailto:regina.riley@namefcu.com\">regina.riley@namefcu.com</a></p><p><a href=\"https://facebook.com/NAMEFED\" target=\"_blank\" rel=\"noopener\" class=\"link-fb\"><span class=\"fb-icon\" aria-hidden=\"true\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"var(--color-primary-dark)\" width=\"20\" height=\"20\"><path d=\"M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z\"/></svg></span> Like us on Facebook</a></p>",
-            "media": {
-              "type": "contact-form",
-              "data": {}
-            }
-          }
-        }
-      ]
-    },
-    "faq": {
-      "title": "FAQ – NAMEFED",
-      "blocks": [
-        {
-          "type": "pagehead",
-          "data": { "title": "Frequently Asked Questions" }
-        },
-        {
-          "type": "qanda",
-          "data": {
-            "introHtml": "<p class=\"lead\">Find answers to common questions about NAMEFED. Can't find what you need? <a href=\"contact.html\">Contact us</a>. We're happy to help.</p>",
-            "items": [
-              {
-                "q": "What is NAMEFED's routing number?",
-                "a": "Our routing number is <strong>211871234</strong>. Use it for direct deposit, wire transfers, and ACH setup. You'll also find it on your checks and in your account materials."
-              },
-              {
-                "q": "Who can join NAMEFED?",
-                "a": "Membership is open to employees and retirees of the City of North Adams, North Adams Public Schools, North Adams Fire and Police Departments, Northern Berkshire EMS, North Adams Housing Authority, and North Adams City Yard. Immediate family members of current members may also join. <a href=\"membership.html\">See full eligibility details</a>."
-              },
-              {
-                "q": "What are your branch hours?",
-                "a": "We're open Monday–Friday, 9:00 AM–4:00 PM. Summer hours (typically June–August): Monday–Thursday 9am–4pm, Friday 9am–1pm. All transactions must be in by 3:30 PM for same-day processing. <a href=\"hours-locations.html\">View full hours and holiday schedule</a>."
-              },
-              {
-                "q": "Where are you located?",
-                "a": "We're at Norad Mill, 60 Roberts Drive, Suite 112, North Adams, MA 01247. <a href=\"hours-locations.html\">Get directions and more details</a>."
-              },
-              {
-                "q": "How much do I need to open an account?",
-                "a": "Just $5.00 to open a Share Savings account. You'll need a valid government-issued ID, Social Security card, and cash or check made payable to NA ME Fed Credit Union. <a href=\"membership.html\">Apply for membership</a>."
-              },
-              {
-                "q": "Do you offer online banking?",
-                "a": "Not at this time. We're a small, branch-based credit union. You can visit us during business hours or call (413) 662-2657. We're exploring online banking for the future."
-              },
-              {
-                "q": "What if I leave my job or move away?",
-                "a": "Once a member, always a member! We just require annual activity in your account to keep it open. You don't lose membership if you change jobs or relocate."
-              },
-              {
-                "q": "How do I set up direct deposit or payroll deduction?",
-                "a": "Contact us for our routing number and your account number. We can provide a direct deposit form, or your employer may have their own. For payroll deduction on loans, we'll work with your employer once your loan is approved."
-              },
-              {
-                "q": "Is my money safe?",
-                "a": "Yes. Your savings are federally insured to at least $250,000 by the NCUA (National Credit Union Administration), backed by the full faith and credit of the United States Government."
-              },
-              {
-                "q": "How do I apply for a loan?",
-                "a": "Visit the branch or call (413) 662-2657 to speak with staff. We offer auto, personal, and seasonal loans. <a href=\"rates.html\">View current rates</a>. We will match competitor rates with Board approval. Just ask!"
-              }
+    "pages": {
+        "index": {
+            "title": "North Adams Municipal Employees Federal Credit Union – NAMEFED",
+            "blocks": [
+                {
+                    "type": "hero",
+                    "data": {
+                        "title": "Have You Joined Your Credit Union Yet?",
+                        "tagline": "North Adams Municipal Employees Federal Credit Union, serving those who serve our community since 1959.",
+                        "bgImage": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Main_Street_North_Adams.jpg",
+                        "bgAlt": "Main Street, North Adams, Massachusetts",
+                        "ctas": [
+                            {
+                                "href": "membership.html",
+                                "text": "Apply for Membership",
+                                "class": "btn btn-primary"
+                            },
+                            {
+                                "href": "contact.html",
+                                "text": "Contact Us",
+                                "class": "btn btn-secondary"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "strip",
+                    "data": {
+                        "contentHtml": "<p><strong>Branch hours:</strong> Mon–Fri 9am–4pm. Transactions must be in by 3:30pm for same-day processing. Closed on federal holidays.</p>"
+                    }
+                },
+                {
+                    "type": "split",
+                    "data": {
+                        "modifiers": "section-split--media section-content--center",
+                        "contentHtml": "<h2>Welcome to NAMEFED</h2><p class=\"lead\">Chartered January 1, 1959, we've been serving North Adams municipal employees and their families for over 60 years. We're member-owned, not-for-profit, and focused on helping you save, borrow, and plan for the future.</p><p><strong>Once a Member – Always a Member!</strong> Even if you leave your employment or move out of the area, we just require annual activity in your account.</p>",
+                        "buttons": [
+                            {
+                                "href": "rates.html",
+                                "text": "View Rates",
+                                "class": "btn btn-primary"
+                            },
+                            {
+                                "href": "hours-locations.html",
+                                "text": "Find Us",
+                                "class": "btn btn-primary"
+                            },
+                            {
+                                "href": "membership.html",
+                                "text": "Join NAMEFED",
+                                "class": "btn btn-primary"
+                            }
+                        ],
+                        "media": {
+                            "src": "https://media.cnn.com/api/v1/images/stellar/prod/190524170003-01-north-adams-photos.jpg?q=w_1110,c_fill",
+                            "alt": "Downtown North Adams, Massachusetts"
+                        }
+                    }
+                },
+                {
+                    "type": "split",
+                    "data": {
+                        "modifiers": "section--alt section-split--media",
+                        "contentHtml": "<h2>Who We Serve</h2><p class=\"lead\">NAMEFED membership is open to employees and retirees of:</p>{{@whoWeServe}}",
+                        "media": {
+                            "src": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Seal_of_North_Adams%2C_Massachusetts.png",
+                            "alt": "Seal of the City of North Adams, Massachusetts"
+                        }
+                    }
+                },
+                {
+                    "type": "grid",
+                    "data": {
+                        "heading": "What We Offer",
+                        "items": [
+                            {
+                                "image": "https://images.pexels.com/photos/12357530/pexels-photo-12357530.jpeg",
+                                "imageAlt": "Free A close-up of an adult's hand dropping a coin into a piggy bank, symbolizing savings and investment.",
+                                "title": "Savings &amp; Christmas Clubs",
+                                "body": "Share Savings at a competitive rate. Just $5 to open. Christmas Clubs with checks printed October 1st. Lil Buck Savers for ages 0–17."
+                            },
+                            {
+                                "image": "https://images.pexels.com/photos/7567304/pexels-photo-7567304.jpeg",
+                                "imageAlt": "Free A stack of $100 bills placed on a tablet displaying financial graphs, representing modern finance.",
+                                "title": "Loans",
+                                "body": "Auto, personal, motorcycle, utility trailers, snowmobiles, boats, campers, ATVs, plus seasonal loan specials throughout the year."
+                            },
+                            {
+                                "image": "https://images.pexels.com/photos/6693656/pexels-photo-6693656.jpeg",
+                                "imageAlt": "Professional woman analyzing financial documents and counting cash at office desk.",
+                                "title": "Payroll Deduction",
+                                "body": "Simplify the process and ensure payments are on time. Direct deposit available; choose any amount."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "newsletter",
+                    "data": {
+                        "modifiers": "section--alt content--center"
+                    }
+                },
+                {
+                    "type": "content",
+                    "data": {
+                        "modifiers": "content--center",
+                        "innerHtml": "<h2>Ready to Join?</h2><p>Eligibility is easy: if you're a municipal employee, retiree, or family member, you likely qualify.</p>",
+                        "buttons": [
+                            {
+                                "href": "membership.html",
+                                "text": "Apply for Membership",
+                                "class": "btn btn-primary"
+                            }
+                        ]
+                    }
+                }
             ]
-          }
-        }
-      ]
-    },
-    "membership": {
-      "title": "Membership – NAMEFED",
-      "blocks": [
-        { "type": "pagehead", "data": { "title": "Apply for Membership" } },
-        {
-          "type": "content",
-          "data": {
-            "innerHtml": "<h2>Who Can Join?</h2><p class=\"lead\">NAMEFED membership is open to municipal employees, retirees, and their families. If you work for the city, school district, transit authority, or public safety, or if you're related to someone who does, you likely qualify.</p>{{@whoWeServe}}<p><strong>Once a Member – Always a Member!</strong> Even if you leave your employment or move out of the area, we just require annual activity in your account.</p>"
-          }
         },
-        {
-          "type": "content",
-          "data": {
-            "modifiers": "section--alt",
-            "innerHtml": "<h2>What You'll Need</h2>{{list2Html}}",
-            "list2": [
-              "Driver's license or other valid government-issued picture ID",
-              "Social Security Card",
-              "Cash or check (minimum $5.00) made payable to NA ME Fed Credit Union"
+        "about": {
+            "title": "About Us – North Adams Municipal Employees Federal Credit Union",
+            "blocks": [
+                {
+                    "type": "pagehead",
+                    "data": {
+                        "title": "About NAMEFED"
+                    }
+                },
+                {
+                    "type": "split",
+                    "data": {
+                        "modifiers": "section-split--media",
+                        "contentHtml": "<h2>Who We Are</h2><p class=\"lead\">North Adams M.E. Federal Credit Union was chartered January 1, 1959, in North Adams, Massachusetts. For over 60 years, we've served municipal employees and their families.</p><p>We're member-owned, not-for-profit, and focused on helping you save, borrow, and plan for the future, without the fees and hassle of big banks.</p>",
+                        "media": {
+                            "src": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Bird%27s-eye_View_of_North_Adams%2C_MA.jpg",
+                            "alt": "Bird's-eye View of North Adams, MA; from a 1905 postcard published by the Detroit Photographic Company."
+                        }
+                    }
+                },
+                {
+                    "type": "content",
+                    "data": {
+                        "modifiers": "section--alt",
+                        "innerHtml": "<h2>Who We Serve</h2><p>NAMEFED membership is open to employees and retirees of:</p>{{@whoWeServe}}"
+                    }
+                },
+                {
+                    "type": "content",
+                    "data": {
+                        "innerHtml": "<h2>Board of Directors</h2><p>We have a volunteer Board of Directors that sets loan and dividend rates, amends policies, and makes important decisions for the Credit Union. Meetings are held on the second Monday of every month at 4:30 PM at the Credit Union office.</p><p><strong>Board positions are open.</strong> If you're interested in serving, please call us at (413) 662-2657.</p>"
+                    }
+                }
             ]
-          }
         },
-        { "type": "eligibility", "data": {} }
-      ]
+        "hours-locations": {
+            "title": "Hours &amp; Locations – NAMEFED",
+            "blocks": [
+                {
+                    "type": "pagehead",
+                    "data": {
+                        "title": "Hours &amp; Locations"
+                    }
+                },
+                {
+                    "type": "content",
+                    "data": {
+                        "innerHtml": "<h2>Branch Hours</h2>{{hoursTableHtml}}<p>We are closed on federal and Massachusetts bank holidays. NAMEFED follows the Federal Reserve Bank of Boston holiday schedule.</p>{{@holidays}}<p><strong>Friendly Reminder:</strong> Due to our day closing procedures, all transactions must be in by 3:30 PM for same-day processing. Requests after 3:30 PM will be processed the next business day.</p>",
+                        "hoursTable": {
+                            "caption": "Branch hours",
+                            "headers": [
+                                [
+                                    "Day(s)",
+                                    "Hours"
+                                ]
+                            ],
+                            "rows": [
+                                [
+                                    "Monday – Friday",
+                                    "9:00 AM – 4:00 PM"
+                                ],
+                                [
+                                    "Monday – Thursday (Summer)",
+                                    "9:00 AM – 4:00 PM"
+                                ],
+                                [
+                                    "Friday (Summer)",
+                                    "9:00 AM – 1:00 PM"
+                                ],
+                                [
+                                    "Saturday – Sunday",
+                                    "Closed"
+                                ]
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "split",
+                    "data": {
+                        "modifiers": "section--alt section-split--media",
+                        "contentHtml": "<h2>Our Location</h2>{{@location}}",
+                        "media": {
+                            "src": "https://upload.wikimedia.org/wikipedia/commons/1/10/Norad_Mill_60_Roberts_Drive_North_Adams_from_west.jpg",
+                            "alt": "Norad Mill, 60 Roberts Drive, North Adams"
+                        }
+                    }
+                }
+            ]
+        },
+        "rates": {
+            "title": "Rates – NAMEFED",
+            "blocks": [
+                {
+                    "type": "pagehead",
+                    "data": {
+                        "title": "Rates &amp; Products"
+                    }
+                },
+                {
+                    "type": "content",
+                    "data": {
+                        "innerHtml": "<h2>Savings &amp; Dividends</h2><p class=\"lead\">Share Savings and Christmas Clubs: .10% APY. Dividend rates are subject to change without prior notification. Minimum $5.00 to open and maintain your account with annual activity.</p>{{tableHtml}}",
+                        "table": {
+                            "caption": "Savings rates",
+                            "headers": [
+                                [
+                                    "Product",
+                                    "APY"
+                                ]
+                            ],
+                            "rows": [
+                                [
+                                    "Share Savings / Christmas Clubs",
+                                    ".10%"
+                                ]
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "content",
+                    "data": {
+                        "modifiers": "section--alt",
+                        "innerHtml": "<h2>Loan Rates</h2>\n<p class=\"lead\">Rates approved by Board of Directors December 15, 2025. All rates based on APR. Loan rates are on a Risk-Based Pricing scale determined by Debt Ratio &amp; Credit Score. Rates subject to change without prior notification.</p>\n\n<!--\n  Important: this uses the same `block-table` markup as the other demo tables so that on mobile the header becomes stacked\n  label/value blocks (see Savings &amp; Dividends screenshot).\n-->\n<div class=\"block-table block-table--wide block-table--rates-sheet\" role=\"region\" aria-label=\"Loan interest rates (full sheet)\" tabindex=\"0\">\n  <div class=\"block-table__caption visually-hidden\">Loan rates by product, credit grade, and term</div>\n\n  <div class=\"block-table__table\">\n    <!-- Desktop header row (hides into label/value cells on mobile) -->\n    <div class=\"block-table__row block-table__row--header\">\n      <div class=\"block-table__cell block-table__cell--header\">Product / tier</div>\n      <div class=\"block-table__cell block-table__cell--header\">Max amount</div>\n      <div class=\"block-table__cell block-table__cell--header\">Term</div>\n      <div class=\"block-table__cell block-table__cell--header\">Grade A</div>\n      <div class=\"block-table__cell block-table__cell--header\">Grade B</div>\n      <div class=\"block-table__cell block-table__cell--header\">Grade C</div>\n      <div class=\"block-table__cell block-table__cell--header\">Grade D</div>\n    </div>\n\n    <!-- Personal Loans -->\n    <div class=\"block-table__row block-table__row--section\">\n      <div class=\"block-table__cell block-table__cell--header\">Personal Loans</div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n    </div>\n    <div class=\"block-table__row\">\n      <div class=\"block-table__cell\" data-title=\"Product / tier\"><span class=\"block-table__cell-value\">Personal Loans</span></div>\n      <div class=\"block-table__cell\" data-title=\"Max amount\"><span class=\"block-table__cell-value\">Max $7,500</span></div>\n      <div class=\"block-table__cell\" data-title=\"Term\"><span class=\"block-table__cell-value\">Maximum of 5 years (60 months)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade A\"><span class=\"block-table__cell-value\">9%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade B\"><span class=\"block-table__cell-value\">10%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade C\"><span class=\"block-table__cell-value\">11%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade D\"><span class=\"block-table__cell-value\">12%</span></div>\n    </div>\n\n    <!-- Share Secured -->\n    <div class=\"block-table__row block-table__row--section\">\n      <div class=\"block-table__cell block-table__cell--header\">Share Secured</div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n    </div>\n    <div class=\"block-table__row\">\n      <div class=\"block-table__cell\" data-title=\"Product / tier\"><span class=\"block-table__cell-value\">Coded Class A</span></div>\n      <div class=\"block-table__cell\" data-title=\"Max amount\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Term\"><span class=\"block-table__cell-value\">Maximum of 10 years (120 months)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade A\"><span class=\"block-table__cell-value\">3.50% + current dividend rate paid (3.63%)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade B\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade C\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade D\"><span class=\"block-table__cell-value\">—</span></div>\n    </div>\n\n    <!-- New Vehicle (Never Titled) -->\n    <div class=\"block-table__row block-table__row--section\">\n      <div class=\"block-table__cell block-table__cell--header\">New Vehicle (Never Titled)</div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n    </div>\n    <div class=\"block-table__row\">\n      <div class=\"block-table__cell\" data-title=\"Product / tier\"><span class=\"block-table__cell-value\">2025 – 2026 · 72 month tier</span></div>\n      <div class=\"block-table__cell\" data-title=\"Max amount\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Term\"><span class=\"block-table__cell-value\">Maximum of 6 years (72 months)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade A\"><span class=\"block-table__cell-value\">5.75%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade B\"><span class=\"block-table__cell-value\">6%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade C\"><span class=\"block-table__cell-value\">6.25%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade D\"><span class=\"block-table__cell-value\">6.5%</span></div>\n    </div>\n    <div class=\"block-table__row\">\n      <div class=\"block-table__cell\" data-title=\"Product / tier\"><span class=\"block-table__cell-value\">2025 – 2026 · 48 month tier</span></div>\n      <div class=\"block-table__cell\" data-title=\"Max amount\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Term\"><span class=\"block-table__cell-value\">Maximum of 4 years (48 months)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade A\"><span class=\"block-table__cell-value\">4.5%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade B\"><span class=\"block-table__cell-value\">4.75%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade C\"><span class=\"block-table__cell-value\">5%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade D\"><span class=\"block-table__cell-value\">6%</span></div>\n    </div>\n\n    <!-- Used Vehicle (Previously Titled) -->\n    <div class=\"block-table__row block-table__row--section\">\n      <div class=\"block-table__cell block-table__cell--header\">Used Vehicle (Previously Titled)</div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n    </div>\n    <div class=\"block-table__row\">\n      <div class=\"block-table__cell\" data-title=\"Product / tier\"><span class=\"block-table__cell-value\">2018 – Current</span></div>\n      <div class=\"block-table__cell\" data-title=\"Max amount\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Term\"><span class=\"block-table__cell-value\">Maximum of 6 years (72 months)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade A\"><span class=\"block-table__cell-value\">6.5%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade B\"><span class=\"block-table__cell-value\">6.75%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade C\"><span class=\"block-table__cell-value\">7%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade D\"><span class=\"block-table__cell-value\">8%</span></div>\n    </div>\n    <div class=\"block-table__row\">\n      <div class=\"block-table__cell\" data-title=\"Product / tier\"><span class=\"block-table__cell-value\">2011 – 2017</span></div>\n      <div class=\"block-table__cell\" data-title=\"Max amount\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Term\"><span class=\"block-table__cell-value\">Maximum of 5 years (60 months)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade A\"><span class=\"block-table__cell-value\">7.5%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade B\"><span class=\"block-table__cell-value\">8.5%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade C\"><span class=\"block-table__cell-value\">9.5%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade D\"><span class=\"block-table__cell-value\">10.5%</span></div>\n    </div>\n    <div class=\"block-table__row\">\n      <div class=\"block-table__cell\" data-title=\"Product / tier\"><span class=\"block-table__cell-value\">2010 – Older</span></div>\n      <div class=\"block-table__cell\" data-title=\"Max amount\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Term\"><span class=\"block-table__cell-value\">Maximum of 4 years (48 months)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade A\"><span class=\"block-table__cell-value\">8.5%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade B\"><span class=\"block-table__cell-value\">9.5%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade C\"><span class=\"block-table__cell-value\">10.5%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade D\"><span class=\"block-table__cell-value\">11.5%</span></div>\n    </div>\n\n    <!-- Antique / Classical -->\n    <div class=\"block-table__row block-table__row--section\">\n      <div class=\"block-table__cell block-table__cell--header\">Antique / Classical Vehicles (25 years)</div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n    </div>\n    <div class=\"block-table__row\">\n      <div class=\"block-table__cell\" data-title=\"Product / tier\"><span class=\"block-table__cell-value\">Single rate tier</span></div>\n      <div class=\"block-table__cell\" data-title=\"Max amount\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Term\"><span class=\"block-table__cell-value\">Maximum of 5 years (60 months)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade A\"><span class=\"block-table__cell-value\">9.99%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade B\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade C\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade D\"><span class=\"block-table__cell-value\">—</span></div>\n    </div>\n\n    <!-- Motorcycles -->\n    <div class=\"block-table__row block-table__row--section\">\n      <div class=\"block-table__cell block-table__cell--header\">Motorcycles</div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n    </div>\n    <div class=\"block-table__row\">\n      <div class=\"block-table__cell\" data-title=\"Product / tier\"><span class=\"block-table__cell-value\">New 2025 – 2026</span></div>\n      <div class=\"block-table__cell\" data-title=\"Max amount\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Term\"><span class=\"block-table__cell-value\">Maximum of 5 years (60 months)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade A\"><span class=\"block-table__cell-value\">7%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade B\"><span class=\"block-table__cell-value\">8%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade C\"><span class=\"block-table__cell-value\">9%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade D\"><span class=\"block-table__cell-value\">10%</span></div>\n    </div>\n    <div class=\"block-table__row\">\n      <div class=\"block-table__cell\" data-title=\"Product / tier\"><span class=\"block-table__cell-value\">Used 2024 – Older</span></div>\n      <div class=\"block-table__cell\" data-title=\"Max amount\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Term\"><span class=\"block-table__cell-value\">Maximum of 4 years (48 months)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade A\"><span class=\"block-table__cell-value\">8%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade B\"><span class=\"block-table__cell-value\">9%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade C\"><span class=\"block-table__cell-value\">10%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade D\"><span class=\"block-table__cell-value\">11%</span></div>\n    </div>\n\n    <!-- Utility Trailers / Snowmobiles / Boats -->\n    <div class=\"block-table__row block-table__row--section\">\n      <div class=\"block-table__cell block-table__cell--header\">Utility Trailers, Snowmobiles, and Boats</div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n    </div>\n    <div class=\"block-table__row\">\n      <div class=\"block-table__cell\" data-title=\"Product / tier\"><span class=\"block-table__cell-value\">New 2025 – 2026</span></div>\n      <div class=\"block-table__cell\" data-title=\"Max amount\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Term\"><span class=\"block-table__cell-value\">Maximum of 5 years (60 months)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade A\"><span class=\"block-table__cell-value\">6%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade B\"><span class=\"block-table__cell-value\">7%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade C\"><span class=\"block-table__cell-value\">8%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade D\"><span class=\"block-table__cell-value\">9%</span></div>\n    </div>\n    <div class=\"block-table__row\">\n      <div class=\"block-table__cell\" data-title=\"Product / tier\"><span class=\"block-table__cell-value\">Used 2024 – Older</span></div>\n      <div class=\"block-table__cell\" data-title=\"Max amount\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Term\"><span class=\"block-table__cell-value\">Maximum of 4 years (48 months)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade A\"><span class=\"block-table__cell-value\">7%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade B\"><span class=\"block-table__cell-value\">8%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade C\"><span class=\"block-table__cell-value\">9%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade D\"><span class=\"block-table__cell-value\">10%</span></div>\n    </div>\n\n    <!-- Campers / ATV -->\n    <div class=\"block-table__row block-table__row--section\">\n      <div class=\"block-table__cell block-table__cell--header\">Campers / ATV</div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n      <div class=\"block-table__cell block-table__cell--section-spacer\"></div>\n    </div>\n    <div class=\"block-table__row\">\n      <div class=\"block-table__cell\" data-title=\"Product / tier\"><span class=\"block-table__cell-value\">New 2025 – 2026</span></div>\n      <div class=\"block-table__cell\" data-title=\"Max amount\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Term\"><span class=\"block-table__cell-value\">Maximum of 6 years (72 months)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade A\"><span class=\"block-table__cell-value\">8%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade B\"><span class=\"block-table__cell-value\">9%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade C\"><span class=\"block-table__cell-value\">10%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade D\"><span class=\"block-table__cell-value\">11%</span></div>\n    </div>\n    <div class=\"block-table__row\">\n      <div class=\"block-table__cell\" data-title=\"Product / tier\"><span class=\"block-table__cell-value\">Used 2024 – Older</span></div>\n      <div class=\"block-table__cell\" data-title=\"Max amount\"><span class=\"block-table__cell-value\">—</span></div>\n      <div class=\"block-table__cell\" data-title=\"Term\"><span class=\"block-table__cell-value\">Maximum of 5 years (60 months)</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade A\"><span class=\"block-table__cell-value\">9%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade B\"><span class=\"block-table__cell-value\">10%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade C\"><span class=\"block-table__cell-value\">11%</span></div>\n      <div class=\"block-table__cell\" data-title=\"Grade D\"><span class=\"block-table__cell-value\">12%</span></div>\n    </div>\n  </div>\n</div>\n\n<p><a href=\"contact.html\">Contact us</a> for full rate details. We will match any competitor's rate with Board approval. Just ask!</p>\n"
+                    }
+                },
+                {
+                    "type": "content",
+                    "data": {
+                        "innerHtml": "<h2>2026 Loan Specials</h2>{{tableHtml}}<p class=\"form-note\">* Subject to credit approval. Payroll deduction available once approved. See staff for details.</p>",
+                        "table": {
+                            "caption": "Seasonal loan specials 2026",
+                            "modifiers": "block-table--wide",
+                            "headers": [
+                                [
+                                    "Special",
+                                    "Available",
+                                    "Max Amount",
+                                    "APR",
+                                    "Max Term"
+                                ]
+                            ],
+                            "rows": [
+                                [
+                                    "Credit Card / Consolidation",
+                                    "Jan–Mar",
+                                    "$7,500",
+                                    "6%",
+                                    "60 months"
+                                ],
+                                [
+                                    "Home Repair",
+                                    "Apr–Jun",
+                                    "$7,500",
+                                    "6%",
+                                    "60 months"
+                                ],
+                                [
+                                    "Vacation",
+                                    "Jul–Sep",
+                                    "$3,500",
+                                    "6%",
+                                    "36 months"
+                                ],
+                                [
+                                    "Fuel",
+                                    "Aug–Oct",
+                                    "$7,500",
+                                    "6%",
+                                    "12 months"
+                                ],
+                                [
+                                    "Holiday",
+                                    "Oct–Dec",
+                                    "$1,500",
+                                    "6%",
+                                    "12 months"
+                                ]
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "contact": {
+            "title": "Contact – NAMEFED",
+            "blocks": [
+                {
+                    "type": "pagehead",
+                    "data": {
+                        "title": "Contact Us"
+                    }
+                },
+                {
+                    "type": "split",
+                    "data": {
+                        "contentHtml": "<h2>Get in Touch</h2><p><strong>Address</strong><br>Norad Mill<br>60 Roberts Drive, Suite 112<br>North Adams, MA 01247</p><p><strong>Phone</strong><br>(413) 662-2657</p><p><strong>Fax</strong><br>(413) 662-2173</p><p><strong>Hours</strong><br>Mon–Fri 9am–4pm (Summer: Fri 9am–1pm)</p><h3>Staff</h3><p><strong>Cathy Corbosiero</strong> – Office Manager<br><a href=\"mailto:cathy.corbosiero@namefcu.com\">cathy.corbosiero@namefcu.com</a></p><p><strong>Regina Riley</strong> – Office Clerk<br><a href=\"mailto:regina.riley@namefcu.com\">regina.riley@namefcu.com</a></p><p><a href=\"https://facebook.com/NAMEFED\" target=\"_blank\" rel=\"noopener\" class=\"link-fb\"><span class=\"fb-icon\" aria-hidden=\"true\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"var(--color-primary-dark)\" width=\"20\" height=\"20\"><path d=\"M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z\"/></svg></span> Like us on Facebook</a></p>",
+                        "media": {
+                            "type": "contact-form",
+                            "data": []
+                        }
+                    }
+                }
+            ]
+        },
+        "faq": {
+            "title": "FAQ – NAMEFED",
+            "blocks": [
+                {
+                    "type": "pagehead",
+                    "data": {
+                        "title": "Frequently Asked Questions"
+                    }
+                },
+                {
+                    "type": "qanda",
+                    "data": {
+                        "introHtml": "<p class=\"lead\">Find answers to common questions about NAMEFED. Can't find what you need? <a href=\"contact.html\">Contact us</a>. We're happy to help.</p>",
+                        "items": [
+                            {
+                                "q": "What is NAMEFED's routing number?",
+                                "a": "Our routing number is <strong>211871234</strong>. Use it for direct deposit, wire transfers, and ACH setup. You'll also find it on your checks and in your account materials."
+                            },
+                            {
+                                "q": "Who can join NAMEFED?",
+                                "a": "Membership is open to employees and retirees of the City of North Adams, North Adams Public Schools, North Adams Fire and Police Departments, Northern Berkshire EMS, North Adams Housing Authority, and North Adams City Yard. Immediate family members of current members may also join. <a href=\"membership.html\">See full eligibility details</a>."
+                            },
+                            {
+                                "q": "What are your branch hours?",
+                                "a": "We're open Monday–Friday, 9:00 AM–4:00 PM. Summer hours (typically June–August): Monday–Thursday 9am–4pm, Friday 9am–1pm. All transactions must be in by 3:30 PM for same-day processing. <a href=\"hours-locations.html\">View full hours and holiday schedule</a>."
+                            },
+                            {
+                                "q": "Where are you located?",
+                                "a": "We're at Norad Mill, 60 Roberts Drive, Suite 112, North Adams, MA 01247. <a href=\"hours-locations.html\">Get directions and more details</a>."
+                            },
+                            {
+                                "q": "How much do I need to open an account?",
+                                "a": "Just $5.00 to open a Share Savings account. You'll need a valid government-issued ID, Social Security card, and cash or check made payable to NA ME Fed Credit Union. <a href=\"membership.html\">Apply for membership</a>."
+                            },
+                            {
+                                "q": "Do you offer online banking?",
+                                "a": "Not at this time. We're a small, branch-based credit union. You can visit us during business hours or call (413) 662-2657. We're exploring online banking for the future."
+                            },
+                            {
+                                "q": "What if I leave my job or move away?",
+                                "a": "Once a member, always a member! We just require annual activity in your account to keep it open. You don't lose membership if you change jobs or relocate."
+                            },
+                            {
+                                "q": "How do I set up direct deposit or payroll deduction?",
+                                "a": "Contact us for our routing number and your account number. We can provide a direct deposit form, or your employer may have their own. For payroll deduction on loans, we'll work with your employer once your loan is approved."
+                            },
+                            {
+                                "q": "Is my money safe?",
+                                "a": "Yes. Your savings are federally insured to at least $250,000 by the NCUA (National Credit Union Administration), backed by the full faith and credit of the United States Government."
+                            },
+                            {
+                                "q": "How do I apply for a loan?",
+                                "a": "Visit the branch or call (413) 662-2657 to speak with staff. We offer auto, personal, and seasonal loans. <a href=\"rates.html\">View current rates</a>. We will match competitor rates with Board approval. Just ask!"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "membership": {
+            "title": "Membership – NAMEFED",
+            "blocks": [
+                {
+                    "type": "pagehead",
+                    "data": {
+                        "title": "Apply for Membership"
+                    }
+                },
+                {
+                    "type": "content",
+                    "data": {
+                        "innerHtml": "<h2>Who Can Join?</h2><p class=\"lead\">NAMEFED membership is open to municipal employees, retirees, and their families. If you work for the city, school district, transit authority, or public safety, or if you're related to someone who does, you likely qualify.</p>{{@whoWeServe}}<p><strong>Once a Member – Always a Member!</strong> Even if you leave your employment or move out of the area, we just require annual activity in your account.</p>"
+                    }
+                },
+                {
+                    "type": "content",
+                    "data": {
+                        "modifiers": "section--alt",
+                        "innerHtml": "<h2>What You'll Need</h2>{{list2Html}}",
+                        "list2": [
+                            "Driver's license or other valid government-issued picture ID",
+                            "Social Security Card",
+                            "Cash or check (minimum $5.00) made payable to NA ME Fed Credit Union"
+                        ]
+                    }
+                },
+                {
+                    "type": "eligibility",
+                    "data": []
+                }
+            ]
+        }
     }
-  }
 }
