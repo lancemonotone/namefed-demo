@@ -60,19 +60,3 @@
   opacity: 0.98;
   line-height: 1.5;
 }
-
-.section-hero__ctas {
-  --section-hero-ctas-cols: 1;
-  --section-hero-ctas-gap: var(--space-md);
-
-  display: grid;
-  grid-template-columns: repeat(var(--section-hero-ctas-cols), 1fr);
-  gap: var(--section-hero-ctas-gap);
-  justify-items: center;
-
-  @media (min-width: 768px) {
-    --section-hero-ctas-cols: auto;
-    grid-template-columns: repeat(auto-fit, minmax(0, max-content));
-    justify-content: center;
-  }
-}
