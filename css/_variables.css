@@ -34,6 +34,8 @@
   --section-alt-link: var(--color-white);
   --section-alt-link-hover: rgba(255, 255, 255, 0.9);
   --section-alt-note: rgba(255, 255, 255, 0.85);
+  --color-link: var(--color-primary-dark);
+  --color-link-hover: var(--color-primary-light);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -63,6 +65,8 @@
     --color-heading: var(--color-white);
     --shadow: 0 2px 12px color-mix(in srgb, black 30%, transparent);
     --shadow-hover: 0 8px 24px color-mix(in srgb, black 40%, transparent);
+    --color-link: var(--color-primary);
+    --color-link-hover: var(--color-white);
   }
 }
 
